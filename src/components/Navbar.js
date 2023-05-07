@@ -18,10 +18,10 @@ function classNames(...classes) {
 
 export default function Navbar() {
 	return (
-		<Disclosure as="nav" className="bg-transparent">
+		<Disclosure as="nav" className="bg-transparent w-full  z-20 ">
 			{({ open }) => (
 				<>
-					<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+					<div className="  container  ">
 						<div className="relative flex h-16 items-center justify-between">
 							<div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
 								{/* Mobile menu button*/}
@@ -42,7 +42,7 @@ export default function Navbar() {
 									)}
 								</Disclosure.Button>
 							</div>
-							<div className="flex items-center w-full  lg:justify-around ">
+							<div className="flex items-center w-full  lg:justify-between ">
 								<div className="flex flex-shrink-0 items-center">
 									<img
 										className="block h-8 w-auto lg:hidden"
