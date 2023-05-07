@@ -18,7 +18,7 @@ export default function Dropdown() {
 
 
     return (
-        <div className=" w-full  bg-white p-2">
+        <div className=" w-full  bg-white ">
             {
                 (data && data.length !== 0) && data.map((item, index) => {
                     return (
