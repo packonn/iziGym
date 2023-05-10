@@ -9,7 +9,7 @@ const Header = () => {
 				<BandeauPromo />
 			</div>
 
-			<div className="h-[90vh] w-full  relative  bg-header  flex flex-col ">
+			<div className="h-[90vh] w-full  relative  bg-header bg-no-repeat bg-cover flex flex-col ">
 				<Navbar />
 
 				<div className="bg-floatRight absolute top-0 left-0 h-full w-full bg-no-repeat"></div>

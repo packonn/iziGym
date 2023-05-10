@@ -26,6 +26,7 @@ module.exports = {
 				primary: "#D9712E",
 				secondary: "#1C1C1E",
 				gray: "#B5B5B5",
+				gray2: "#1E1E1E",
 				black2: "#262626",
 			},
 			container: {
@@ -51,6 +52,8 @@ module.exports = {
 				bottomHeader: "url('/assets-dev/bot_header.png')",
 				serviceBG: "url('/assets-dev/background_03_01.png')",
 				servicePencherBG: "url('/assets-dev/background_03_02.png)",
+				botServiceBG: "url('/assets-dev/bot_actu.png)",
+				actusBG: "url(/assets-dev/actuClub.jpg)",
 			},
 		},
 	},
