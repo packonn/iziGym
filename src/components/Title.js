@@ -3,10 +3,10 @@ export const Title = ({ title, subtitle, color }) => {
 		color === "primary"
 			? "text-primary"
 			: color === "secondary"
-				? "text-secondary"
-				: color === "white"
-					? "text-white"
-					: "text-primary"
+			? "text-secondary"
+			: color === "white"
+			? "text-white"
+			: "text-primary"
 
 	return (
 		<div className="mb-10">

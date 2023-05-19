@@ -54,6 +54,8 @@ module.exports = {
 				servicePencherBG: "url('/assets-dev/background_03_02.png)",
 				botServiceBG: "url('/assets-dev/bot_actu.png)",
 				actusBG: "url(/assets-dev/actuClub.jpg)",
+				sign: "url(/logo/sign_gray.png)",
+				rectangleOrange: "url(/logo/Rectangle_orange.png)",
 			},
 		},
 	},
