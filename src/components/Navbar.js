@@ -3,11 +3,12 @@ import { Disclosure, Menu, Transition } from "@headlessui/react"
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Button from "./Button"
+import {  homeURL, servicesCoursCollectifURL, servicesURL } from "../../helpers"
 
 const navigation = [
-	{ name: "Accueil", href: "#", current: true },
+	{ name: "Accueil", href: homeURL, current: true },
 	{ name: "Actualités", href: "#", current: false },
-	{ name: "Cours collectif", href: "#", current: false },
+	{ name: "Cours collectif", href: servicesURL + servicesCoursCollectifURL, current: false },
 	{ name: "Abonnements", href: "#", current: false },
 	{ name: "Contact", href: "#", current: false },
 ]
