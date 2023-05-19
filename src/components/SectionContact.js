@@ -59,7 +59,10 @@ export default function SectionContact(props) {
     };
 
     return (
-        <div id="contact">
+        <div id="contact" className="relative ">
+             <div className="absolute top-0 z-20 w-full h-20">
+                    <Image src="/assets-dev/banner-black2.png" fill className=" " />
+                </div>
             {formIsLoading && <Loader />}
             <div className='gap-10 grid grid-cols-1 md:grid-cols-2 '>
                 <form onSubmit={handleSubmit(onSubmit)} className=' pl-[40px] pt-10'>

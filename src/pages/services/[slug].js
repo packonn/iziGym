@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Dropdown from "@/components/Dropdown";
+import Layout from "@/components/Layout";
 import { Title } from "@/components/Title";
 import Image from "next/image";
 
@@ -242,7 +243,8 @@ const Service = ({ service, slug }) => {
     ]
 
     return (
-        <div>
+        <Layout backgroundImageURL="/assets-dev/header.png" title1="Club" title2="IZI GYM" title3="Deviens la meileure version de toi même !">
+
             <h1>slug : {slug} </h1>
 
             <div className="container grid grid-cols-4 gap-x-10">
@@ -342,24 +344,8 @@ const Service = ({ service, slug }) => {
                     </div>
                 </div>
             </div>
-            <div className=" w-full relative ">
-                <div className="absolute top-0 z-20 w-full h-20">
-                    <Image src="/assets-dev/banner-black2.png" fill className=" " />
-                </div>
-                <div className="bg-white  ">
-
-                    <div className="grid grid-cols-2 min-h-[400px]">
-                        <div className="col-span-2 md:col-span-1 py-20 container">
-                            <Title title="Planning" subtitle="Cours collectifs" />
-                            <input type="text" />
-                        </div>
-                        <div className="col-span-2 md:col-span-1 w-full h-full relative">
-                            <Image src="/assets-dev/contact.png" fill className="bg-red-400 object-cover" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div >
+         
+        </Layout >
 
     )
 }

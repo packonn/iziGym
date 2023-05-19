@@ -1,11 +1,13 @@
 import Image from "next/image"
 import { Title } from "./Title"
+import { servicesCardioURL, servicesCoursCollectifURL, servicesMusculationURL, servicesURL } from "../../helpers"
+import Link from "next/link"
 
 const SectionServices = () => {
 	const table = [
-		{ name: "cardio", img: "/assets-dev/prog3.png" },
-		{ name: "musculation", img: "/assets-dev/prog2.png" },
-		{ name: "fitness", img: "/assets-dev/prog1.png" },
+		{ name: "cardio", img: "/assets-dev/prog3.png", url:servicesURL + servicesCardioURL },
+		{ name: "cours collectif", img: "/assets-dev/prog1.png", url:servicesURL + servicesCoursCollectifURL },
+		{ name: "musculation", img: "/assets-dev/prog2.png",url:servicesURL + servicesMusculationURL },
 	]
 	return (
 		<div className="relative min-h-[65vh]">
@@ -22,7 +24,7 @@ const SectionServices = () => {
 					<div className=" flex justify-around flex-wrap  ">
 						{table.map((e, i) => {
 							return (
-								<div
+								<Link href={e.url}
 									className="relative w-96 h-96 flex items-end justify-start my-2 "
 									key={i}
 								>
@@ -39,7 +41,7 @@ const SectionServices = () => {
 											/>
 										</div>
 									</div>
-								</div>
+								</Link>
 							)
 						})}
 					</div>
