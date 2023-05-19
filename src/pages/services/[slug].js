@@ -244,12 +244,9 @@ const Service = ({ service, slug }) => {
 
     return (
         <Layout backgroundImageURL="/assets-dev/header.png" title1="Club" title2="IZI GYM" title3="Deviens la meileure version de toi même !">
-
-            <h1>slug : {slug} </h1>
-
             <div className="container grid grid-cols-4 gap-x-10">
                 <div className="col-span-3">
-                    <Title title="Planning" subtitle="Cours collectifs" />
+                    <Title title="Planning" subtitle="Cours collectifs" color="secondary" />
                     <p className="font-roboto text-16">Arcu est amet nibh ullamcorper gravida suspendisse. Tempor pellentesque porttitor faucibus in vel venenatis in purus. Feugiat et adipiscing nisi vitae vitae consectetur laoreet mus. Varius tellus integer amet volutpat commodo pellentesque tortor. Nulla nisl quis nam sed nisi orci tellus sollicitudin hac. Tellus rhoncus vitae nunc lorem cursus nullam. Tempus nulla lectus nisi enim amet eu.
                         Massa nulla Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi porro non sunt temporibus sapiente optio dolorem vero voluptatibus amet saepe accusamus pariatur maiores, distinctio tempore, suscipit exercitationem officiis sint consequatur corrupti vitae aut? Est quas veniam iure pariatur consequatur quo numquam provident? Non esse, numquam qui excepturi doloribus tempora veritatis? Eligendi eaque, cum similique corporis iure voluptate excepturi asperiores officia, velit aut necessitatibus! Ex quibusdam numquam obcaecati, animi voluptas laborum optio ea minima tenetur doloribus unde ad sequi necessitatibus velit voluptatibus enim officia! Officiis, dicta quia, expedita minima est voluptatem modi, magnam impedit nisi sapiente nihil esse. Ut, consectetur omnis? justo sed ornare nulla quis diam et. Diam faucibus malesuada vestibulum eu non ipsum bibendum. Quis mollis nisi enim blandit. Et in viverra egestas faucibus sollicitudin eu sit malesuada dolor. Proin dui duis mi aenean elit lobortis nulla parturient. Gravida amet quam posuere amet at neque. Pellentesque donec tristique pretium mollis. Dui ac duis viverra tellus mattis donec. Commodo sed mauris donec aliquam pellentesque venenatis risus et nunc. Cras arcu eget eu in et quam.</p>
                     <div className="mt-10">
@@ -291,7 +288,7 @@ const Service = ({ service, slug }) => {
                     <Image src="/assets-dev/banner-white.png" fill />
                 </div>
                 <div className="container py-10 pb-32">
-                    <Title title="Planning" subtitle="Cours collectifs" />
+                    <Title title="Planning" subtitle="Cours collectifs" color={"white"} />
                     <div className="grid grid-cols-3 gap-10 mt-20 ">
 
                         {planning.map((item, index) => {

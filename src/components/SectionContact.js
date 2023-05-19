@@ -61,11 +61,11 @@ export default function SectionContact(props) {
     return (
         <div id="contact" className="relative ">
              <div className="absolute top-0 z-20 w-full h-20">
-                    <Image src="/assets-dev/banner-black2.png" fill className=" " />
+                    <Image src="/assets-dev/banner-black2.png" fill className="object-cover " />
                 </div>
             {formIsLoading && <Loader />}
             <div className='gap-10 grid grid-cols-1 md:grid-cols-2 '>
-                <form onSubmit={handleSubmit(onSubmit)} className=' pl-[40px] pt-10'>
+                <form onSubmit={handleSubmit(onSubmit)} className=' pl-[40px] py-32'>
                 <Title
                         title='Question ?'
                         subtitle='contactez-nous'
@@ -100,7 +100,7 @@ export default function SectionContact(props) {
                             </>
                         )}
                     </div>
-                    <div className='bg-[url("/assets-dev/button-bg.svg")] w-fit bg-no-repeat flex items-center justify-left px-4  py-[6px]'>
+                    <div className='bg-[url("/assets-dev/button-bg.svg")]  w-fit bg-no-repeat flex items-center justify-left px-4  py-[6px]'>
                         <Image src={"/logo/enveloppe.png"} width={20} height={20} className="mr-2" />
                         <input type='submit' value="Envoyer" className={`${isValid ? "" : ""}  py-2 font-anton text-white font-[400]  uppercase `} />
                     </div>
@@ -109,7 +109,7 @@ export default function SectionContact(props) {
 
                 </form>
             <div className="h-full min-h-[500px] w-full relative">
-                <Image src={"/assets-dev/contact.png"} fill alt='' placeholder="blur" blurDataURL="/images/contact.svg" />
+                <Image src={"/assets-dev/contact.png"} fill alt='' placeholder="blur" blurDataURL="/images/contact.svg" className="object-cover"/>
             </div>
             </div>
         </div>

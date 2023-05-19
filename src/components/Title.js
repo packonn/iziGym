@@ -9,7 +9,7 @@ export const Title = ({ title, subtitle, color }) => {
 					: "text-primary"
 
 	return (
-		<div>
+		<div className="mb-10">
 			<h3 className="font-great text-primary text-[80px] ">{title}</h3>
 			<h3
 				className={`font-anton text-[80px] uppercase -mt-4 leading-[84px] ${textColor}`}

@@ -5,7 +5,7 @@ import Image from "next/image"
 import Button from "./Button"
 import {  homeURL, servicesCoursCollectifURL, servicesURL } from "../../helpers"
 
-const navigation = [
+export const navigation = [
 	{ name: "Accueil", href: homeURL, current: true },
 	{ name: "Actualités", href: "#", current: false },
 	{ name: "Cours collectif", href: servicesURL + servicesCoursCollectifURL, current: false },

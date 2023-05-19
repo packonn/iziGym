@@ -11,7 +11,7 @@ const Header = ({ backgroundImageURL, title1, title2, title3, center }) => {
 			</div>
 
 			<div className="h-[90vh] w-full  relative  flex flex-col ">
-				<Image src={backgroundImageURL} fill className="bg-bottom bg-cover" />
+				<Image src={backgroundImageURL} fill className="object-top object-cover" />
 				<Navbar />
 
 				<div className="bg-floatRight absolute top-0 left-0 h-full w-full bg-no-repeat"></div>
