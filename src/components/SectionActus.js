@@ -65,19 +65,17 @@ const SectionActus = () => {
 									<p className="text-4xl font-bold">
 										{e.title}
 									</p>
-									<div className="flex">
-										<Link
-											href={`${e.link}`}
-											className="text-sm mr-2"
-										>
-											EN SAVOIR PLUS
-										</Link>
+									<Link
+										href={`${e.link}`}
+										className="text-sm mr-2 flex"
+									>
+										<p className="mr-2"> EN SAVOIR PLUS</p>
 										<Image
 											width={13}
 											height={13}
 											src={"/assets-dev/arrow.svg"}
 										/>
-									</div>
+									</Link>
 								</div>
 								<Image fill src={e.img} className="-z-10" />
 							</div>
