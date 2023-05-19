@@ -8,7 +8,7 @@ const SectionServices = () => {
 		{ name: "fitness", img: "/assets-dev/prog1.png" },
 	]
 	return (
-		<div className="relative min-h-[65vh]">
+		<div className="relative min-h-[65vh] py-10">
 			<div className="container">
 				<Title
 					title={"Les Différences"}
@@ -18,8 +18,7 @@ const SectionServices = () => {
 				<div>
 					<div className=" bg-serviceBG h-full w-1/2 absolute top-0 left-0 -z-10"></div>
 					<div className=" bg-serviceBG h-full w-1/4 absolute top-0 right-0 -z-10 rotate-12"></div>
-					<div className="py-10"></div>
-					<div className=" flex justify-around flex-wrap  ">
+					<div className=" flex justify-around flex-wrap">
 						{table.map((e, i) => {
 							return (
 								<div
