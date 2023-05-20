@@ -65,7 +65,7 @@ export default function SectionContact(props) {
                 </div>
             {formIsLoading && <Loader />}
             <div className='gap-10 grid grid-cols-1 md:grid-cols-2 '>
-                <form onSubmit={handleSubmit(onSubmit)} className=' pl-[40px] py-32'>
+                <form onSubmit={handleSubmit(onSubmit)} className=' md:pl-[40px] container py-32'>
                 <Title
                         title='Question ?'
                         subtitle='contactez-nous'
@@ -108,7 +108,7 @@ export default function SectionContact(props) {
                    
 
                 </form>
-            <div className="h-full min-h-[500px] w-full relative">
+            <div className="h-full min-h-[500px] md:flex hidden  w-full relative">
                 <Image src={"/assets-dev/contact.png"} fill alt='' placeholder="blur" blurDataURL="/images/contact.svg" className="object-cover"/>
             </div>
             </div>

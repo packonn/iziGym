@@ -6,7 +6,7 @@ import phone from "../../public/logo/tel_orange.png"
 const BandeauInfo = () => {
 	return (
 		<div className=" bg-secondary text-white text-xs ">
-			<div className="flex items-center gap-10 h-9 container">
+			<div className="flex flex-wrap justify-center items-center md:gap-10 gap-x-4 py-2 container">
 				<div className="flex items-center">
 					<Image
 						src={pin}
