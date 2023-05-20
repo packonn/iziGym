@@ -10,9 +10,9 @@ export const Title = ({ title, subtitle, color }) => {
 
 	return (
 		<div className="mb-10">
-			<h3 className="font-great text-primary text-[80px] ">{title}</h3>
+			<h3 className="font-great text-primary md:text-[80px]  text-[20vw] ">{title}</h3>
 			<h3
-				className={`font-anton text-[80px] uppercase -mt-4 leading-[84px] ${textColor}`}
+				className={`font-anton uppercase -mt-4 md:leading-[80px] md:text-[80px] leading-[20vw]  text-[20vw]  ${textColor}`}
 			>
 				{subtitle}
 			</h3>

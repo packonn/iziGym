@@ -3,26 +3,26 @@ import SectionContact from "./SectionContact"
 import { navigation } from "./Navbar"
 import Link from "next/link"
 
+export const infos = [
+     {
+         title: "Adresse",
+         texte: "Rue de la gare 1, 1000 Bruxelles"
+     },
+     {
+         title: "Téléphone",
+         texte: "02 123 45 67"
+     },
+     {
+         title: "Horaires",
+         texte: "Du lundi au vendredi de 8h à 20h"
+     },
+     {
+         title: "rejoignez-nous",
+         texte: ""
+     }
+ ]
 const Footer = () => {
 
-    const infos = [
-        {
-            title: "Adresse",
-            texte: "Rue de la gare 1, 1000 Bruxelles"
-        },
-        {
-            title: "Téléphone",
-            texte: "02 123 45 67"
-        },
-        {
-            title: "Horaires",
-            texte: "Du lundi au vendredi de 8h à 20h"
-        },
-        {
-            title: "rejoignez-nous",
-            texte: ""
-        }
-    ]
 
     return (
         <footer className="relative">
@@ -85,7 +85,7 @@ const Footer = () => {
                                 
                             })}
                         </div>
-                        <div className="lg:col-span-2 col-span-5  relative w-full overflow-hidden  md:h-[300px] lg:border-l lg:pl-5 lg:border-t-0  border-t lg:mt-0 lg:mt-0  mt-5 border-gray ">
+                        <div className="lg:col-span-2 col-span-5  relative w-full overflow-hidden  md:h-[300px] h-[200px] lg:border-l lg:pl-5 lg:border-t-0  border-t lg:mt-0  mt-5 border-gray ">
                             <Image src="/assets-dev/maps.png" fill  className="lg:ml-5 mt-5 lg:mt-0  object-cover " />
                         </div>
                     </div>
