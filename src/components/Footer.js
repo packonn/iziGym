@@ -31,7 +31,7 @@ const Footer = () => {
                 <div className="relative w-full h-20 -mb-[1px]">
                     <Image src="/assets-dev/banner-top-footer.png" fill  />
                 </div>
-                <div className=" bg-black2 "></div>
+                <div className=" bg-black2 ">
                     <div className="container py-10 relative grid gap-x-10 grid-cols-5">
                         <div className="lg:col-span-1 col-span-5  ">
                             <Image src="/logo/logo.png" width={150} height={150} />
