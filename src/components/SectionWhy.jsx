@@ -30,7 +30,7 @@ const SectionWhy = () => {
 	]
 
 	return (
-		<div className="h-screen">
+		<div className="relative">
 			<div className="container">
 				<div className="flex justify-center bg-sign  bg-contain bg-no-repeat bg-center text-center">
 					<Title
@@ -39,10 +39,10 @@ const SectionWhy = () => {
 						color={"secondary"}
 					/>
 				</div>
-				<div>
+				<div className="grid grid-cols-3 gap-10 mb-24">
 					{array.map((e, i) => {
 						return (
-							<div>
+							<div key={i} className={""}>
 								<div className="bg-rectangleOrange w-[66px] h-[66px] bg-contain relative ">
 									<Image
 										src={"/logo/runner.svg"}
@@ -61,6 +61,47 @@ const SectionWhy = () => {
 							</div>
 						)
 					})}
+				</div>
+			</div>
+			<div className=" w-full bg-[url('/logo/bandeau-orange.png')] bg-no-repeat ">
+				<div className="container flex items-center justify-between">
+					<div className=" relative w-[580px] h-[431px] z-50 ">
+						<div className="absolute w-[580px] h-[431px] -left-10">
+							<Image
+								src={"/assets-dev/hero_image_05 1.svg"}
+								fill
+								alt="img"
+							/>
+						</div>
+					</div>
+					<Title
+						title={"1ère séance"}
+						subtitle={"GRATUITE!"}
+						color={"secondary"}
+						textColor1={"white"}
+					/>
+					<div className="h-32 flex flex-col justify-between z-50">
+						<div className="bg-[url('/assets-dev/button-bg-black.svg')] w-[253px] h-14 text-white flex items-center px-6 py-3">
+							<Image
+								src={"/logo/white-mail.svg"}
+								width={25}
+								height={20}
+							/>
+							<p className="ml-4 font-anton text-xl uppercase">
+								izigym@hotmail.com
+							</p>
+						</div>
+						<div className="bg-[url('/assets-dev/button-bg-white.svg')] w-[253px] h-14 flex items-center px-6 py-3 -z-20">
+							<Image
+								src={"/logo/black-phone.svg"}
+								width={21}
+								height={21}
+							/>
+							<p className="ml-4 font-anton text-xl uppercase">
+								09 54 59 76 86
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

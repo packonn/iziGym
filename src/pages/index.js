@@ -1,5 +1,6 @@
 import Header from "@/components/Header"
 import Layout from "@/components/Layout"
+import Planning from "@/components/Planning"
 import SectionActus from "@/components/SectionActus"
 import SectionContact from "@/components/SectionContact"
 import SectionServices from "@/components/SectionServices"
@@ -16,6 +17,7 @@ export default function Home() {
 			<SectionServices />
 			<SectionActus />
 			<SectionWhy />
+			<Planning />
 		</Layout>
 	)
 }
