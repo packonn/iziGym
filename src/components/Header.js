@@ -15,21 +15,21 @@ const Header = ({ backgroundImageURL, title1, title2, title3, center }) => {
 				<Navbar />
 
 				<div className="bg-floatRight absolute top-0 left-0 h-full w-full bg-no-repeat"></div>
-				<div className="flex container h-full items-start pt-20">
+				<div className="flex container justify-center lg:justify-start h-full items-start md:pt-20 pt-32">
 					<div className="  mx-0 w-fit ">
-						<h2 className="text-white font-great leading-[130px] text-[130px] text-center -rotate-6">
+						<h2 className="text-white font-great md:leading-[130px] md:text-[130px] text-[60px] leading-[60px] text-center -rotate-6">
 							{title1}
 						</h2>
-						<h1 className=" text-primary font-great text-[130px]  leading-[130px] whitespace-nowrap text-center   -rotate-6">
+						<h1 className=" text-primary font-great md:leading-[130px] md:text-[130px] text-[60px] leading-[60px] whitespace-nowrap text-center   -rotate-6">
 							{title2}
 						</h1>
-						<p className="font-anton text-[40px] uppercase text-white text-center -rotate-6">
+						<p className="font-anton md:text-[40px] text-[30px] uppercase text-white text-center -rotate-6">
 							{title3}
 						</p>
 					</div>
 				</div>
 				<div className="bg-floatLeft  absolute top-0 right-0 h-full w-full bg-right bg-no-repeat"></div>
-				<div className=" bg-bottomHeader h-40 w-full absolute bottom-0"></div>
+				<div className=" bg-bottomHeader h-40 w-full absolute bottom-[-1px]"></div>
 			</div>
 		</div>
 	)
