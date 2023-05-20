@@ -30,7 +30,7 @@ const SectionServices = () => {
 		<div className="relative min-h-[65vh] py-10 overflow-hidden">
 			<div className="container">
 				<Title
-					title={"Les Différences"}
+					title={"Les Différents"}
 					subtitle={"Service du club"}
 					color={"secondary"}
 				/>
