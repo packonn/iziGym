@@ -125,7 +125,7 @@ export default function Navbar() {
                                     </div>
                                 )
                             })}
-                            {infos.map((e, i) => {
+                            {infos.slice(2,10).map((e, i) => {
                                 return (
                                     <div key={i} className="">
                                         { e.title != "rejoignez-nous" ? (<>  <p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">{e.title}</p>

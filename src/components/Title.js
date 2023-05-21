@@ -19,9 +19,9 @@ export const Title = ({ title, subtitle, color, textColor1 }) => {
 
 	return (
 		<div className="mb-10">
-			<h3 className={`font-great ${color1} md:text-[80px]  text-[20vw] `}>{title}</h3>
+			<h3 className={`font-great ${color1} md:text-[70px] lg:text-[80px] lg:leading-[80px] md:leading-[70px]  text-[14vw]  leading-[14vw]`}>{title}</h3>
 			<h3
-				className={`font-anton md:leading-[80px] md:text-[80px] leading-[20vw]  text-[20vw]  uppercase -mt-4  ${textColor2}`}
+				className={`font-anton  md:text-[70px] lg:text-[80px] leading-[14vw] lg:leading-[80px] md:leading-[70px]  text-[14vw]  uppercase -mt-2  ${textColor2}`}
 				
 			>{subtitle}</h3>
 		</div>

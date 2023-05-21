@@ -37,7 +37,7 @@ const SectionActus = () => {
 	]
 	return (
 		<div className="bg-actusBG min-h-[70vh] pb-20 relative">
-			<div className="relative w-full h-20">
+			<div className="relative w-full h-20 bottom-1">
 				<Image src="/assets-dev/banner-white.png" fill />
 			</div>
 			<div className="container pb-20">
@@ -55,15 +55,15 @@ const SectionActus = () => {
 							>
 								<div className="bg-primary text-white font-bold w-24 h-24 text-4xl py-2 px-5">
 									{e.date.day > 9 ? (
-										<p className="font-anton">
+										<p className="font-anton text-[37px] font-regular">
 											{e.date.day}
 										</p>
 									) : (
-										<p className="font-anton">
+										<p className="font-anton text-[37px] font-regular">
 											0{e.date.day}
 										</p>
 									)}
-									<p className="font-anton">{e.date.month}</p>
+									<p className="font-anton text-[37px] font-regular">{e.date.month}</p>
 								</div>
 								<div className="text-white ">
 									{e.time && (
@@ -71,14 +71,14 @@ const SectionActus = () => {
 											{e.time}
 										</p>
 									)}
-									<p className="text-4xl font-bold">
+									<p className="text-4xl font-bold leading-[37px] ">
 										{e.title}
 									</p>
 									<Link
 										href={`${e.link}`}
-										className="text-sm mr-2 flex"
+										className="text-sm mr-2 flex mt-1"
 									>
-										<p className="mr-2 font-black">
+										<p className="mr-2 font-black  tracking-[1.5px]">
 											{" "}
 											EN SAVOIR PLUS
 										</p>
@@ -95,7 +95,7 @@ const SectionActus = () => {
 					})}
 				</div>
 			</div>
-			<div className="absolute bottom-0 w-full h-20">
+			<div className="absolute -bottom-[1px] w-full h-20">
 				<Image src="/assets-dev/white_bottom_wave_03.png" fill />
 			</div>
 		</div>

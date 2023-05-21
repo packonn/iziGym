@@ -47,7 +47,7 @@ const SectionServices = () => {
 								>
 									<Image src={e.img} fill alt="img" />
 									<div className="p-2">
-										<p className="z-20 text-white font-bold	 uppercase text-4xl relative">
+										<p className="z-20 text-white font-regular font-anton text-[37px]	 uppercase  relative">
 											{e.name}
 										</p>
 										<div className="z-50 relative w-6 h-6">

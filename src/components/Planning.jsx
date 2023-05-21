@@ -3,12 +3,10 @@ import { planning } from "@/pages/services/[slug]"
 import Image from "next/image"
 const Planning = () => {
 	return (
-		<div className="bg-black2 mt-20 relative z-50">
+		<div className="bg-black2  relative z-50">
 			<div className="bg-floatLeftGray absolute top-0 right-0 h-full w-full bg-right bg-no-repeat"></div>
 			<div className="bg-floatRightGray absolute top-0 left-0 h-full w-full bg-no-repeat"></div>
-			<div className="relative w-full h-20">
-				<Image src="/assets-dev/banner-white.png" fill />
-			</div>
+
 			<div className="container py-10 pb-32">
 				<Title
 					title="Planning"
