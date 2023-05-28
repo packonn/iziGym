@@ -6,6 +6,7 @@ import Button from "./Button"
 import {  abonnementsURL, actusURL, cgvURL, cookiePolicyURL, coursCollectifURL, homeURL, reglementInterieurURL, servicesCoursCollectifURL, servicesURL } from "../../helpers"
 import { infos } from "./Footer"
 import { useRouter } from "next/router"
+import Link from "next/link"
 
 
 export const navigationURLS =(router)=> {
@@ -54,16 +55,18 @@ export default function Navbar() {
 							</div>
 							<div className="flex items-center w-full  lg:justify-between ">
 								<div className="flex flex-shrink-0 items-center">
-									<img
+								<Link href={homeURL}	>
+								<img
 										className="block h-8 w-auto lg:hidden"
 										src="/logo/logo.png"
-										alt="Your Company"
+										alt="IziGym Salle de sport 17290 Le Thou"
 									/>
 									<img
 										className="hidden h-8 w-auto lg:block"
 										src="/logo/logo.png"
-										alt="Your Company"
+										alt="IziGym Salle de sport 17290 Le Thou"
 									/>
+									</Link>
 								</div>
 								<div className="hidden sm:ml-6 lg:block">
 									<div className="flex space-x-4">
