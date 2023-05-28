@@ -27,8 +27,6 @@ function classNames(...classes) {
 export default function Navbar() {
 	const router = useRouter()
 	const navigation = navigationURLS(router)
-	console.log('router.asPath',router.asPath)
-console.log(navigation)
 	return (
 		<Disclosure as="nav" className="bg-transparent w-full relative z-20 ">
 			{({ open }) => (
@@ -77,7 +75,7 @@ console.log(navigation)
 													item.current
 														? " text-white border-b-2 border-primary"
 														: "text-white  hover:text-primary",
-													" px-2 py-2 font-bold text-sm uppercase tracking-widest"
+													" px-2 text-[17px] py-2 font-bold text-sm uppercase tracking-widest"
 												)}
 												aria-current={
 													item.current

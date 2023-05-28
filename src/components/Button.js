@@ -6,7 +6,7 @@ const Button = ({ text, onPress, icon, primary, secondary, white }) => {
     return (
         <div className={`${bgColor} flex items-center px-2 py-1 w-fit `}>
             <Image src={icon} width={14} height={14} className="mr-2" />
-            <p className={`${textColor} text-16 font-roboto uppercase tracking-widest font-regular `}>{text}</p>
+            <p className={`${textColor} text-[17px] font-roboto uppercase tracking-widest font-regular `}>{text}</p>
         </div>
     )
 }
