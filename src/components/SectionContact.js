@@ -58,10 +58,12 @@ export default function SectionContact(props) {
         }
     };
 
+    const bannerBottomURL = props.white ? "/assets-dev/banner-white.png" : "/assets-dev/banner-black2.png";
+
     return (
         <div id="contact" className="relative ">
              <div className="absolute top-0 z-20 w-full h-20">
-                    <Image src="/assets-dev/banner-black2.png" fill className="object-cover " />
+                    <Image src={bannerBottomURL} fill className="object-cover " />
                 </div>
             {formIsLoading && <Loader />}
             <div className='gap-10 grid grid-cols-1 md:grid-cols-2 '>
