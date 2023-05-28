@@ -26,13 +26,13 @@ export const infos = [
          texte: ""
      }
  ]
-const Footer = ({footerWhite}) => {
+const Footer = ({contactBannerColor}) => {
     const router = useRouter()
     const navigation = navigationURLS(router)
 
     return (
         <footer className="relative">
-            <SectionContact white={footerWhite} />
+            <SectionContact contactBannerColor={contactBannerColor} />
             <div className="relative  -mt-14 w-full h-full left-0 top-0">
                 <div className="relative w-full h-20 -mb-[1px]">
                     <Image src="/assets-dev/banner-top-footer.png" fill  />

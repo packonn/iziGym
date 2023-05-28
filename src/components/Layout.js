@@ -45,7 +45,7 @@ export default function Layout(props) {
 
 			<main>{children}</main>
 
-			 <Footer footerWhite={props.footerWhite} /> 
+			 <Footer contactBannerColor={props.contactBannerColor} /> 
 		</>
 	)
 }

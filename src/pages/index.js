@@ -11,7 +11,7 @@ import Image from "next/image"
 
 export default function Home() {
 	return (
-		<Layout
+		<Layout contactBannerColor='cream'
 			backgroundImageURL="/assets-dev/header.png"
 			title1="Club"
 			title2="IZI GYM"

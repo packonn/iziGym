@@ -253,7 +253,7 @@ useEffect(() => {
    
 
     return (
-        <Layout footerWhite backgroundImageURL="/assets-dev/header.png" title1="Club" title2="IZI GYM" title3="Deviens la meileure version de toi même !">
+        <Layout contactBannerColor="white" backgroundImageURL="/assets-dev/header.png" title1="Club" title2="IZI GYM" title3="Deviens la meileure version de toi même !">
             <div className="container py-20 grid grid-cols-4 gap-x-4">
                 <div className="lg:col-span-3 col-span-4">
                     <Title title="Planning" subtitle="Cours collectifs" color="secondary" />

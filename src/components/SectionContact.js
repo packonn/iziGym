@@ -58,7 +58,7 @@ export default function SectionContact(props) {
         }
     };
 
-    const bannerBottomURL = props.white ? "/assets-dev/banner-white.png" : "/assets-dev/banner-black2.png";
+    const bannerBottomURL = props.contactBannerColor === "white" ? "/assets-dev/banner-white.png" :props.contactBannerColor === "cream" ? "/assets-dev/banner-cream.svg" :  "/assets-dev/banner-black2.png";
 
     return (
         <div id="contact" className="relative ">
