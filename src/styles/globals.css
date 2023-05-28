@@ -77,3 +77,28 @@
 * {
 	font-family: roboto;
 }
+
+
+.swiper-avis .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	border-radius: 10px!important;
+	width: 14px !important;
+	height: 64px!important;
+	background-color: white!important;
+  }
+  .swiper-project .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	border-radius: 10px!important;
+	width: 64px !important;
+	height: 14px!important;
+	background-color: white!important;
+  }
+  .swiper-pagination-bullet {
+	width: 14px !important;
+	height: 14px!important;
+	margin: 0 4px;
+	background-color: transparent!important;
+	border:2px solid white!important;
+	border-radius: 50%!important;
+  }
+  .swiper-wrapper {
+	padding-bottom: 60px!important;
+  }

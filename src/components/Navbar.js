@@ -3,22 +3,32 @@ import { Disclosure, Menu, Transition } from "@headlessui/react"
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Button from "./Button"
-import {  homeURL, servicesCoursCollectifURL, servicesURL } from "../../helpers"
+import {  abonnementsURL, actusURL, cgvURL, cookiePolicyURL, coursCollectifURL, homeURL, reglementInterieurURL, servicesCoursCollectifURL, servicesURL } from "../../helpers"
 import { infos } from "./Footer"
+import { useRouter } from "next/router"
 
-export const navigation = [
-	{ name: "Accueil", href: homeURL, current: true },
-	{ name: "Actualités", href: "#", current: false },
-	{ name: "Cours collectif", href: servicesURL + servicesCoursCollectifURL, current: false },
-	{ name: "Abonnements", href: "#", current: false },
-	{ name: "Contact", href: "#", current: false },
+
+export const navigationURLS =(router)=> {
+	return [
+	{ name: "Accueil", href: homeURL, current: (router.asPath === homeURL)   , header:true},
+	{ name: "Actualités", href: actusURL, current: (router.asPath.includes(actusURL)), header:true},
+	{ name: "Cours collectif", href: coursCollectifURL, current: (router.asPath.includes(coursCollectifURL)) , header:true},
+	{ name: "Abonnements", href: abonnementsURL, current: (router.asPath.includes(abonnementsURL)) , header:true},
+	{ name: "Règlement intérieur", href: reglementInterieurURL, current:  (router.asPath.includes(reglementInterieurURL)) , header:false, header:false},
+	{ name: "Politique de confidentialité", href: cookiePolicyURL, current:  (router.asPath.includes(cookiePolicyURL)) , header:false},
+	{ name: "Conditions générales de vente", href: cgvURL, current:  (router.asPath.includes(cgvURL)) , header:false},
 ]
 
+} 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ")
 }
 
 export default function Navbar() {
+	const router = useRouter()
+	const navigation = navigationURLS(router)
+	console.log('router.asPath',router.asPath)
+console.log(navigation)
 	return (
 		<Disclosure as="nav" className="bg-transparent w-full relative z-20 ">
 			{({ open }) => (
@@ -59,7 +69,7 @@ export default function Navbar() {
 								</div>
 								<div className="hidden sm:ml-6 lg:block">
 									<div className="flex space-x-4">
-										{navigation.map((item) => (
+										{navigation.filter((item)=> item.header).map((item) => (
 											<a
 												key={item.name}
 												href={item.href}
@@ -67,7 +77,7 @@ export default function Navbar() {
 													item.current
 														? " text-white border-b-2 border-primary"
 														: "text-white  hover:text-primary",
-													" px-2 py-2 text-sm uppercase tracking-widest"
+													" px-2 py-2 font-bold text-sm uppercase tracking-widest"
 												)}
 												aria-current={
 													item.current
@@ -76,13 +86,15 @@ export default function Navbar() {
 												}
 											>
 												{item.name}
+												{console.log('current',item.current)}
+
 											</a>
 										))}
-										<div className="absolute inset-y-0 right-0 flex justify-around items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-primary w-40 h-8">
+										<div className="absolute inset-y-0 right-0 flex justify-around items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-primary h-8">
 											<Button
 												type="button"
 												className="text-white text-base "
-												text={"inscription"}
+												text={"réserver un cours"}
 												icon={"/assets-dev/arrow.svg"}
 											></Button>
 										</div>
@@ -100,7 +112,7 @@ export default function Navbar() {
 										src="/logo/logo.png"
 										alt="Your Company"
 									/>
-							{navigation.map((item) => (
+							{navigation.filter((item)=> item.header).map((item) => (
 								<Disclosure.Button
 									key={item.name}
 									as="a"

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Title } from "./Title"
+import ButtonDestroy from "./ButtonDestroy"
 
 const SectionWhy = () => {
 	const array = [
@@ -82,26 +83,11 @@ const SectionWhy = () => {
 						/>
 					</div>
 					<div className="h-32 -mt-4 lg:-mt-0 items-center flex flex-col justify-between z-50  " >
-						<div className="bg-[url('/assets-dev/button-bg-black.svg')] w-[253px] h-14 text-white flex items-center px-6 py-3">
-							<Image
-								src={"/logo/white-mail.svg"}
-								width={25}
-								height={20}
-							/>
-							<p className="ml-4 font-anton lg:text-xl text-16">
-								izigym@hotmail.com
-							</p>
-						</div>
-						<div className="bg-[url('/assets-dev/button-bg-white.svg')] w-[253px] h-14 flex items-center px-6 py-3 -z-20">
-							<Image
-								src={"/logo/black-phone.svg"}
-								width={21}
-								height={21}
-							/>
-							<p className="ml-4 font-anton lg:text-xl text-16">
-								09 54 59 76 86
-							</p>
-						</div>
+						<ButtonDestroy secondary icon="/logo/white-mail.svg" text="izigym@hotmail.com" />
+						<ButtonDestroy white icon="/logo/black-phone.svg" text="09 54 59 76 86" />
+
+
+
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,7 @@
 import { Title } from "./Title"
-import { planning } from "@/pages/services/[slug]"
+import { planning } from "@/pages/cours-collectifs"
 import Image from "next/image"
+import ButtonDestroy from "./ButtonDestroy"
 const Planning = () => {
 	return (
 		<div className="bg-black2  relative z-50">
@@ -12,7 +13,9 @@ const Planning = () => {
 					title="Planning"
 					subtitle="Cours collectifs"
 					color={"white"}
+					center
 				/>
+				<ButtonDestroy primary icon="logo/calendar.svg" text="Réserver mon cours" />
 				<div className="grid grid-cols-3 gap-10 mt-20 ">
 					{planning.map((item, index) => {
 						return (

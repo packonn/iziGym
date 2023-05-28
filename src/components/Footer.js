@@ -1,7 +1,8 @@
 import Image from "next/image"
 import SectionContact from "./SectionContact"
-import { navigation } from "./Navbar"
+import { navigation, navigationURLS } from "./Navbar"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 export const infos = [
      {
@@ -13,8 +14,12 @@ export const infos = [
          texte: "02 123 45 67"
      },
      {
-         title: "Horaires",
-         texte: "Du lundi au vendredi de 8h à 20h"
+         title: "Horaires d'accueil",
+         texte: "<p>Lundi-Mardi-Jeudi : 9h-13h30 / 16h-21h</p><p>Mercredi : 16h-21h</p><p>Vendredi : 9h-13h30 / 16h-20h</p> <p>Samedi : 9h30-13h</p>",
+     },
+     {
+         title: "Horaires d'accès",
+         texte: "<p>6h-23h - 7j/7</p>",
      },
      {
          title: "rejoignez-nous",
@@ -22,7 +27,8 @@ export const infos = [
      }
  ]
 const Footer = () => {
-
+    const router = useRouter()
+    const navigation = navigationURLS(router)
 
     return (
         <footer className="relative">

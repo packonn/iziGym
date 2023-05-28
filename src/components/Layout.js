@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import Image from "next/image"
 
 export default function Layout(props) {
 	const children = props.children
@@ -34,6 +35,7 @@ export default function Layout(props) {
 				title2={props.title2}
 				title3={props.title3}
 			/>
+			<Image width={225} height={225} className="absolute rotate-[-5deg] right-10 bottom-10" src="/logo/horaire-circle.svg" alt="header" />
 
 			<main>{children}</main>
 

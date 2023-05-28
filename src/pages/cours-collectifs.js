@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import Button from "@/components/ButtonDestroy";
 import Dropdown from "@/components/Dropdown";
 import Layout from "@/components/Layout";
 import { Title } from "@/components/Title";
@@ -215,19 +215,17 @@ export const planning = [
 
 
 export const getServerSideProps = async (context) => {
-    const slug = context.params.slug;
-    const service = null
 
     return {
         props: {
-            slug
+           
         },
 
     }
 
 }
 
-const Service = ({ service, slug }) => {
+const Service = () => {
 
     const otherServices = [
         {

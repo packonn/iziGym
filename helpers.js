@@ -1,5 +1,11 @@
-export const servicesURL = "/services/";
-export const servicesCoursCollectifURL = "cours-collectif/";
-export const servicesMusculationURL = "musculation/";
-export const servicesCardioURL = "cardio/";
+export const servicesURL = "/services";
+export const coursCollectifURL = "/cours-collectifs";
+export const servicesMusculationURL = "/musculation";
+export const servicesCardioURL = "/cardio";
 export const homeURL = "/"
+export const actusURL = "/actualites"
+export const abonnementsURL = "/abonnements"
+export const reglementInterieurURL = "/reglement-interieur"
+export const cookiePolicyURL = "/politique-de-confidentialite"
+export const cgvURL = "/conditions-generales-de-ventes"
+export const contactURL = "/contact"
