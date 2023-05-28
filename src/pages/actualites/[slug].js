@@ -8,7 +8,7 @@ import VideoPlayer from "@/components/Video";
 import SwiperGallery from "@/components/SwiperGallery";
 import { ActusCarousel } from "@/components/ActusCarousel";
 import SectionActus from "@/components/SectionActus";
-import { actus } from "../../../helpers";
+import { actus, breakPointsSwiper, images, slidesPerView } from "../../../helpers";
 
 
 
@@ -27,7 +27,6 @@ return {
 
 }
 
-
 const ActualiteSlug = ({slug}) => {
     const router = useRouter ();
     const [showVideo, setShowVideo] = useState(false);
@@ -36,17 +35,8 @@ const ActualiteSlug = ({slug}) => {
         setShowVideo(true);
     }, []);
 
-    const images = [
-        "/assets-dev/header.png",
-        "/assets-dev/header.png",
-        "/assets-dev/header.png",
-    ]
-	const slidesPerView = 1.3
-	const breakPointsSwiper = {
-		768: { slidesPerView: 2.3 },
-		1024: { slidesPerView: 2.3 },
-		1280: { slidesPerView: 2.3 },
-	}
+   
+	
 
     return (
         <Layout  backgroundImageURL="/assets-dev/header.png" title1="Club" title2="IZI GYM" title3="Deviens la meileure version de toi mêmessss !" center  >

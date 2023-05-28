@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Title } from "./Title"
 import {
+	coursCollectifURL,
 	servicesCardioURL,
 	servicesCoursCollectifURL,
 	servicesMusculationURL,
@@ -18,12 +19,12 @@ const SectionServices = () => {
 		{
 			name: "salle de musculation et cardio",
 			img: "/assets-dev/prog2.png",
-			url: servicesURL + servicesMusculationURL,
+			url: servicesMusculationURL,
 		},
 		{
 			name: "cours collectif",
 			img: "/assets-dev/prog1.png",
-			url: servicesURL + servicesCoursCollectifURL,
+			url: coursCollectifURL,
 		},
 	]
 	return (

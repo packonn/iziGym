@@ -1,6 +1,6 @@
 export const servicesURL = "/services";
 export const coursCollectifURL = "/cours-collectifs";
-export const servicesMusculationURL = "/musculation";
+export const servicesMusculationURL = "/salle-de-musculation-et-cardio";
 export const servicesCardioURL = "/cardio";
 export const homeURL = "/"
 export const actusURL = "/actualites"
@@ -10,7 +10,18 @@ export const cookiePolicyURL = "/politique-de-confidentialite"
 export const cgvURL = "/conditions-generales-de-ventes"
 export const contactURL = "/contact"
 
+export const images = [
+        "/assets-dev/header.png",
+        "/assets-dev/header.png",
+        "/assets-dev/header.png",
+    ]
 
+    export const slidesPerView = 1.3
+	export const breakPointsSwiper = {
+		768: { slidesPerView: 2.3 },
+		1024: { slidesPerView: 2.3 },
+		1280: { slidesPerView: 2.3 },
+	}
 
 export const actus = [
 	{
