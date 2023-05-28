@@ -3,6 +3,7 @@ import Layout from "@/components/Layout"
 import Planning from "@/components/Planning"
 import SectionActus from "@/components/SectionActus"
 import SectionContact from "@/components/SectionContact"
+import SectionPrices from "@/components/SectionPrice"
 import SectionServices from "@/components/SectionServices"
 import SectionWhy from "@/components/SectionWhy"
 
@@ -18,6 +19,7 @@ export default function Home() {
 			<SectionActus />
 			<SectionWhy />
 			<Planning />
+			<SectionPrices />
 		</Layout>
 	)
 }
