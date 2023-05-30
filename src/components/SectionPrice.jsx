@@ -72,13 +72,15 @@ const SectionPrices = () => {
 											return <li className="pb-2">{e}</li>
 										})}
 									</ul>
-									<p className="text-[15px] uppercase">
-										{e.engagement}
+									</div>
+									<div className="pt-8">
+									<p className="text-[15px] text-center uppercase">
+									{e.engagement}
 									</p>
-								</div>
-								<p className="text-primary text-[37px] font-anton pt-8">
+									<p className="text-primary text-center  text-[37px] font-anton ">
 									{e.price}€/mois
-								</p>
+									</p>
+									</div>
 							</div>
 						)
 					})}
@@ -88,15 +90,15 @@ const SectionPrices = () => {
 							Cartes
 						</h3>
 						<div className="text-center pb-10">
-							<p>10 scéances</p>
-							<p className="text-primary">valable 6 mois</p>
+							<p className="font-bold text-20">10 scéances</p>
+							<p className="text-primary uppercase">valable 6 mois</p>
 							<p className="text-primary text-[37px] font-anton">
 								99€
 							</p>
 						</div>
 						<div className="text-center pb-10">
-							<p>20 scéances</p>
-							<p className="text-primary">valable 6 mois</p>
+						<p className="font-bold text-20">20 scéances</p>
+							<p className="text-primary uppercase">valable 6 mois</p>
 							<p className="text-primary text-[37px] font-anton">
 								160€
 							</p>
@@ -127,6 +129,12 @@ const SectionPrices = () => {
 							</p>
 						</div>
 					</div>
+				</div>
+				<div className="mt-6 md:w-1/2 mx-auto w-full">
+				<p className="text-center text-18 font-bold">Adhésion : 87€ - Carte : 10€</p>
+				<p className="text-center text-18 font-bold">Règlement de l’inscription en CB - Chèque - Espèces - ANCV
+				1 RIB pour les abonnements en prélèvement</p>
+				<p className="text-center text-[15px]">*non soumis à l’adhésion du club</p>
 				</div>
 			</div>
 		</div>

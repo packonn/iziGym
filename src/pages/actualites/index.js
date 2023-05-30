@@ -48,7 +48,6 @@ const Actualites = ({slug}) => {
         <Layout contactBannerColor='white'  backgroundImageURL="/assets-dev/header.png"  title3="Les actualités" center classCustom="!h-[400px] !min-h-[400px]"  >
             <div className="container py-20 grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
             {actus.map((actu, index) =>  {
-                console.log('actu', actu)
                 return (
                    <div className="!h-[420px] relative " key={index}>
                    

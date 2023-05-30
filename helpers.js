@@ -75,3 +75,211 @@ export const actus = [
 		slug: "5",
 	},
 ]
+
+export const planning = [
+    {
+        day: "Lundi",
+        morning: [
+            {
+                title: "Body pump",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Abdos-fessiers",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Body balance",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            }
+
+
+        ],
+        afternoon: [
+            {
+                title: "Abdos-fessiers",
+                time: "14h00 - 15h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "RPM",
+                time: "16h00 - 16h45",
+                coach: "Jean-Michel"
+            }
+        ]
+    },
+    {
+        day: "Mardi",
+        morning: [
+            {
+                title: "Body pump",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Abdos-fessiers",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Body balance",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            }
+
+
+        ],
+        afternoon: [
+            {
+                title: "Abdos-fessiers",
+                time: "14h00 - 15h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "RPM",
+                time: "16h00 - 16h45",
+                coach: "Jean-Michel"
+            }
+        ]
+    },
+    {
+        day: "Mercredi",
+        morning: [
+            {
+                title: "Body pump",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Abdos-fessiers",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Body balance",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            }
+
+
+        ],
+        afternoon: [
+            {
+                title: "Abdos-fessiers",
+                time: "14h00 - 15h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "RPM",
+                time: "16h00 - 16h45",
+                coach: "Jean-Michel"
+            }
+        ]
+    },
+    {
+        day: "Jeudi",
+        morning: [
+            {
+                title: "Body pump",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Abdos-fessiers",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Body balance",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            }
+
+
+        ],
+        afternoon: [
+            {
+                title: "Abdos-fessiers",
+                time: "14h00 - 15h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "RPM",
+                time: "16h00 - 16h45",
+                coach: "Jean-Michel"
+            }
+        ]
+    },
+    {
+        day: "Vendredi",
+        morning: [
+            {
+                title: "Body pump",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Abdos-fessiers",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Body balance",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            }
+
+
+        ],
+        afternoon: [
+            {
+                title: "Abdos-fessiers",
+                time: "14h00 - 15h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "RPM",
+                time: "16h00 - 16h45",
+                coach: "Jean-Michel"
+            }
+        ]
+    },
+    {
+        day: "Samedi",
+        morning: [
+            {
+                title: "Body pump",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Abdos-fessiers",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "Body balance",
+                time: "10h00 - 11h00",
+                coach: "Jean-Michel"
+            }
+
+
+        ],
+        afternoon: [
+            {
+                title: "Abdos-fessiers",
+                time: "14h00 - 15h00",
+                coach: "Jean-Michel"
+            },
+            {
+                title: "RPM",
+                time: "16h00 - 16h45",
+                coach: "Jean-Michel"
+            }
+        ]
+    }
+
+]

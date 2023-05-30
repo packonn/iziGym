@@ -31,9 +31,9 @@ const SectionWhy = () => {
 	]
 
 	return (
-		<div className="relative">
-			<div className="container">
-				<div className="flex justify-center bg-sign  bg-contain bg-no-repeat bg-center text-center">
+		<div className="relative  ">
+			<div className="container md:pt-20 pt-10">
+				<div className="flex mb-10 justify-center bg-sign  bg-contain bg-no-repeat bg-center text-center">
 					<Title
 						title={"Pourquoi choisir"}
 						subtitle={"IZI GYM ?"}
@@ -65,38 +65,27 @@ const SectionWhy = () => {
 				</div>
 			</div>
 			<div className=" w-full bg-[url('/logo/bandeau-orange.png')]  lg:pb-0 md:pb-14 pb-14 bg-no-repeat bg-cover relative z-50">
-				<div className="container lg:flex items-center justify-between">
-					<div className=" lg:mx-0 mx-auto relative md:w-[400px] md:h-[301px] w-full h-[201px] z-[60] lg:-left-10   ">
-						<Image
-							src={"/assets-dev/hero_image_05 1.svg"}
-							fill
-							alt="img"
-							className="lg:hidden "
-						/>
-					</div>
-					<div className="flex justify-center items-center ">
-						<Title
+				<div className="container md:pb-0 pb-10 flex flex-col md:flex-row items-center justify-between">
+						<div className="flex relative   md:w-[480px] md:h-[371px] w-[480px] h-[431px] z-[60] left-0 ">
+								<Image
+								src={"/assets-dev/hero_image_05 1.svg"}
+								fill
+								alt="img"
+								/>
+						</div>
+						<div className="flex justify-center items-center ">
+							<Title
 							title={"1ère séance"}
 							subtitle={"GRATUITE!"}
 							color={"secondary"}
 							textColor1={"white"}
-						/>
-					</div>
-					<div className="h-32 -mt-4 lg:-mt-0 items-center flex flex-col justify-between z-50  " >
-						<ButtonDestroy secondary icon="/logo/white-mail.svg" text="izigym@hotmail.com" />
-						<ButtonDestroy white icon="/logo/black-phone.svg" text="09 54 59 76 86" />
-
-
-
-					</div>
+							/>
+						</div>
+						<div className="gap-y-4 flex flex-col md:items-start items-center">
+							<ButtonDestroy secondary icon="/logo/white-mail.svg" text="izigym@hotmail.com" />
+							<ButtonDestroy white icon="/logo/black-phone.svg" text="09 54 59 76 86" />
+						</div>
 				</div>
-			</div>
-			<div className="lg:flex hidden absolute md:w-[480px] md:h-[371px] w-[380px] h-[231px] z-[60] left-0 -bottom-10  ">
-				<Image
-					src={"/assets-dev/hero_image_05 1.svg"}
-					fill
-					alt="img"
-				/>
 			</div>
 			<div className="relative  w-full h-20 -mt-16 z-50 ">
 				<Image src="/logo/wave-black.png" fill />

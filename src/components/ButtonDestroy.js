@@ -6,7 +6,7 @@ const ButtonDestroy = ({ text, onPress, icon, primary, secondary, white,classCus
     const bgImageDestroy = primary ? 'bg-[url("/assets-dev/button-bg-orange.svg")]' : secondary ? 'bg-[url("/assets-dev/button-bg-black.svg")]' : white ? 'bg-[url("/assets-dev/button-bg-white.svg")]' : 'bg-[url("/assets-dev/button-bg-orange.svg")]'
     
     return (
-        <div className={`${bgImageDestroy} mx-auto   flex items-center px-3 py-3 -z-20`}>
+        <div className={`${bgImageDestroy} bg-no-repeat  flex items-center px-3 py-3 -z-20`}>
 					{icon && <Image
 						src={icon}
 						width={21}

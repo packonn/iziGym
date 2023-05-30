@@ -19,7 +19,7 @@ const Header = ({ backgroundImageURL, title1, title2, title3, center , classCust
 				<div className="bg-floatRight absolute top-0 left-0 h-full w-full bg-no-repeat"></div>
 				<div className={`flex container pt-20  h-full z-[9999] items-center ${center ? " justify-center " : " justify-center xl:justify-start"} `}>
 					<div className="  relative z-20 flex flex-col md:items-start items-center  w-full  ">
-					<div className=" flex flex-col justify-center items-center md:w-1/2 w-full ">
+					<div className={` flex flex-col justify-center items-center ${center ? "" : 'md:w-1/2'} w-full `}>
 					<h2 className={`text-white font-great md:leading-[130px] md:text-[130px] text-[80px] leading-[80px] ${center ? 'text-center' : 'text-left -rotate-6'} `}>
 					{title1}
 					</h2>

@@ -28,7 +28,7 @@ const SectionServices = () => {
 		},
 	]
 	return (
-		<div className="relative min-h-[65vh] py-10 overflow-hidden">
+		<div className="relative min-h-[65vh] md:py-20 py-10 overflow-hidden">
 			<div className="container">
 				<Title
 					title={"Les Différents"}

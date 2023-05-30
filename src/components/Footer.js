@@ -67,7 +67,7 @@ const Footer = ({contactBannerColor}) => {
                                 return (
                                     <div key={i} className="">
                                         <p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">{e.title}</p>
-                                        <p className="text-roboto uppercase !text-16 text-white">{e.texte}</p>
+                                        <div  className="text-roboto  !text-16 text-white" dangerouslySetInnerHTML={{__html:e.texte}} />
                                     </div>
                                 )
                             })}
@@ -75,10 +75,11 @@ const Footer = ({contactBannerColor}) => {
                                 return (
                                     <div key={i} className="">
                                         { e.title != "rejoignez-nous" ? (<>  <p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">{e.title}</p>
-                                            <p className="text-roboto uppercase !text-16 text-white">{e.texte}</p></>
+                                        <div  className="text-roboto  !text-16 text-white" dangerouslySetInnerHTML={{__html:e.texte}} />
+</>
                                         ) : (
                                             <div className="">
-                                            <p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">{e.title}</p>
+                                            <p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-3">{e.title}</p>
                                             <div className="flex items-center gap-x-6">
                                                 <Image src="/logo/fb.svg" width={20} height={20} className="object-contain w-5 h-5" />
                                                 <Image src="/logo/instagram.svg" width={20} height={20} className="object-contain w-5 h-5"  />

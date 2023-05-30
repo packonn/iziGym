@@ -1,21 +1,23 @@
 import { Title } from "./Title"
-import { planning } from "@/pages/cours-collectifs"
 import Image from "next/image"
 import ButtonDestroy from "./ButtonDestroy"
+import { planning } from "../../helpers"
 const Planning = () => {
 	return (
 		<div className="bg-black2  relative z-50">
 			<div className="bg-floatLeftGray absolute top-0 right-0 h-full w-full bg-right bg-no-repeat"></div>
 			<div className="bg-floatRightGray absolute top-0 left-0 h-full w-full bg-no-repeat"></div>
 
-			<div className="container py-10 pb-32">
+			<div className="container md:py-20 py-10 md:pb-32">
 				<Title
 					title="Planning"
 					subtitle="Cours collectifs"
 					color={"white"}
 					center
 				/>
+				<div className="flex justify-center">
 				<ButtonDestroy primary icon="logo/calendar.svg" text="Réserver mon cours" />
+				</div>
 				<div className="grid grid-cols-3 gap-10 mt-20 ">
 					{planning.map((item, index) => {
 						return (
