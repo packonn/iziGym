@@ -7,6 +7,7 @@ import {  abonnementsURL, actusURL, cgvURL, cookiePolicyURL, coursCollectifURL, 
 import { infos } from "./Footer"
 import { useRouter } from "next/router"
 import Link from "next/link"
+import ButtonDestroy from "./ButtonDestroy"
 
 
 export const navigationURLS =(router)=> {
@@ -69,7 +70,7 @@ export default function Navbar() {
 									</Link>
 								</div>
 								<div className="hidden sm:ml-6 lg:block">
-									<div className="flex space-x-4">
+									<div className="flex space-x-4 items-center">
 										{navigation.filter((item)=> item.header).map((item) => (
 											<a
 												key={item.name}
@@ -87,25 +88,18 @@ export default function Navbar() {
 												}
 											>
 												{item.name}
-												{console.log('current',item.current)}
 
 											</a>
 										))}
-										<div className="absolute inset-y-0 right-0 flex justify-around items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-primary h-8">
-											<Button
-												type="button"
-												className="text-white text-base "
-												text={"réserver un cours"}
-												icon={"/assets-dev/arrow.svg"}
-											></Button>
-										</div>
+										
+											<ButtonDestroy classCustom={' uppercase font-bold  !text-[17px] !leading-[20px] font-roboto '} primary text="Réserver un cours" />
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<Disclosure.Panel className="lg:hidden py-4 container bg-secondary flex  absolute  w-full top-0 left-0">
+					<Disclosure.Panel className=" lg:hidden py-4 container bg-secondary flex  absolute  w-full top-0 left-0">
 					
 						<div className="space-y-1 flex-1 px-2 pb-3 pt-2">
 						<img

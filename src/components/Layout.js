@@ -36,12 +36,10 @@ export default function Layout(props) {
 				title2={props.title2}
 				title3={props.title3}
 				center={props.center}
+				hours={props.hours}
 				
 			/>
-			{props.hours && (
-
-				<Image width={225} height={225} className="absolute rotate-[-5deg] right-10 bottom-10" src="/logo/horaire-circle.svg" alt="header" />
-				)}
+		
 
 			<main>{children}</main>
 

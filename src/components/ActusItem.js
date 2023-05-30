@@ -4,11 +4,11 @@ import { actusURL } from "../../helpers"
 
  const ActusItem = ({item}) => {
     return (
-        <Link href={actusURL + "/" + item.slug}>
-                                <Image src={item.img} width={410} height={620} className="-z-10 absolute top-0 lef-0 w-full h-full object-cover " />
+        <Link href={actusURL + "/" + item.slug} className="flex h-full w-full overflow-hidden relative">
+                                <Image src={item.img} fill className="z-10 overflow-hidden absolute top-0 lef-0 w-full h-full transition duration-500 ease-in-out hover:scale-110 object-cover " />
 
                                 <div className=" bg-[url('/logo/bottom-carousel-actu.png')] -bottom-[1px] relative bg-no-repeat bg-bottom h-full flex flex-col justify-end w-full p-4 pb-6 pt-0">
-                                    <div className="bg-primary z-10 absolute top-0 left-4 text-white font-bold w-24 h-24 text-4xl py-2 px-5">
+                                    <div className="bg-primary z-10 absolute -top-1 left-4 text-white font-bold w-24 h-24 text-4xl py-2 px-5">
                                         {item.day > 9 ? (
                                             <p className="font-anton text-[37px] font-regular">
                                                 {item.day}

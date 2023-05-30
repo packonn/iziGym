@@ -125,3 +125,8 @@
   .bullet-black .swiper-pagination-bullet {
 	border:2px solid black!important;
   }
+
+  .gradient-black-top {
+
+background: linear-gradient(360deg, rgba(0, 0, 0, 0.3) 70.91%, rgba(17, 17, 18, 0.97) 102.74%);
+  }
