@@ -16,7 +16,7 @@ const BandeauInfo = () => {
 						// blurDataURL="data:..." automatically provided
 						// placeholder="blur" // Optional blur-up while loading
 					/>
-					<p className="ml-2 text-14">Z.A Fief Girard Ouest, 17290 Le Thou</p>
+					<p className="ml-2 text-16">Z.A Fief Girard Ouest, 17290 Le Thou</p>
 				</div>
 				<div className="flex items-center">
 					<Image
@@ -27,7 +27,7 @@ const BandeauInfo = () => {
 						// blurDataURL="data:..." automatically provided
 						// placeholder="blur" // Optional blur-up while loading
 					/>
-					<p className="ml-2 text-14">7/7 | 6h-23h</p>
+					<p className="ml-2 text-16">7/7 | 6h-23h</p>
 				</div>
 				<div className="flex items-center">
 					<Image
@@ -38,7 +38,7 @@ const BandeauInfo = () => {
 						// blurDataURL="data:..." automatically provided
 						// placeholder="blur" // Optional blur-up while loading
 					/>
-					<p className="ml-2 text-14">09.54.59.76.86</p>
+					<p className="ml-2 text-16">09.54.59.76.86</p>
 				</div>
 			</div>
 		</div>

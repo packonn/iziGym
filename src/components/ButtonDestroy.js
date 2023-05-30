@@ -12,7 +12,7 @@ const ButtonDestroy = ({ text, onPress, icon, primary, secondary, white,classCus
 						width={21}
 						height={21}
 					/>}
-					<p className={`${classCustom} ml-4 ${textColor} font-anton lg:text-xl text-16`}>
+					<p className={`${classCustom} ${icon && " ml-4"} ${textColor} font-anton lg:text-xl text-16`}>
 						{text}
 					</p>
 				</div>
