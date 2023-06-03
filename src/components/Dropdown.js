@@ -22,7 +22,7 @@ export default function Dropdown() {
             {
                 (data && data.length !== 0) && data.map((item, index) => {
                     return (
-                        <Disclosure>
+                        <Disclosure key={index}>
                             {({ open }) => (
                                 <>
                                     <Disclosure.Button className="border border-x-transparent border-b-transparent border-t-gray flex w-full items-center justify-between py-2 text-left text-sm font-medium text-black  focus:outline-none  ">

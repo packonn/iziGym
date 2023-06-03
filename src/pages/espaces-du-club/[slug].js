@@ -1,23 +1,17 @@
-import Button from "@/components/ButtonDestroy"
-import Dropdown from "@/components/Dropdown"
 import Layout from "@/components/Layout"
 import {
 	breakPointsSwiper,
 	images,
-	planning,
 	slidesPerView,
 } from "../../../helpers"
 import ContentDynamic from "@/components/ContentDynamic"
-import { useEffect, useState } from "react"
+import {  useEffect, useState } from "react"
 
-export const getServerSideProps = async (context) => {
-	return {
-		props: {},
-	}
-}
+
 
 const SpaceDetails = () => {
 	const [showVideo, setShowVideo] = useState(false)
+
 
 	useEffect(() => {
 		setShowVideo(true)

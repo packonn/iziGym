@@ -117,9 +117,8 @@ export default function Navbar() {
 										{navigation
 											.filter((item) => item.header)
 											.map((item) => (
-												<a
+												<Link href={item.href}
 													key={item.name}
-													href={item.href}
 													className={classNames(
 														item.current
 															? " text-white border-b-2 border-primary"
@@ -133,7 +132,7 @@ export default function Navbar() {
 													}
 												>
 													{item.name}
-												</a>
+												</Link>
 											))}
 
 										<ButtonDestroy

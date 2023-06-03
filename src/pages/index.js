@@ -8,7 +8,6 @@ import SectionWhy from "@/components/SectionWhy"
 import { gql } from "@apollo/client"
 import { useContext } from "react"
 import apolloClient from "../../apollo-client"
-import { DataContext } from "../../context/DataContext"
 import { planning } from "./salle-de-musculation-et-cardio"
 
 export const getServerSideProps = async (context) => {
@@ -88,7 +87,6 @@ export const getServerSideProps = async (context) => {
 }
 
 export default function Home({ subscriptions, options }) {
-	const { dataInfosGeneral } = useContext(DataContext)
 	return (
 		<Layout
 			contactBannerColor="cream"

@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import Layout from "@/components/Layout"
 
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import VideoPlayer from "@/components/Video"
 import SwiperGallery from "@/components/SwiperGallery"
 import { ActusCarousel } from "@/components/ActusCarousel"
@@ -20,7 +20,6 @@ export const getServerSideProps = async (context) => {
 const Actualites = ({ slug }) => {
 	const router = useRouter()
 	const [showVideo, setShowVideo] = useState(false)
-
 	useEffect(() => {
 		setShowVideo(true)
 	}, [])

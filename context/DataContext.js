@@ -6,7 +6,6 @@ const DataContextProvider = (props) => {
 	const [dataInfosGeneral, setDataInfosGeneral] = useState(null)
 	
 	useEffect(() => {
-		console.log('useEffect context')
         const getCategories = async () => {
             const options = {
                 method: "POST",

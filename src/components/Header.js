@@ -2,6 +2,7 @@ import BandeauInfo from "@/components/BandeauInfo"
 import BandeauPromo from "@/components/BandeauPromo"
 import Navbar from "@/components/Navbar"
 import Image from "next/image"
+import DataContextProvider from "../../context/DataContext"
 
 const Header = ({
 	backgroundImageURL,
@@ -14,10 +15,11 @@ const Header = ({
 	options,
 }) => {
 	return (
+		<DataContextProvider>
 		<div>
 			<div className="z-20 relative">
-				<BandeauInfo options={options} />
-				<BandeauPromo options={options} />
+				<BandeauInfo  />
+				<BandeauPromo  />
 			</div>
 
 			<div
@@ -91,6 +93,7 @@ const Header = ({
 				<div className=" bg-bottomHeader h-40 w-full absolute bottom-[-1px]"></div>
 			</div>
 		</div>
+		</DataContextProvider>
 	)
 }
 

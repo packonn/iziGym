@@ -2,14 +2,17 @@ import Image from "next/image"
 import pin from "../../public/logo/pin.png"
 import clock from "../../public/logo/clock_orange.png"
 import phone from "../../public/logo/tel_orange.png"
+import { DataContext } from "../../context/DataContext"
+import { useContext } from "react"
 
-const BandeauInfo = ({ options }) => {
+const BandeauInfo = () => {
+	const { dataInfosGeneral } = useContext(DataContext)
 	return (
 		<div className=" bg-secondary text-white text-xs ">
 			<div className="flex flex-wrap justify-center items-center md:gap-10 gap-x-4 py-2 container">
 				<div className="flex items-center">
 					<Image src={pin} alt="Pin logo" width={15} height={20} />
-					<p className="ml-2 text-16">{options?.address}</p>
+					<p className="ml-2 text-16">{dataInfosGeneral?.address}</p>
 				</div>
 				<div className="flex items-center">
 					<Image
@@ -21,7 +24,7 @@ const BandeauInfo = ({ options }) => {
 					<div
 						className="ml-2 text-16"
 						dangerouslySetInnerHTML={{
-							__html: options?.hoursacces,
+							__html: dataInfosGeneral?.hoursacces,
 						}}
 					></div>
 				</div>
@@ -34,7 +37,7 @@ const BandeauInfo = ({ options }) => {
 						// blurDataURL="data:..." automatically provided
 						// placeholder="blur" // Optional blur-up while loading
 					/>
-					<p className="ml-2 text-16">{options?.phone}</p>
+					<p className="ml-2 text-16">{dataInfosGeneral?.phone}</p>
 				</div>
 			</div>
 		</div>

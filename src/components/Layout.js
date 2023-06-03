@@ -2,6 +2,7 @@ import * as React from "react"
 import Head from "next/head"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import DataContextProvider, { DataContext } from "../../context/DataContext"
 
 export default function Layout(props) {
 	const children = props.children
@@ -39,7 +40,9 @@ export default function Layout(props) {
 
 			<main>{children}</main>
 
+			<DataContextProvider>
 			<Footer contactBannerColor={props.contactBannerColor} />
+			</DataContextProvider>
 		</>
 	)
 }
