@@ -2,7 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 
 const ButtonDestroy = ({ text, onPress, icon, primary, secondary, white,classCustom, href }) => {
-	console.log('href',href)
     const bgColor = primary ? "bg-primary" : secondary ? "bg-secondary" : white ? "bg-white" : "bg-primary"
     const textColor = primary ? "text-white" : secondary ? "text-white" : white ? "text-black" : "text-white"
     const bgImageDestroy = primary ? 'bg-[url("/assets-dev/button-bg-orange.svg")]' : secondary ? 'bg-[url("/assets-dev/button-bg-black.svg")]' : white ? 'bg-[url("/assets-dev/button-bg-white.svg")]' : 'bg-[url("/assets-dev/button-bg-orange.svg")]'

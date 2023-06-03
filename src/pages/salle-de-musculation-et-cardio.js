@@ -232,8 +232,7 @@ const Service = () => {
 		},
 	]
 
-	const { data } = useContext(DataContext)
-	console.log("context", data)
+	const { dataInfosGeneral } = useContext(DataContext)
 
 	return (
 		<Layout

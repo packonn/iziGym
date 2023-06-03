@@ -75,7 +75,6 @@ export const getServerSideProps = async (context) => {
 
 		subscriptions = await response.data.subscriptions.nodes
 		options = await response.data.themeGeneralSettings.option
-		console.log("response", response.data)
 	} catch (error) {
 		console.log("error", error)
 	}
@@ -89,8 +88,7 @@ export const getServerSideProps = async (context) => {
 }
 
 export default function Home({ subscriptions, options }) {
-	console.log("options", options)
-
+	const { dataInfosGeneral } = useContext(DataContext)
 	return (
 		<Layout
 			contactBannerColor="cream"
