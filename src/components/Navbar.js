@@ -11,6 +11,7 @@ import {
 	reglementInterieurURL,
 	servicesCoursCollectifURL,
 	servicesURL,
+	spacesURL,
 } from "../../helpers"
 import { infos } from "./Footer"
 import { useRouter } from "next/router"
@@ -33,7 +34,7 @@ export const navigationURLS = (router) => {
 		},
 		{
 			name: "Cours collectif",
-			href: coursCollectifURL,
+			href: spacesURL + coursCollectifURL,
 			current: router.asPath.includes(coursCollectifURL),
 			header: true,
 		},

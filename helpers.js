@@ -1,6 +1,7 @@
 export const servicesURL = "/services";
 export const coursCollectifURL = "/cours-collectifs";
 export const servicesMusculationURL = "/salle-de-musculation-et-cardio";
+export const spacesURL = '/espaces-du-club'
 export const servicesCardioURL = "/cardio";
 export const homeURL = "/"
 export const actusURL = "/actualites"

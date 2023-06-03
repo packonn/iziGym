@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Title } from "./Title"
-import { coursCollectifURL, servicesMusculationURL } from "../../helpers"
+import { coursCollectifURL, servicesMusculationURL, spacesURL } from "../../helpers"
 import Link from "next/link"
 
 const SectionServices = () => {
@@ -13,12 +13,12 @@ const SectionServices = () => {
 		{
 			name: "salle de musculation et cardio",
 			img: "/assets-dev/prog2.png",
-			url: servicesMusculationURL,
+			url: spacesURL + servicesMusculationURL,
 		},
 		{
 			name: "cours collectif",
 			img: "/assets-dev/prog1.png",
-			url: coursCollectifURL,
+			url: spacesURL +coursCollectifURL,
 		},
 	]
 	return (
