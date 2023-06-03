@@ -10,64 +10,95 @@ import apolloClient from "../../apollo-client"
 import { planning } from "./salle-de-musculation-et-cardio"
 
 export const getServerSideProps = async (context) => {
-	let options = {}
-	let planning = {}
-	try {
-		const response = await apolloClient.query({
-			query: gql`
-				{
-					themeGeneralSettings {
-						option {
-							address
-							discount
-							email
-							phone
-							hoursacces
-							facebookurl
-							hoursreception
-							instagramurl
-							planning {
-								day
-								course {
-									activity
-									hours
-									when
-								}
-							}
+
+	let subscriptions = []
+	let options = null
+        try {
+            const response = await apolloClient.query({
+                query: gql ` { themeGeneralSettings {
+					option {
+						address
+						discount
+						email
+						phone
+						hoursacces
+						facebookurl
+						hoursreception
+						instagramurl
+						urlDeReservatioDesCoursEnLigne
+						infosubscription
+						planning {
+						  course {
+							activity
+							hours
+							when
+						  }
+						  day
 						}
+					  }
+				  }
+
+
+				 
+		
+		 
+
+
+
+				  subscriptions {
+					nodes {
+					  abonnements {
+						details {
+						  description
+						}
+						duration
+						price
+					  }
+					  content
+					  title
 					}
-					posts(first: 6) {
-						nodes {
-							title
-							groupeChampsArticle {
-								actuimage {
-									sourceUrl
-								}
-								enddate
-								startdate
-								subtitle
-								videourl
+				  }
+				  posts(first: 6) {
+					nodes {
+						title
+						groupeChampsArticle {
+							actuimage {
+								sourceUrl
 							}
-							slug
-							content
+							enddate
+							startdate
+							subtitle
+							videourl
 						}
+						slug
+						content
 					}
 				}
-			`,
-		})
-		options = await response.data.themeGeneralSettings.option
-	} catch (error) {
-		console.log("error", error)
-	}
+				}`,
+               
+            });
 
-	return {
-		props: {
-			options: options,
-		},
-	}
-}
+			 subscriptions = await response.data.subscriptions.nodes
+			 options = await response.data.themeGeneralSettings.option
+console.log("response", response.data)
+          
+        } catch (error) {
+			console.log('error',error);
+        }
+        
 
-export default function Home({ options }) {
+        return {
+            props: {
+     subscriptions:subscriptions, 
+	 options:options
+            },
+        };
+    }
+
+
+
+export default function Home({subscriptions, options}) {
+	console.log('options',options)
 	return (
 		<Layout
 			contactBannerColor="cream"
@@ -81,8 +112,8 @@ export default function Home({ options }) {
 			<SectionServices />
 			<SectionActus bottomBanner />
 			<SectionWhy />
-			<Planning />
-			<SectionPrices />
+			<Planning planning={options.planning} urlDeReservatioDesCoursEnLigne={options.urlDeReservatioDesCoursEnLigne} />
+			<SectionPrices subscriptions={subscriptions} infoSubscription={options.infosubscription} />
 		</Layout>
 	)
 }

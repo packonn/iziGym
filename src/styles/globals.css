@@ -130,3 +130,22 @@
 
 background: linear-gradient(360deg, rgba(0, 0, 0, 0.3) 70.91%, rgba(17, 17, 18, 0.97) 102.74%);
   }
+
+  .customContentSubscription  {
+font-family: 'Roboto';
+  }
+  .customContentSubscription p {
+margin-bottom: 6px;
+  }
+
+  .customContentSubscription h4 span strong {
+	font-size: 37px;
+font-family: "Anton"!important;
+	  }
+  .customContentSubscription h5  {
+margin-top: auto;
+	  }
+
+	  .mt-auto {
+		margin-top: auto;
+	  }
