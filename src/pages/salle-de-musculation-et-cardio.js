@@ -5,8 +5,9 @@ import { Title } from "@/components/Title"
 import { breakPointsSwiper, images, slidesPerView } from "../../helpers"
 import VideoPlayer from "@/components/Video"
 import SwiperGallery from "@/components/SwiperGallery"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import ContentDynamic from "@/components/ContentDynamic"
+import { DataContext } from "../../context/DataContext"
 
 export const planning = [
 	{
@@ -230,6 +231,9 @@ const Service = () => {
 			slug: "cardio",
 		},
 	]
+
+	const { data } = useContext(DataContext)
+	console.log("context", data)
 
 	return (
 		<Layout
