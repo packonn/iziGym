@@ -1,5 +1,4 @@
 import { Title } from "./Title"
-import Image from "next/image"
 import ButtonDestroy from "./ButtonDestroy"
 import { planning } from "../../helpers"
 const Planning = () => {
@@ -16,7 +15,11 @@ const Planning = () => {
 					center
 				/>
 				<div className="flex justify-center">
-				<ButtonDestroy primary icon="logo/calendar.svg" text="Réserver mon cours" />
+					<ButtonDestroy
+						primary
+						icon="logo/calendar.svg"
+						text="Réserver mon cours"
+					/>
 				</div>
 				<div className="grid grid-cols-3 gap-10 mt-20 ">
 					{planning.map((item, index) => {

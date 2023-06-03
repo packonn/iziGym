@@ -1,12 +1,6 @@
 import Image from "next/image"
 import { Title } from "./Title"
-import {
-	coursCollectifURL,
-	servicesCardioURL,
-	servicesCoursCollectifURL,
-	servicesMusculationURL,
-	servicesURL,
-} from "../../helpers"
+import { coursCollectifURL, servicesMusculationURL } from "../../helpers"
 import Link from "next/link"
 
 const SectionServices = () => {
@@ -46,7 +40,12 @@ const SectionServices = () => {
 									className="relative overflow-hidden w-full h-[30rem] flex items-end justify-start my-2 "
 									key={i}
 								>
-									<Image src={e.img} fill alt="img" 	className=" hover:saturate-100 transition duration-500 ease-in-out hover:scale-110 object-cover" />
+									<Image
+										src={e.img}
+										fill
+										alt="img"
+										className=" hover:saturate-100 transition duration-500 ease-in-out hover:scale-110 object-cover"
+									/>
 									<div className="p-2">
 										<p className="z-20 text-white font-regular font-anton text-[37px] w-3/4 leading-[47px]	mb-2 uppercase  relative">
 											{e.name}
@@ -56,7 +55,6 @@ const SectionServices = () => {
 												src={"/logo/fleche_orange.png"}
 												fill
 												alt="img"
-											
 											/>
 										</div>
 									</div>

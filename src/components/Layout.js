@@ -1,10 +1,7 @@
 import * as React from "react"
 import Head from "next/head"
-import { useRouter } from "next/router"
-
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import Image from "next/image"
 
 export default function Layout(props) {
 	const children = props.children
@@ -30,20 +27,19 @@ export default function Layout(props) {
 			</Head>
 
 			<Header
-			classCustom={props.classCustom}
+				classCustom={props.classCustom}
 				backgroundImageURL={props.backgroundImageURL}
 				title1={props.title1}
 				title2={props.title2}
 				title3={props.title3}
 				center={props.center}
 				hours={props.hours}
-				
+				options={props.options}
 			/>
-		
 
 			<main>{children}</main>
 
-			 <Footer contactBannerColor={props.contactBannerColor} /> 
+			<Footer contactBannerColor={props.contactBannerColor} />
 		</>
 	)
 }
