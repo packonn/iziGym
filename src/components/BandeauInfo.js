@@ -4,7 +4,6 @@ import clock from "../../public/logo/clock_orange.png"
 import phone from "../../public/logo/tel_orange.png"
 
 const BandeauInfo = ({ options }) => {
-	console.log('options',options)
 	return (
 		<div className=" bg-secondary text-white text-xs ">
 			<div className="flex flex-wrap justify-center items-center md:gap-10 gap-x-4 py-2 container">

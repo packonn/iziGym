@@ -1,7 +1,6 @@
 import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
 const Planning = ({planning, urlDeReservatioDesCoursEnLigne}) => {
-	console.log('planning', planning)
 	return (
 		<div className="bg-black2  relative z-50">
 			<div className="bg-floatLeftGray absolute top-0 right-0 h-full w-full bg-right bg-no-repeat"></div>
