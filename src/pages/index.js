@@ -8,6 +8,34 @@ import SectionServices from "@/components/SectionServices"
 import SectionWhy from "@/components/SectionWhy"
 import { actus } from "../../helpers"
 import Image from "next/image"
+import { gql } from "@apollo/client"
+import apolloClient from "../../apollo-client"
+
+export const getServerSideProps = async (context) => {
+        try {
+            const response = await apolloClient.query({
+                query: gql ` { themeGeneralSettings {
+					option {
+					  address
+					}
+				  }}`,
+               
+            });
+console.log("response", response.data.themeGeneralSettings.option.address)
+          
+        } catch (error) {
+			console.log('error',error);
+        }
+        
+
+        return {
+            props: {
+     
+            },
+        };
+    }
+
+
 
 export default function Home() {
 	return (

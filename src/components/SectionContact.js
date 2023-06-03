@@ -29,7 +29,6 @@ export default function SectionContact(props) {
     } = useForm({ mode: "onChange" });
 
     const onSubmit = async (body) => {
-        console.log('body contact front', body)
         setFormIsLoading(true);
 
         const options = {

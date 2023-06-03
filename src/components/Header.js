@@ -3,7 +3,6 @@ import BandeauPromo from "@/components/BandeauPromo"
 import Navbar from "@/components/Navbar"
 import Image from "next/image"
 const Header = ({ backgroundImageURL, title1, title2, title3, center , classCustom, hours}) => {
-	console.log('center', center)
 	return (
 		<div>
 			<div className="z-20 relative">

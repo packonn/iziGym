@@ -12,7 +12,6 @@ import ActusItem from './ActusItem';
 export const ActusCarousel = ({ data }) => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
-    console.log('data', data)
     return (
         <div id="projects" className='relative my-section swiper-project'>
             <Swiper
