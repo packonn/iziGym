@@ -4,7 +4,6 @@ import {gql} from "@apollo/client";
 
 async function getGeneralInfos(req, res) {
 let generalInfos = null
-console.log('request')
 
     try {
         const response = await apolloClient.query({
@@ -22,16 +21,7 @@ console.log('request')
                     
                   }
               }
-
-
-             
-    
-     
-
-
-             
             }`,
-           
         });
 
         generalInfos = await response.data.themeGeneralSettings.option
