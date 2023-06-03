@@ -4,7 +4,7 @@ const BandeauPromo = ({ options }) => {
 			<div
 				className="text-16"
 				dangerouslySetInnerHTML={{
-					__html: options.discount,
+					__html: options?.discount,
 				}}
 			></div>
 		</div>
