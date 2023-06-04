@@ -42,6 +42,7 @@ export default function SectionContact(props) {
 
 		const response = await fetch("/api/contact", options)
 		const data = await response.json()
+		console.log('data', data)
 
 		if (response.status !== 200) {
 			setFormIsLoading(false)
@@ -95,7 +96,7 @@ export default function SectionContact(props) {
 					<div className="mt-6">
 						<label className={formsStyles.label}>
 							{" "}
-							Votre nom et prénom *
+							Nom et Prénom *
 						</label>
 						<input
 							type="text"
@@ -113,7 +114,7 @@ export default function SectionContact(props) {
 					<div className="mt-[20px]">
 						<label className={formsStyles.label}>
 							{" "}
-							Votre adresse email *
+							Email *
 						</label>
 						<input
 							autoCapitalize="off"
@@ -136,9 +137,35 @@ export default function SectionContact(props) {
 							{errors.email?.message}
 						</p>
 					</div>
+					<div className="mt-[20px]">
+						<label className={formsStyles.label}>
+							{" "}
+							Téléphone *
+						</label>
+						<input
+							autoCapitalize="off"
+							type="phone"
+							placeholder=""
+							{...register("phone", {
+								required: {
+									value: true,
+									message: "Veuillez entrer votre numéro de téléphone",
+								},
+								pattern: {
+									message:
+										"Veuillez entrer un numéro de téléphone valide",
+										value: /^((\+)33|0)[1-9](\d{2}){4}$/,
+								},
+							})}
+							className={formsStyles.field}
+						/>
+						<p className={formsStyles.error}>
+							{errors.phone?.message}
+						</p>
+					</div>
 					<div className="mt-[20px] font-light">
 						<label className={formsStyles.label}>
-							Votre message *
+							Message *
 						</label>
 						<textarea
 							placeholder=""
@@ -157,8 +184,8 @@ export default function SectionContact(props) {
 							<>
 								{formFeedback.error ? (
 									<Image
-										src={"/images/alert.svg"}
-										blurDataURL="/images/alert.svg"
+										src={"/logo/alert.svg"}
+										blurDataURL="/logo/alert.svg"
 										placeholder="blur"
 										height="12"
 										width="16"
@@ -166,12 +193,12 @@ export default function SectionContact(props) {
 									/>
 								) : (
 									<Image
-										src={"/images/check.svg"}
+										src={"/logo/check.svg"}
 										height="12"
 										width="16"
 										alt="logo check"
 										placeholder="blur"
-										blurDataURL="/images/check.svg"
+										blurDataURL="/logo/check.svg"
 									/>
 								)}
 								<p className="ml-2 text-black text-sm font-light">

@@ -28,11 +28,8 @@ const SectionServices = ({spaces}) => {
 										src={e.featuredImage.node.sourceUrl}
 										fill
 										alt="img"
-										className=" hover:saturate-100 transition duration-500 ease-in-out hover:scale-110 object-cover"
+										className=" hover:saturate-100  transition duration-500 ease-in-out hover:scale-110  object-cover"
 									/>
-									{/* overlay */}
-
-									
 									<div className="p-2">
 										<p className="z-20 text-white font-regular font-anton text-[37px] w-3/4 leading-[47px]	mb-2 uppercase  relative">
 											{e.title}
