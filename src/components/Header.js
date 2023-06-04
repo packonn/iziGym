@@ -12,7 +12,6 @@ const Header = ({
 	center,
 	classCustom,
 	hours,
-	options,
 }) => {
 	return (
 		<DataContextProvider>
@@ -23,7 +22,7 @@ const Header = ({
 			</div>
 
 			<div
-				className={`min-h-[80vh]  w-full  relative  flex flex-col ${classCustom}`}
+				className={`min-h-[80vh] bg-primary  w-full  relative  flex flex-col ${classCustom}`}
 			>
 				<Image
 					src={backgroundImageURL}
@@ -36,7 +35,7 @@ const Header = ({
 
 				<div className="bg-floatRight absolute top-0 left-0 h-full w-full bg-no-repeat"></div>
 				<div
-					className={`flex container pt-20  h-full z-[9999] items-center ${
+					className={`flex container flex-1 items-center  h-full z-[9999] ${
 						center
 							? " justify-center "
 							: " justify-center xl:justify-start"
@@ -48,7 +47,7 @@ const Header = ({
 								center ? "" : "md:w-1/2"
 							} w-full `}
 						>
-							<h2
+							{title1 && <h2
 								className={`text-white font-great md:leading-[130px] md:text-[130px] text-[80px] leading-[80px] ${
 									center
 										? "text-center"
@@ -56,8 +55,8 @@ const Header = ({
 								} `}
 							>
 								{title1}
-							</h2>
-							<h1
+							</h2>}
+							{title2 &&<h1
 								className={` text-primary font-great md:leading-[130px] md:text-[130px] text-[80px] leading-[80px] whitespace-nowrap ${
 									center
 										? "text-center"
@@ -66,15 +65,19 @@ const Header = ({
 							>
 								{title2}
 							</h1>
-							<p
+							}
+							{title3 && 
+							
+								<p
 								className={`font-anton md:text-[40px] ml-2   text-[30px] uppercase text-white ${
 									center
-										? "text-center"
-										: "text-center -rotate-6"
+									? "text-center"
+									: "text-center -rotate-6"
 								}  `}
-							>
+								>
 								{title3}
-							</p>
+								</p>
+							}
 						</div>
 						{hours && (
 							<div className="mt-4 pb-4 container flex justify-center md:justify-end  relative ">

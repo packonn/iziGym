@@ -14,7 +14,7 @@ const Planning = ({planning, urlDeReservatioDesCoursEnLigne}) => {
 					center
 				/>
 				<div className="flex justify-center">
-				<ButtonDestroy primary icon="logo/calendar.svg" text="Réserver mon cours" href={urlDeReservatioDesCoursEnLigne} />
+				<ButtonDestroy primary icon="logo/calendar.svg" text="Réserver mon cours" href={urlDeReservatioDesCoursEnLigne} target="_blank" />
 				</div>
 				<div className="grid grid-cols-3 gap-10 mt-20 ">
 					{planning && planning.map((item, index) => {

@@ -6,12 +6,68 @@ import {
 } from "../../../helpers"
 import ContentDynamic from "@/components/ContentDynamic"
 import {  useEffect, useState } from "react"
+import apolloClient from "../../../apollo-client"
+import { gql } from "@apollo/client"
+
+export const getServerSideProps = async (context) => {
+	const slug = context.params.slug
+	let space = []
+
+try {
+	const response = await apolloClient.query({
+		query: gql`
+		{
+			space(idType: SLUG, id: "${slug}") {
+			  title
+			  content
+			  featuredImage {
+				node {
+				  sourceUrl
+				}
+			  }
+			  groupeChampsEspacesDuClub {
+				subscription {
+				  ... on Subscription {
+					id
+					title
+					content
+				  }
+				}
+				subtitle
+				videourl
+				collapse {
+				  description
+				  title
+				}
+				galleriephotos {
+				  altText
+				  sourceUrl
+				  title
+				}
+			  }
+			}
+		  }`
+	})
+	space = await response.data.space
+
+	console.log('response', space)
+} catch (error) {
+	console.log('error', error)
+	
+}
+
+return {
+	props: {
+		space:space
+	},
+}
+
+}
 
 
 
-const SpaceDetails = () => {
+const SpaceDetails = ({space}) => {
 	const [showVideo, setShowVideo] = useState(false)
-
 
 	useEffect(() => {
 		setShowVideo(true)
@@ -35,20 +91,21 @@ const SpaceDetails = () => {
 	return (
 		<Layout
 			contactBannerColor="white"
-			backgroundImageURL="/assets-dev/header.png"
-			title1="Club"
-			title2="IZI GYM"
-			title3="Deviens la meileure version de toi même !"
+			center
+			backgroundImageURL={space.featuredImage?.node?.sourceUrl}
+			title1={space.title}
 		>
 			<ContentDynamic
-				data={""}
+			subscriptions={space.groupeChampsEspacesDuClub.subscription}
 				showVideo={showVideo}
-				title="Salle de musculation et cardio"
-				description="Une salle tout équipée pour se dépenser"
-				backgroundImageURL="/assets-dev/salle-musculation-cardio.png"
+				title={space.title}
+				videoURL={space.groupeChampsEspacesDuClub.videourl}
+				collapse={space.groupeChampsEspacesDuClub.collapse}
+				subtitle={space.groupeChampsEspacesDuClub.subtitle}
 				otherServices={otherServices}
 				slidesPerView={slidesPerView}
-				images={images}
+				content={space.content}
+				gallery={space.groupeChampsEspacesDuClub.galleriephotos}
 				breakPointsSwiper={breakPointsSwiper}
 			/>
 		</Layout>

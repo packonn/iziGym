@@ -17,6 +17,8 @@ import { infos } from "./Footer"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import ButtonDestroy from "./ButtonDestroy"
+import { useContext } from "react"
+import { DataContext } from "../../context/DataContext"
 
 export const navigationURLS = (router) => {
 	return [
@@ -72,6 +74,7 @@ function classNames(...classes) {
 export default function Navbar() {
 	const router = useRouter()
 	const navigation = navigationURLS(router)
+	const {dataInfosGeneral} = useContext(DataContext)
 	return (
 		<Disclosure as="nav" className="bg-transparent w-full relative z-20 ">
 			{({ open }) => (
@@ -141,6 +144,8 @@ export default function Navbar() {
 											}
 											primary
 											text="Réserver un cours"
+										target={"_blank"}
+										href={dataInfosGeneral?.urlDeReservatioDesCoursEnLigne} 
 										/>
 									</div>
 								</div>

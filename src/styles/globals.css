@@ -149,3 +149,7 @@ margin-top: auto;
 	  .mt-auto {
 		margin-top: auto;
 	  }
+
+	  .dropdownContentCustomHtml p{
+padding: 2px 0;
+	  }

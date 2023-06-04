@@ -1,13 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const ButtonDestroy = ({ text, onPress, icon, primary, secondary, white,classCustom, href }) => {
+const ButtonDestroy = ({ text, onPress,target, icon, primary, secondary, white,classCustom, href }) => {
     const bgColor = primary ? "bg-primary" : secondary ? "bg-secondary" : white ? "bg-white" : "bg-primary"
     const textColor = primary ? "text-white" : secondary ? "text-white" : white ? "text-black" : "text-white"
     const bgImageDestroy = primary ? 'bg-[url("/assets-dev/button-bg-orange.svg")]' : secondary ? 'bg-[url("/assets-dev/button-bg-black.svg")]' : white ? 'bg-[url("/assets-dev/button-bg-white.svg")]' : 'bg-[url("/assets-dev/button-bg-orange.svg")]'
     const url = href ? href : ""
     return (
-        <Link href={url}  target="_blank"  className={`${bgImageDestroy} bg-no-repeat relative z-20 flex items-center px-3 py-3 `}>
+        <Link href={url}  target={target} onclick='return false;' className={`${bgImageDestroy} bg-no-repeat relative z-20 flex items-center px-3 py-3 `}>
 					{icon && <Image
 						src={icon}
 						width={21}

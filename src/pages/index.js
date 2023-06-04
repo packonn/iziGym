@@ -13,6 +13,7 @@ import { planning } from "./salle-de-musculation-et-cardio"
 export const getServerSideProps = async (context) => {
 	let subscriptions = []
 	let options = null
+	let spaces = []
 	try {
 		const response = await apolloClient.query({
 			query: gql`
@@ -27,6 +28,14 @@ export const getServerSideProps = async (context) => {
 							facebookurl
 							hoursreception
 							instagramurl
+							ordersubscription {
+								... on Subscription {
+								  id
+								  content
+								  slug
+								  title
+								}
+							  }
 							urlDeReservatioDesCoursEnLigne
 							infosubscription
 							planning {
@@ -41,17 +50,21 @@ export const getServerSideProps = async (context) => {
 					}
 					subscriptions {
 						nodes {
-							abonnements {
-								details {
-									description
-								}
-								duration
-								price
-							}
 							content
 							title
 						}
 					}
+					spaces{
+						nodes{
+						  title
+						  slug
+						  featuredImage{
+							node{
+							  sourceUrl
+							}
+						  }
+						}
+					  }
 					posts(first: 6) {
 						nodes {
 							title
@@ -72,7 +85,8 @@ export const getServerSideProps = async (context) => {
 			`,
 		})
 
-		subscriptions = await response.data.subscriptions.nodes
+		spaces = await response.data.spaces.nodes
+		subscriptions = await response.data.themeGeneralSettings.option.ordersubscription
 		options = await response.data.themeGeneralSettings.option
 	} catch (error) {
 		console.log("error", error)
@@ -82,11 +96,12 @@ export const getServerSideProps = async (context) => {
 		props: {
 			subscriptions: subscriptions,
 			options: options,
+			spaces:spaces
 		},
 	}
 }
 
-export default function Home({ subscriptions, options }) {
+export default function Home({ subscriptions, options, spaces }) {
 	return (
 		<Layout
 			contactBannerColor="cream"
@@ -97,7 +112,7 @@ export default function Home({ subscriptions, options }) {
 			hours
 			options={options}
 		>
-			<SectionServices />
+			<SectionServices spaces={spaces} />
 			<SectionActus bottomBanner />
 			<SectionWhy />
 			<Planning
