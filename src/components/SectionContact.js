@@ -42,7 +42,6 @@ export default function SectionContact(props) {
 
 		const response = await fetch("/api/contact", options)
 		const data = await response.json()
-		console.log('data', data)
 
 		if (response.status !== 200) {
 			setFormIsLoading(false)

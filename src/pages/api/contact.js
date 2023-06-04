@@ -9,8 +9,6 @@ async function contactRoute(req, res) {
 
     const response = await fetch(process.env.BACKEND_URL + "wp-json/api/contact", options)
     const data = await response.json()
-    console.log('data api/contact', data)
-    console.log('response api/contact', response)
 
     res.send(data);
 }

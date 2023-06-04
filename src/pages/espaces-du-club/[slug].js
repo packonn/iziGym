@@ -50,7 +50,6 @@ try {
 	})
 	space = await response.data.space
 
-	console.log('response', space)
 } catch (error) {
 	console.log('error', error)
 	
