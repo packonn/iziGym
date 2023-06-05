@@ -13,7 +13,6 @@ const SectionActus = ({ bottomBanner, actus }) => {
 				/>
 			</div>
 			<div className="container  py-10 ">
-				<div className="absolute bottom-0 bg-black opacity-75 w-full h-11"></div>
 				<Title
 					title={"Les dernières"}
 					subtitle={"ACTUS DU CLUB"}

@@ -8,6 +8,8 @@ const ActusItem = ({ item }) => {
 			href={actusURL + "/" + item.slug}
 			className="flex h-full w-full overflow-hidden relative"
 		>
+			<div className="absolute bottom-0 bg-gradient-to-t from-black opacity-75 w-full h-36 z-30"></div>
+
 			<Image
 				src={item.groupeChampsArticle.actuimage.sourceUrl}
 				alt={item.title}

@@ -79,8 +79,8 @@ const Actualites = ({ slug, actus }) => {
 			<div className="container py-20 grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
 				{actus.map((actu, index) => {
 					return (
-						<div className="!h-[420px] relative " key={index}>
-							<ActusItem actu={actu} key={index} />
+						<div className="!h-[420px]" key={index}>
+							<ActusItem item={actu} key={index} />
 						</div>
 					)
 				})}

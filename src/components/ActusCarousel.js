@@ -39,8 +39,6 @@ export const ActusCarousel = ({ actus }) => {
 								key={i}
 								className="bg-red-400   !h-[420px] relative z-50 flex  justify-center items-center "
 							>
-								<div className="absolute bottom-0 bg-gradient-to-t from-black opacity-75 w-full h-36 z-30"></div>
-
 								<ActusItem item={item} />
 							</SwiperSlide>
 						)
