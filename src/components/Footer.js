@@ -44,64 +44,32 @@ const Footer = ({ contactBannerColor }) => {
 					/>
 				</div>
 				<div className=" bg-black2 ">
-					<div className="container py-10 relative grid gap-x-10 grid-cols-5">
-						<div className="lg:col-span-1 col-span-5  ">
+					<div className="container py-10 relative grid gap-x-2 grid-cols-4">
+						<div className="lg:col-span-1 col-span-5 ">
 							<Image
 								src="/logo/logo.png"
 								width={150}
 								height={150}
 								alt="logo"
 							/>
-							<div className="grid grid-cols-1 mt-4 gap-x-4 gap-y-4 ">
+							<div className="grid grid-cols-1  mt-4 gap-x-4 ">
 								<div className="col-span-1">
 									{navigation.slice(0, 10).map((e, i) => {
 										return (
 											<Link href={e.href} key={i}>
-												<p className="text-white !text-16 font-roboto  my-2 uppercase tracking-widest font-regular ">
+												<p className="text-white !text-15 font-roboto  my-1 uppercase  tracking-widest font-regular ">
 													{e.name}
 												</p>
 											</Link>
 										)
 									})}
 								</div>
-								{/* <div className="col-span-1">
-                                    {navigation.slice(3,10).map((e, i) => {
-                                        return (
-                                        <Link href={e.href} key={i} >
-                                            <p className="text-white !text-16 font-roboto uppercase tracking-widest my-2 font-regular ">{e.name}</p>
-                                        </Link>
-                                        )
-                                    })}
-                                </div> */}
 							</div>
 						</div>
-						<div className="lg:col-span-2 col-span-5    lg:border-l lg:pl-5  border-gray border-t lg:border-t-0 lg:pt-0  pt-5  grid grid-cols-2 gap-x-4 gap-y-4">
-							<div className="">
-								<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-									Adresse
-								</p>
-								<div
-									className="text-roboto  !text-16 text-white"
-									dangerouslySetInnerHTML={{
-										__html: dataInfosGeneral?.address,
-									}}
-								/>
-							</div>
-							<div className="">
-								<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-									Téléphone
-								</p>
-								<a href={`tel:${dataInfosGeneral?.phone}`}>
-									<div
-										className="text-roboto  !text-16 text-white"
-										dangerouslySetInnerHTML={{
-											__html: dataInfosGeneral?.phone,
-										}}
-									/>
-								</a>
-							</div>
+						<div className="lg:col-span-2 col-span-5   lg:border-l lg:pl-4  border-gray border-t lg:border-t-0 lg:pt-0 mt-5 lg:mt-0 pt-5  grid grid-cols-2 gap-x-2 gap-y-4">
+						
 
-							<div>
+							<div className="md:col-span-1 col-span-2">
 								<>
 									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
 										Horaire d'accueil
@@ -114,7 +82,7 @@ const Footer = ({ contactBannerColor }) => {
 									/>
 								</>
 								<>
-									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+									<p className="bg-primary mt-2 text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
 										Horaire d'accès
 									</p>
 									<div
@@ -124,9 +92,35 @@ const Footer = ({ contactBannerColor }) => {
 										}}
 									/>
 								</>
+							</div>
 
+
+								<div className="md:col-span-1 col-span-2">
 								<div className="">
-									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-3">
+								<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+									Adresse
+								</p>
+								<div
+									className="text-roboto  !text-16 text-white"
+									dangerouslySetInnerHTML={{
+										__html: dataInfosGeneral?.address,
+									}}
+								/>
+							</div>
+							
+								<p className="bg-primary mt-2  text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+									Téléphone
+								</p>
+								<a href={"'tel:" + dataInfosGeneral?.phone +"'" }>
+									<div
+										className="text-roboto  !text-16 text-white"
+										dangerouslySetInnerHTML={{
+											__html: dataInfosGeneral?.phone,
+										}}
+									/>
+								</a>
+						
+									<p className="bg-primary mt-2 text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-3">
 										Réseaux
 									</p>
 									<div className="flex items-center gap-x-6">
@@ -154,18 +148,17 @@ const Footer = ({ contactBannerColor }) => {
 												alt="logo instagram"
 											/>
 										</Link>
-									</div>
 								</div>
 							</div>
 						</div>
-						<div className="lg:col-span-2 col-span-5  relative w-full overflow-hidden  md:h-[300px] h-[200px] lg:border-l lg:pl-5 lg:border-t-0  border-t lg:mt-0  mt-5 border-gray ">
+						<Link target="_blank" href={`https://www.google.com/maps/search/${dataInfosGeneral?.address}`} className="lg:col-span-1 col-span-5  relative w-full overflow-hidden  md:h-[300px] h-[200px] lg:border-l lg:pl-4 lg:border-t-0  border-t lg:mt-0  mt-5 border-gray ">
 							<Image
 								src="/assets-dev/maps.png"
 								fill
-								className="lg:ml-5 mt-5 lg:mt-0  object-cover "
+								className="lg:ml-4 mt-5 lg:mt-0  object-cover "
 								alt="logo maps"
 							/>
-						</div>
+						</Link>
 					</div>
 				</div>
 			</div>

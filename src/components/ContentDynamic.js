@@ -20,7 +20,7 @@ videoURL,
 subscriptions
 }) {
 	return (
-		<div className="container py-20 grid grid-cols-4 gap-x-4">
+		<div className="container py-20 grid grid-cols-4 gap-x-6">
 			<div className="lg:col-span-3 col-span-4">
 				<Title
 					title={title}
