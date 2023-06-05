@@ -7,6 +7,7 @@ import {
 	cgvURL,
 	cookiePolicyURL,
 	coursCollectifURL,
+	frontURL,
 	homeURL,
 	reglementInterieurURL,
 	servicesCoursCollectifURL,

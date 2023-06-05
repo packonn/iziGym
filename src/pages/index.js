@@ -1,14 +1,11 @@
 import Layout from "@/components/Layout"
 import Planning from "@/components/Planning"
 import SectionActus from "@/components/SectionActus"
-import SectionContact from "@/components/SectionContact"
 import SectionPrices from "@/components/SectionPrice"
 import SectionServices from "@/components/SectionServices"
 import SectionWhy from "@/components/SectionWhy"
 import { gql } from "@apollo/client"
-import { useContext } from "react"
 import apolloClient from "../../apollo-client"
-import { planning } from "./salle-de-musculation-et-cardio"
 
 export const getServerSideProps = async (context) => {
 	let subscriptions = []
@@ -120,7 +117,6 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			title2="IZI GYM"
 			title3="Deviens la meileure version de toi même !"
 			hours
-			options={options}
 		>
 			<SectionServices spaces={spaces} />
 			<SectionActus bottomBanner actus={actus} />
@@ -131,10 +127,14 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 					options.urlDeReservatioDesCoursEnLigne
 				}
 			/>
+			
+			<div className="relative">
+            <div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
 			<SectionPrices
-				subscriptions={subscriptions}
-				infoSubscription={options.infosubscription}
+			subscriptions={subscriptions}
+			infoSubscription={options.infosubscription}
 			/>
+			</div>
 		</Layout>
 	)
 }

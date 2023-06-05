@@ -35,13 +35,13 @@ const Header = ({
 
 				<div className="bg-floatRight absolute top-0 left-0 h-full w-full bg-no-repeat"></div>
 				<div
-					className={`flex container flex-1 items-center  h-full z-[9999] ${
+					className={`flex container flex-1 items-center md:flex-row flex-col h-full pb-[100px] z-[9999] ${
 						center
 							? " justify-center "
 							: " justify-center xl:justify-start"
 					} `}
 				>
-					<div className="  relative z-20 flex flex-col md:items-start items-center  w-full  ">
+					<div className=" relative z-20 flex flex-col md:items-start items-center  w-full lg:left-0 left-0 md:left-[70px] ">
 						<div
 							className={` flex flex-col justify-center items-center ${
 								center ? "" : "md:w-1/2"
@@ -79,21 +79,22 @@ const Header = ({
 								</p>
 							}
 						</div>
-						{hours && (
-							<div className="mt-4 pb-4 container flex justify-center md:justify-end  relative ">
-								<Image
-									width={225}
-									height={225}
-									className=" rotate-[-5deg] "
-									src="/logo/horaire-circle.svg"
-									alt="header"
-								/>
-							</div>
-						)}
+						
 					</div>
+					{hours && (
+						<div className="mt-4 pb-4  container flex justify-center md:justify-end   md:absolute  bottom-10 ">
+							<Image
+								width={225}
+								height={225}
+								className=" rotate-[-5deg] "
+								src="/logo/horaire-circle.svg"
+								alt="header"
+							/>
+						</div>
+					)}
 				</div>
 				<div className="bg-floatLeft  absolute top-0 right-0 h-full w-full bg-right bg-no-repeat"></div>
-				<div className=" bg-bottomHeader h-40 w-full absolute bottom-[-1px]"></div>
+				<div className=" bg-bottomHeader h-40 w-full absolute bottom-[-1px]  bg-repeat"></div>
 			</div>
 		</div>
 		</DataContextProvider>

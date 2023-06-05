@@ -71,10 +71,11 @@ const Actualites = ({ slug, actus }) => {
 	return (
 		<Layout
 			contactBannerColor="white"
-			backgroundImageURL="/assets-dev/header.png"
-			title3="Les actualités"
+			backgroundImageURL="/assets-dev/bg-actus.jpg"
+			title3="Découvrez les dernières actualités de votre salle de sport"
+			title2='Actualités'
 			center
-			classCustom="!h-[400px] !min-h-[400px]"
+			classCustom=" min-h-[450px]"
 		>
 			<div className="container py-20 grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
 				{actus.map((actu, index) => {
