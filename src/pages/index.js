@@ -107,7 +107,6 @@ export const getServerSideProps = async (context) => {
 }
 
 export default function Home({ subscriptions, options, spaces, actus }) {
-	console.log("reponse2", actus)
 
 	return (
 		<Layout

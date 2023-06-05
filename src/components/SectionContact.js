@@ -229,7 +229,7 @@ export default function SectionContact(props) {
 						fill
 						alt="logo contact"
 						placeholder="blur"
-						blurDataURL="/images/contact.svg"
+						blurDataURL="/assets-dev/contact.png"
 						className="object-cover"
 					/>
 				</div>
