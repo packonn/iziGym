@@ -1,4 +1,6 @@
 import { NextPage } from "next"
+import dayjs from "dayjs"
+import "dayjs/locale/fr"
 import { useRouter } from "next/router"
 import Layout from "@/components/Layout"
 import Image from "next/image"
@@ -71,12 +73,17 @@ const ActualiteSlug = ({ slug, actu }) => {
 		setShowVideo(true)
 	}, [])
 
+	let dateEnd = dayjs(actu.groupeChampsArticle.enddate).format("DD MMM")
+	let dateStart = dayjs(actu.groupeChampsArticle.startdate)
+		.locale("fr")
+		.format("dddd DD MMMM YYYY")
+
 	return (
 		<Layout
 			backgroundImageURL={actu.featuredImage.node.sourceUrl}
 			title1={actu.title}
 			title2={actu.groupeChampsArticle.subtitle}
-			title3={actu.groupeChampsArticle.startdate}
+			title3={dateStart}
 			center
 		>
 			<div className="container md:w-[884px] w-full pb-[80px] -mt-[120px]">

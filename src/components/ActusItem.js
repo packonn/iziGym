@@ -1,8 +1,12 @@
+import dayjs from "dayjs"
 import Image from "next/image"
 import Link from "next/link"
 import { actusURL } from "../../helpers"
 
 const ActusItem = ({ item }) => {
+	let dateEnd = dayjs(item.groupeChampsArticle.enddate).format("DD MMM")
+	let dateStart = dayjs(item.groupeChampsArticle.startdate).format("DD MMM")
+
 	return (
 		<Link
 			href={actusURL + "/" + item.slug}
@@ -21,16 +25,16 @@ const ActusItem = ({ item }) => {
 					{item.groupeChampsArticle.enddate ? (
 						<div className="flex">
 							<p className="font-anton text-[37px] font-regular ">
-								{item.groupeChampsArticle.startdate}
+								{dateStart}
 							</p>
 							<span className="mx-2">-</span>
 							<p className="font-anton text-[37px] font-regular">
-								{item.groupeChampsArticle.enddate}
+								{dateEnd}
 							</p>
 						</div>
 					) : (
 						<p className="font-anton text-[37px] font-regular">
-							{item.groupeChampsArticle.startdate}
+							{dateStart}
 						</p>
 					)}
 				</div>
