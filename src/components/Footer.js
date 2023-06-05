@@ -33,7 +33,6 @@ const Footer = ({ contactBannerColor }) => {
 	const navigation = navigationURLS(router)
 	const { dataInfosGeneral } = useContext(DataContext)
 
-
 	return (
 		<footer className="relative">
 			<SectionContact contactBannerColor={contactBannerColor} />

@@ -3,10 +3,10 @@ import "swiper/css"
 import "swiper/css/bundle"
 import { useRef } from "react"
 import { Navigation, Pagination } from "swiper"
-import { actus } from "../../helpers"
+// import { actus } from "../../helpers"
 import ActusItem from "./ActusItem"
 
-export const ActusCarousel = () => {
+export const ActusCarousel = ({ actus }) => {
 	const prevRef = useRef(null)
 	const nextRef = useRef(null)
 	return (
@@ -39,6 +39,8 @@ export const ActusCarousel = () => {
 								key={i}
 								className="bg-red-400   !h-[420px] relative z-50 flex  justify-center items-center "
 							>
+								<div className="absolute bottom-0 bg-gradient-to-t from-black opacity-75 w-full h-36 z-30"></div>
+
 								<ActusItem item={item} />
 							</SwiperSlide>
 						)

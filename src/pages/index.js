@@ -14,6 +14,7 @@ export const getServerSideProps = async (context) => {
 	let subscriptions = []
 	let options = null
 	let spaces = []
+	let actus = {}
 	try {
 		const response = await apolloClient.query({
 			query: gql`
@@ -30,12 +31,12 @@ export const getServerSideProps = async (context) => {
 							instagramurl
 							ordersubscription {
 								... on Subscription {
-								  id
-								  content
-								  slug
-								  title
+									id
+									content
+									slug
+									title
 								}
-							  }
+							}
 							urlDeReservatioDesCoursEnLigne
 							infosubscription
 							planning {
@@ -54,21 +55,25 @@ export const getServerSideProps = async (context) => {
 							title
 						}
 					}
-					spaces{
-						nodes{
-						  title
-						  slug
-						  featuredImage{
-							node{
-							  sourceUrl
+					spaces {
+						nodes {
+							title
+							slug
+							featuredImage {
+								node {
+									sourceUrl
+								}
 							}
-						  }
 						}
-					  }
-					posts(first: 6) {
+					}
+					posts(first: 4) {
 						nodes {
 							title
 							groupeChampsArticle {
+								subtitle
+								startdate
+								videourl
+								enddate
 								actuimage {
 									sourceUrl
 								}
@@ -86,8 +91,10 @@ export const getServerSideProps = async (context) => {
 		})
 
 		spaces = await response.data.spaces.nodes
-		subscriptions = await response.data.themeGeneralSettings.option.ordersubscription
+		subscriptions = await response.data.themeGeneralSettings.option
+			.ordersubscription
 		options = await response.data.themeGeneralSettings.option
+		actus = await response.data.posts.nodes
 	} catch (error) {
 		console.log("error", error)
 	}
@@ -96,12 +103,15 @@ export const getServerSideProps = async (context) => {
 		props: {
 			subscriptions: subscriptions,
 			options: options,
-			spaces:spaces
+			spaces: spaces,
+			actus: actus,
 		},
 	}
 }
 
-export default function Home({ subscriptions, options, spaces }) {
+export default function Home({ subscriptions, options, spaces, actus }) {
+	console.log("reponse2", actus)
+
 	return (
 		<Layout
 			contactBannerColor="cream"
@@ -113,7 +123,7 @@ export default function Home({ subscriptions, options, spaces }) {
 			options={options}
 		>
 			<SectionServices spaces={spaces} />
-			<SectionActus bottomBanner />
+			<SectionActus bottomBanner actus={actus} />
 			<SectionWhy />
 			<Planning
 				planning={options.planning}
