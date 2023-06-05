@@ -32,7 +32,6 @@ const Footer = ({ contactBannerColor }) => {
 	const router = useRouter()
 	const navigation = navigationURLS(router)
 	const { dataInfosGeneral } = useContext(DataContext)
-
 	return (
 		<footer className="relative">
 			<SectionContact contactBannerColor={contactBannerColor} />
@@ -77,63 +76,87 @@ const Footer = ({ contactBannerColor }) => {
 							</div>
 						</div>
 						<div className="lg:col-span-2 col-span-5    lg:border-l lg:pl-5  border-gray border-t lg:border-t-0 lg:pt-0  pt-5  grid grid-cols-2 gap-x-4 gap-y-4">
-							{infos.slice(0, 2).map((e, i) => {
-								return (
-									<div key={i} className="">
-										<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-											{e.title}
-										</p>
-										<div
-											className="text-roboto  !text-16 text-white"
-											dangerouslySetInnerHTML={{
-												__html: e.texte,
-											}}
-										/>
+							<div className="">
+								<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+									Adresse
+								</p>
+								<div
+									className="text-roboto  !text-16 text-white"
+									dangerouslySetInnerHTML={{
+										__html: dataInfosGeneral?.address,
+									}}
+								/>
+							</div>
+							<div className="">
+								<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+									Téléphone
+								</p>
+								<a href={`tel:${dataInfosGeneral?.phone}`}>
+									<div
+										className="text-roboto  !text-16 text-white"
+										dangerouslySetInnerHTML={{
+											__html: dataInfosGeneral?.phone,
+										}}
+									/>
+								</a>
+							</div>
+
+							<div>
+								<>
+									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+										Horaire d'accueil
+									</p>
+									<div
+										className="text-roboto  !text-16 text-white"
+										dangerouslySetInnerHTML={{
+											__html: dataInfosGeneral?.hoursreception,
+										}}
+									/>
+								</>
+								<>
+									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+										Horaire d'accès
+									</p>
+									<div
+										className="text-roboto  !text-16 text-white"
+										dangerouslySetInnerHTML={{
+											__html: dataInfosGeneral?.hoursacces,
+										}}
+									/>
+								</>
+
+								<div className="">
+									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-3">
+										Réseaux
+									</p>
+									<div className="flex items-center gap-x-6">
+										<Link
+											href={`${dataInfosGeneral?.facebookurl}`}
+											target={"_blank"}
+										>
+											<Image
+												src="/logo/fb.svg"
+												width={20}
+												height={20}
+												className="object-contain w-5 h-5"
+												alt="logo facebook"
+											/>
+										</Link>
+										<Link
+											target={"_blank"}
+											href={`${dataInfosGeneral?.instagramurl}`}
+										>
+											<Image
+												src="/logo/instagram.svg"
+												width={20}
+												height={20}
+												className="object-contain w-5 h-5"
+												alt="logo instagram"
+											/>
+										</Link>
 									</div>
-								)
-							})}
-							{infos.slice(2, 10).map((e, i) => {
-								return (
-									<div key={i} className="">
-										{e.title != "rejoignez-nous" ? (
-											<>
-												{" "}
-												<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-													{e.title}
-												</p>
-												<div
-													className="text-roboto  !text-16 text-white"
-													dangerouslySetInnerHTML={{
-														__html: e.texte,
-													}}
-												/>
-											</>
-										) : (
-											<div className="">
-												<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-3">
-													{e.title}
-												</p>
-												<div className="flex items-center gap-x-6">
-													<Image
-														src="/logo/fb.svg"
-														width={20}
-														height={20}
-														className="object-contain w-5 h-5"
-														alt="logo facebook"
-													/>
-													<Image
-														src="/logo/instagram.svg"
-														width={20}
-														height={20}
-														className="object-contain w-5 h-5"
-														alt="logo instagram"
-													/>
-												</div>
-											</div>
-										)}
-									</div>
-								)
-							})}
+								</div>
+							</div>
 						</div>
 						<div className="lg:col-span-2 col-span-5  relative w-full overflow-hidden  md:h-[300px] h-[200px] lg:border-l lg:pl-5 lg:border-t-0  border-t lg:mt-0  mt-5 border-gray ">
 							<Image

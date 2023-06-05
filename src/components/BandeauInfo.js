@@ -37,7 +37,12 @@ const BandeauInfo = () => {
 						// blurDataURL="data:..." automatically provided
 						// placeholder="blur" // Optional blur-up while loading
 					/>
-					<a href={`tel:${dataInfosGeneral?.phone}`} className="ml-2 text-16">{dataInfosGeneral?.phone}</a>
+					<a
+						href={`tel:${dataInfosGeneral?.phone}`}
+						className="ml-2 text-16"
+					>
+						{dataInfosGeneral?.phone}
+					</a>
 				</div>
 			</div>
 		</div>

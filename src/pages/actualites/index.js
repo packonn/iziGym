@@ -1,29 +1,66 @@
-import { NextPage } from "next"
 import { useRouter } from "next/router"
 import Layout from "@/components/Layout"
-
-import Image from "next/image"
-import { useContext, useEffect, useState } from "react"
-import VideoPlayer from "@/components/Video"
-import SwiperGallery from "@/components/SwiperGallery"
-import { ActusCarousel } from "@/components/ActusCarousel"
-import SectionActus from "@/components/SectionActus"
-import { actus } from "../../../helpers"
+import { useEffect, useState } from "react"
 import ActusItem from "@/components/ActusItem"
+import apolloClient from "../../../apollo-client"
+import { gql } from "@apollo/client"
 
 export const getServerSideProps = async (context) => {
+	let subscriptions = []
+	let options = null
+	let spaces = []
+	let actus = {}
+
+	try {
+		const response = await apolloClient.query({
+			query: gql`
+				{
+					posts(first: 4) {
+						nodes {
+							content
+							title
+							featuredImage {
+								node {
+									sourceUrl
+								}
+							}
+							groupeChampsArticle {
+								actuimage {
+									sourceUrl
+								}
+								gallery {
+									sourceUrl
+								}
+								startdate
+								subtitle
+								videourl
+								enddate
+							}
+							slug
+						}
+					}
+				}
+			`,
+		})
+		actus = await response.data.posts.nodes
+	} catch (error) {
+		console.log("error", error)
+	}
+
 	return {
-		props: {},
+		props: {
+			actus: actus,
+		},
 	}
 }
 
-const Actualites = ({ slug }) => {
+const Actualites = ({ slug, actus }) => {
 	const router = useRouter()
 	const [showVideo, setShowVideo] = useState(false)
 	useEffect(() => {
 		setShowVideo(true)
 	}, [])
-
+	console.log("actus", actus)
 	const slidesPerView = 1.3
 	const breakPointsSwiper = {
 		768: { slidesPerView: 2.3 },
@@ -43,7 +80,7 @@ const Actualites = ({ slug }) => {
 				{actus.map((actu, index) => {
 					return (
 						<div className="!h-[420px] relative " key={index}>
-							<ActusItem item={actu} key={index} />
+							<ActusItem actu={actu} key={index} />
 						</div>
 					)
 				})}

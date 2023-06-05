@@ -3,10 +3,9 @@ import { useRouter } from "next/router"
 import Layout from "@/components/Layout"
 
 import Image from "next/image"
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import VideoPlayer from "@/components/Video"
 import SwiperGallery from "@/components/SwiperGallery"
-import { ActusCarousel } from "@/components/ActusCarousel"
 import SectionActus from "@/components/SectionActus"
 import {
 	actus,
