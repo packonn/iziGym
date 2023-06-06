@@ -153,3 +153,23 @@ margin-top: auto;
 	  .dropdownContentCustomHtml p{
 padding: 2px 0;
 	  }
+
+
+	  .customMentionLegaleHTML p {
+		font-family: 'Roboto';
+		font-size: 16px;
+		line-height: 23px;
+	  }
+	  .customMentionLegaleHTML h1, .customMentionLegaleHTML h2,.customMentionLegaleHTML h3 {
+		line-height: 30px;
+	  }
+	  .customMentionLegaleHTML h1 span {
+		font-family: 'Anton'!important;
+		font-size: 30px;
+	
+	  }
+	  .customMentionLegaleHTML h2 span, h2, h2 span strong {
+		font-family: 'Anton'!important;
+		font-size: 24px;
+	
+	  }

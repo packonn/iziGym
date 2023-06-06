@@ -54,16 +54,18 @@ export default function Abonnements({ subscriptions, options }) {
 		<Layout
 			contactBannerColor="white"
 			backgroundImageURL="/assets-dev/bg-abonnements.jpg"
-			title2="Abonnements"
-			title3="Rejoins-nous !"
-			center
-			classCustom=" min-h-[450px]"
-		>
-			<SectionPrices
-				bgColor="white"
-				subscriptions={subscriptions}
-				infoSubscription={options.infosubscription}
-			/>
-		</Layout>
-	)
+			title3="Les Abonnements"
+            center
+			classCustom=" min-h-[300px] md:min-h-[400px]"
+        >
+
+       
+        <SectionPrices
+        bgColor="white"
+        subscriptions={subscriptions}
+        infoSubscription={options.infosubscription}
+        />
+
+        </Layout>
+    )
 }

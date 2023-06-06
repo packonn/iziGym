@@ -93,7 +93,6 @@ export const getServerSideProps = async (context) => {
 }
 
 const ActualiteSlug = ({ slug, actu, actus }) => {
-	const router = useRouter()
 	const [showVideo, setShowVideo] = useState(false)
 
 	useEffect(() => {

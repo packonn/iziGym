@@ -93,6 +93,7 @@ const SpaceDetails = ({space}) => {
 			center
 			backgroundImageURL={space.featuredImage?.node?.sourceUrl}
 			title1={space.title}
+			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
 			<ContentDynamic
 			subscriptions={space.groupeChampsEspacesDuClub.subscription}

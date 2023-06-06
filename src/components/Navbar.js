@@ -77,7 +77,7 @@ export default function Navbar() {
 	const navigation = navigationURLS(router)
 	const {dataInfosGeneral} = useContext(DataContext)
 	return (
-		<Disclosure as="nav" className="bg-transparent w-full relative z-20 ">
+		<Disclosure as="nav" className="bg-transparent w-full relative z-[9999999999] ">
 			{({ open }) => (
 				<>
 					<div className="  container  ">
@@ -179,59 +179,93 @@ export default function Navbar() {
 									</Disclosure.Button>
 								))}
 
-							<div className="  lg:border-l lg:pl-5  border-gray border-t lg:border-t-0 lg:pt-0  pt-5  grid md:grid-cols-2 grid-cols-1 gap-x-4 gap-y-4">
-								{infos.slice(0, 2).map((e, i) => {
-									return (
-										<div key={i} className="">
-											<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-												{e.title}
-											</p>
-											<p className="text-roboto uppercase !text-16 text-white">
-												{e.texte}
-											</p>
-										</div>
-									)
-								})}
-								{infos.slice(2, 10).map((e, i) => {
-									return (
-										<div key={i} className="">
-											{e.title != "rejoignez-nous" ? (
-												<>
-													{" "}
-													<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-														{e.title}
-													</p>
-													<p className="text-roboto uppercase !text-16 text-white">
-														{e.texte}
-													</p>
-												</>
-											) : (
-												<div className="">
-													<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-														{e.title}
-													</p>
-													<div className="flex items-center gap-x-6">
-														<Image
-															src="/logo/fb.svg"
-															width={20}
-															height={20}
-															className="object-contain w-5 h-5"
-															alt="logo facebook"
-														/>
-														<Image
-															src="/logo/instagram.svg"
-															width={20}
-															height={20}
-															className="object-contain w-5 h-5"
-															alt="logo instagram"
-														/>
-													</div>
-												</div>
-											)}
-										</div>
-									)
-								})}
+
+								<div className="lg:col-span-2 col-span-5   lg:border-l lg:pl-4  border-gray border-t lg:border-t-0 lg:pt-0 mt-5 lg:mt-0 pt-5  grid grid-cols-2 gap-x-2 gap-y-4">
+						
+
+							<div className="md:col-span-1 col-span-2">
+								<>
+									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+										Horaire d'accueil
+									</p>
+									<div
+										className="text-roboto  !text-16 text-white"
+										dangerouslySetInnerHTML={{
+											__html: dataInfosGeneral?.hoursreception,
+										}}
+									/>
+								</>
+								<>
+									<p className="bg-primary mt-2 text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+										Horaire d'accès
+									</p>
+									<div
+										className="text-roboto  !text-16 text-white"
+										dangerouslySetInnerHTML={{
+											__html: dataInfosGeneral?.hoursacces,
+										}}
+									/>
+								</>
 							</div>
+
+
+								<div className="md:col-span-1 col-span-2">
+								<div className="">
+								<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+									Adresse
+								</p>
+								<div
+									className="text-roboto  !text-16 text-white"
+									dangerouslySetInnerHTML={{
+										__html: dataInfosGeneral?.address,
+									}}
+								/>
+							</div>
+							
+								<p className="bg-primary mt-2  text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+									Téléphone
+								</p>
+								<a href={"'tel:" + dataInfosGeneral?.phone +"'" }>
+									<div
+										className="text-roboto  !text-16 text-white"
+										dangerouslySetInnerHTML={{
+											__html: dataInfosGeneral?.phone,
+										}}
+									/>
+								</a>
+						
+									<p className="bg-primary mt-2 text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-3">
+										Réseaux
+									</p>
+									<div className="flex items-center gap-x-6">
+										<Link
+											href={`${dataInfosGeneral?.facebookurl}`}
+											target={"_blank"}
+										>
+											<Image
+												src="/logo/fb.svg"
+												width={20}
+												height={20}
+												className="object-contain w-5 h-5"
+												alt="logo facebook"
+											/>
+										</Link>
+										<Link
+											target={"_blank"}
+											href={`${dataInfosGeneral?.instagramurl}`}
+										>
+											<Image
+												src="/logo/instagram.svg"
+												width={20}
+												height={20}
+												className="object-contain w-5 h-5"
+												alt="logo instagram"
+											/>
+										</Link>
+								</div>
+							</div>
+						</div>
+							
 						</div>
 						<Disclosure.Button className="flex items-start justify-end rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
 							<span className="sr-only">Open main menu</span>

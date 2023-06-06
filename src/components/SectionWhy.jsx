@@ -40,7 +40,7 @@ const SectionWhy = () => {
 						color={"secondary"}
 					/>
 				</div>
-				<div className="grid mt-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 mb-24">
+				<div className="grid mt-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 lg:mb-24 mb-10">
 					{array.map((e, i) => {
 						return (
 							<div key={i} className={"flex "}>
@@ -67,7 +67,7 @@ const SectionWhy = () => {
 			</div>
 			<div className=" w-full bg-[url('/logo/bandeau-orange.png')]  lg:pb-0 md:pb-14 pb-14 bg-no-repeat bg-cover relative z-50">
 				<div className="container md:pb-0 pb-10 flex flex-col md:flex-row items-center justify-between">
-					<div className="flex relative   md:w-[480px] md:h-[371px] w-[480px] h-[431px] z-[60] left-0 ">
+					<div className="flex relative   md:w-[480px] md:h-[371px] w-full h-[231px] z-[60] left-0 ">
 						<Image
 							src={"/assets-dev/hero_image_05 1.svg"}
 							fill
