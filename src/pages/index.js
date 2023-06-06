@@ -66,6 +66,12 @@ export const getServerSideProps = async (context) => {
 					posts(first: 4) {
 						nodes {
 							title
+							content
+							featuredImage {
+								node {
+									sourceUrl
+								}
+							}
 							groupeChampsArticle {
 								subtitle
 								startdate
@@ -107,7 +113,6 @@ export const getServerSideProps = async (context) => {
 }
 
 export default function Home({ subscriptions, options, spaces, actus }) {
-
 	return (
 		<Layout
 			contactBannerColor="cream"
@@ -126,13 +131,13 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 					options.urlDeReservatioDesCoursEnLigne
 				}
 			/>
-			
+
 			<div className="relative">
-            <div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
-			<SectionPrices
-			subscriptions={subscriptions}
-			infoSubscription={options.infosubscription}
-			/>
+				<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
+				<SectionPrices
+					subscriptions={subscriptions}
+					infoSubscription={options.infosubscription}
+				/>
 			</div>
 		</Layout>
 	)
