@@ -73,7 +73,7 @@ export const getServerSideProps = async (context) => {
 	}
 }
 
-const Actualites = ({  actus,currentPage, pageInfo,last, first }) => {
+const Actualites = ({  actus, pageInfo,last, first }) => {
 
 
     const hasPreviousPage = pageInfo.hasPreviousPage
