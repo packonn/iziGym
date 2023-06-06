@@ -11,6 +11,7 @@ export const reglementInterieurURL = "/reglement-interieur"
 export const cookiePolicyURL = "/politique-de-confidentialite"
 export const cgvURL = "/conditions-generales-de-ventes"
 export const contactURL = "/contact"
+export const mentionslegalesURL = "/mentions-legales"
 
 export const images = [
         "/assets-dev/header.png",

@@ -35,7 +35,7 @@ const Espaces = ({ slug }) => {
 		<Layout
 			contactBannerColor="white"
 			backgroundImageURL="/assets-dev/header.png"
-			title3="Les actualités"
+			title1="Les actualités"
 			center
 			classCustom="!h-[400px] !min-h-[400px]"
 		>

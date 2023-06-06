@@ -110,13 +110,20 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 			title1={actu.title}
 			title2={actu.groupeChampsArticle.subtitle}
 			title3={dateStart}
-			center
+			centerx
+			classCustom="!h-[100vh] !min-h-[100vh]"
 		>
-			<div className="container md:w-[884px] w-full pb-[80px] -mt-[120px]">
-				<div className="  relative  h-[400px] ">
+			<div className="container md:w-[884px] w-full pb-[80px] -mt-[90px]">
+				<div className=" z-[9999] overflow-hidden flex justify-center items-center relative  h-[600px] ">
 					<Image
 						fill
-						className="w-full h-full object-contain  "
+						className="w-full h-full object-contain object-center  "
+						src={actu.groupeChampsArticle.actuimage.sourceUrl}
+						alt="header"
+					/>
+					<Image
+						fill
+						className="w-full h-full object-cover -z-10 blur-[5px] absolute top-0 left-0  "
 						src={actu.groupeChampsArticle.actuimage.sourceUrl}
 						alt="header"
 					/>

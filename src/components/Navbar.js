@@ -4,15 +4,11 @@ import Image from "next/image"
 import {
 	abonnementsURL,
 	actusURL,
-	cgvURL,
-	cookiePolicyURL,
 	coursCollectifURL,
-	frontURL,
 	homeURL,
 	reglementInterieurURL,
-	servicesCoursCollectifURL,
-	servicesURL,
 	spacesURL,
+	mentionslegalesURL
 } from "../../helpers"
 import { infos } from "./Footer"
 import { useRouter } from "next/router"
@@ -55,17 +51,12 @@ export const navigationURLS = (router) => {
 			header: false,
 		},
 		{
-			name: "Politique de confidentialité",
-			href: cookiePolicyURL,
-			current: router.asPath.includes(cookiePolicyURL),
+			name: "Mentions légales",
+			href: mentionslegalesURL,
+			current: router.asPath.includes(mentionslegalesURL),
 			header: false,
 		},
-		{
-			name: "Conditions générales de vente",
-			href: cgvURL,
-			current: router.asPath.includes(cgvURL),
-			header: false,
-		},
+		
 	]
 }
 function classNames(...classes) {

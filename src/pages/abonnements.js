@@ -54,7 +54,7 @@ export default function Abonnements({ subscriptions, options }) {
 		<Layout
 			contactBannerColor="white"
 			backgroundImageURL="/assets-dev/bg-abonnements.jpg"
-			title3="Les Abonnements"
+			title1="Les Abonnements"
             center
 			classCustom=" min-h-[300px] md:min-h-[400px]"
         >

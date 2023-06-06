@@ -42,8 +42,7 @@ export default function Abonnements({mentionslegales}){
         <Layout 
         contactBannerColor="white"
 			backgroundImageURL="/assets-dev/bg-abonnements.jpg"
-			title2="Conditions générales d'utilisation"
-			title3="Les mentions légales"
+			title1="Conditions générales d'utilisation"
             center
 			classCustom=" min-h-[440px]"
         >

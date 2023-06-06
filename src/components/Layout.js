@@ -6,7 +6,7 @@ import DataContextProvider, { DataContext } from "../../context/DataContext"
 import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 import Script from "next/script";
 import { useState } from "react";
-import { cookiePolicyURL } from "../../helpers";
+import { mentionslegalesURL } from "../../helpers";
 
 
 export default function Layout(props) {
@@ -90,7 +90,7 @@ export default function Layout(props) {
 					expires={150}
 					debug={true}>
 					Nous utilisons des cookies pour vous offrir la meilleure expérience sur notre site. Vous pouvez en savoir plus sur les cookies que nous utilisons ou les désactiver.
-					<a href={cookiePolicyURL}  style={{ color: "#D9712E" }}> Politique de confidentialité</a>
+					<a href={mentionslegalesURL}  style={{ color: "#D9712E" }}> Politique de confidentialité</a>
 				</CookieConsent>
 			}
 			
