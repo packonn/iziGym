@@ -4,18 +4,24 @@ import { useEffect, useState } from "react"
 import ActusItem from "@/components/ActusItem"
 import apolloClient from "../../../apollo-client"
 import { gql } from "@apollo/client"
+import Pagination from "@/components/Pagination"
+import { actusURL } from "../../../helpers"
 
 export const getServerSideProps = async (context) => {
-	let subscriptions = []
-	let options = null
-	let spaces = []
-	let actus = {}
+
+	let actus = []
+	let first = 6
+	let last = 6
+
+	const query = (context.query.paramsQuery) ? context.query.paramsQuery : `first: ${first}`
+    const currentPage = (context.query.page) ? context.query.page : 1;
+    let pageInfo = []
 
 	try {
 		const response = await apolloClient.query({
 			query: gql`
 				{
-					posts(first: 4) {
+					posts(${query}) {
 						nodes {
 							content
 							title
@@ -38,35 +44,42 @@ export const getServerSideProps = async (context) => {
 							}
 							slug
 						}
+						pageInfo {
+							endCursor
+							startCursor
+							hasPreviousPage
+							hasNextPage
+						  }
+						  
 					}
 				}
 			`,
 		})
 		actus = await response.data.posts.nodes
+		pageInfo = await response.data.posts.pageInfo
 	} catch (error) {
 		console.log("error", error)
 	}
 
+
 	return {
 		props: {
 			actus: actus,
+			currentPage: currentPage,
+			pageInfo: pageInfo,
+			last: last,
+			first:first
 		},
 	}
 }
 
-const Actualites = ({ slug, actus }) => {
-	const router = useRouter()
-	const [showVideo, setShowVideo] = useState(false)
-	useEffect(() => {
-		setShowVideo(true)
-	}, [])
-	console.log("actus", actus)
-	const slidesPerView = 1.3
-	const breakPointsSwiper = {
-		768: { slidesPerView: 2.3 },
-		1024: { slidesPerView: 2.3 },
-		1280: { slidesPerView: 2.3 },
-	}
+const Actualites = ({  actus, pageInfo,last, first }) => {
+
+
+    const hasPreviousPage = pageInfo.hasPreviousPage
+    const hasNextPage = pageInfo.hasNextPage
+    const startCursor = pageInfo.startCursor
+    const endCursor = pageInfo.endCursor
 
 	return (
 		<Layout
@@ -77,7 +90,7 @@ const Actualites = ({ slug, actus }) => {
 			center
 			classCustom=" min-h-[450px]"
 		>
-			<div className="container py-20 grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
+			<div className="container pt-20 pb-4 grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
 				{actus.map((actu, index) => {
 					return (
 						<div className="!h-[420px]" key={index}>
@@ -85,6 +98,9 @@ const Actualites = ({ slug, actus }) => {
 						</div>
 					)
 				})}
+			</div>
+			<div className="container pb-10">
+			<Pagination first={Number(first)} last={Number(last)} href={actusURL} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} startCursor={startCursor} endCursor={endCursor} />
 			</div>
 		</Layout>
 	)
