@@ -63,7 +63,7 @@ export const getServerSideProps = async (context) => {
 							}
 						}
 					}
-					posts(first: 4) {
+					posts {
 						nodes {
 							title
 							content

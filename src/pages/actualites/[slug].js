@@ -19,9 +19,8 @@ import { gql } from "@apollo/client"
 
 export const getServerSideProps = async (context) => {
 	const slug = context.params.slug
-	console.log(slug)
-
 	let actu = {}
+	let actus = {}
 
 	try {
 		const response = await apolloClient.query({
@@ -49,10 +48,37 @@ export const getServerSideProps = async (context) => {
 					}
 				  }
 				}
+				posts {
+					nodes {
+					  title
+					  content
+					  featuredImage {
+						node {
+						  sourceUrl
+						}
+					  }
+					  groupeChampsArticle {
+						subtitle
+						startdate
+						videourl
+						enddate
+						actuimage {
+						  sourceUrl
+						}
+						enddate
+						startdate
+						subtitle
+						videourl
+					  }
+					  slug
+					  content
+					}
+				  }
 			  }
 			`,
 		})
 		actu = await response.data.post
+		actus = await response.data.posts.nodes
 	} catch (error) {
 		console.log("error", error)
 	}
@@ -60,12 +86,13 @@ export const getServerSideProps = async (context) => {
 	return {
 		props: {
 			actu: actu,
+			actus: actus,
+			slug: slug,
 		},
 	}
 }
 
-const ActualiteSlug = ({ slug, actu }) => {
-	console.log(actu)
+const ActualiteSlug = ({ slug, actu, actus }) => {
 	const router = useRouter()
 	const [showVideo, setShowVideo] = useState(false)
 
@@ -87,15 +114,15 @@ const ActualiteSlug = ({ slug, actu }) => {
 			center
 		>
 			<div className="container md:w-[884px] w-full pb-[80px] -mt-[120px]">
-				<div className="  relative h-[600px] ">
+				<div className="  relative  h-[400px] ">
 					<Image
 						fill
-						className="w-full h-full right-10 object-cover "
+						className="w-full h-full object-contain  "
 						src={actu.groupeChampsArticle.actuimage.sourceUrl}
 						alt="header"
 					/>
 				</div>
-				<div className="   z-10 ">
+				<div className="z-10 ">
 					<div
 						dangerouslySetInnerHTML={{
 							__html: `${actu.content}`,
@@ -110,20 +137,22 @@ const ActualiteSlug = ({ slug, actu }) => {
 							/>
 						</div>
 					)}
-					<div className="mt-4">
-						<SwiperGallery
-							data={[
-								...actu.groupeChampsArticle.gallery.map(
-									(item) => item.sourceUrl
-								),
-							]}
-							breakpoints={breakPointsSwiper}
-							slidesPerView={slidesPerView}
-						/>
-					</div>
+					{actu.groupeChampsArticle.gallery !== null ?? (
+						<div className="mt-4">
+							<SwiperGallery
+								data={[
+									...actu.groupeChampsArticle.gallery.map(
+										(item) => item.sourceUrl
+									),
+								]}
+								breakpoints={breakPointsSwiper}
+								slidesPerView={slidesPerView}
+							/>
+						</div>
+					)}
 				</div>
 			</div>
-			<SectionActus data={actus.filter((e, i) => e.slug !== slug)} />
+			<SectionActus actus={actus.filter((e, i) => e.slug !== slug)} />
 		</Layout>
 	)
 }

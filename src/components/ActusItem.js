@@ -13,9 +13,12 @@ const ActusItem = ({ item }) => {
 			className="flex h-full w-full overflow-hidden relative"
 		>
 			<div className="absolute bottom-0 bg-gradient-to-t from-black opacity-75 w-full h-36 z-30"></div>
-
 			<Image
-				src={item?.featuredImage?.node?.sourceUrl ?item?.featuredImage?.node?.sourceUrl : "/assets-dev/placeholder.png"}
+				src={
+					item?.featuredImage?.node?.sourceUrl
+						? item?.featuredImage?.node?.sourceUrl
+						: "/assets-dev/placeholder.png"
+				}
 				alt={item.title}
 				fill
 				className="z-10 overflow-hidden absolute top-0 lef-0 w-full h-full transition duration-500 ease-in-out hover:scale-110 object-cover "
@@ -40,11 +43,11 @@ const ActusItem = ({ item }) => {
 				</div>
 				<div className="text-white relative z-50   ">
 					{item.groupeChampsArticle.subtitle && (
-						<p className="text-sm font-bold tracking-[1.5px]">
+						<p className="text-sm font-bold tracking-[1.5px] line-clamp-1">
 							{item.groupeChampsArticle.subtitle}
 						</p>
 					)}
-					<p className="text-4xl font-bold font-anton uppercase leading-[44px]">
+					<p className="text-4xl font-bold font-anton uppercase leading-[44px] line-clamp-2">
 						{item.title}
 					</p>
 					<div className="text-sm mr-2 flex mt-1">

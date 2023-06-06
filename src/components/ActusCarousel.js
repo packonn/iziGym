@@ -3,7 +3,6 @@ import "swiper/css"
 import "swiper/css/bundle"
 import { useRef } from "react"
 import { Navigation, Pagination } from "swiper"
-// import { actus } from "../../helpers"
 import ActusItem from "./ActusItem"
 
 export const ActusCarousel = ({ actus }) => {
@@ -13,7 +12,7 @@ export const ActusCarousel = ({ actus }) => {
 		<div id="projects" className="relative my-section swiper-project">
 			<Swiper
 				breakpoints={{
-					768: { slidesPerView: 2.3 },
+					768: { slidesPerView: 2 },
 					1024: { slidesPerView: 3 },
 					425: {
 						slidesPerView: 1,
