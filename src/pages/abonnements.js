@@ -35,7 +35,6 @@ export const getServerSideProps = async (context) => {
 			`,
 		})
 
-console.log('response', await response)
 
 		subscriptions = await response.data.themeGeneralSettings.option
 			.ordersubscription
@@ -59,10 +58,9 @@ export default function Abonnements({subscriptions, options}){
         <Layout 
         contactBannerColor="white"
 			backgroundImageURL="/assets-dev/bg-abonnements.jpg"
-			title2="Abonnements"
-			title3="Rejoins-nous !"
+			title3="Les Abonnements"
             center
-			classCustom=" min-h-[450px]"
+			classCustom=" min-h-[300px] md:min-h-[400px]"
         >
 
        

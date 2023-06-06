@@ -85,7 +85,7 @@ export default function SectionContact(props) {
 			<div className="gap-10 grid grid-cols-1 md:grid-cols-2 ">
 				<form
 					onSubmit={handleSubmit(onSubmit)}
-					className=" md:pl-[40px] container py-32"
+					className=" md:pl-[40px] container lg:py-32 py-20"
 				>
 					<Title
 						title="Question ?"

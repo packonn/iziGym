@@ -85,10 +85,9 @@ const Actualites = ({  actus, pageInfo,last, first }) => {
 		<Layout
 			contactBannerColor="white"
 			backgroundImageURL="/assets-dev/bg-actus.jpg"
-			title3="Découvrez les dernières actualités de votre salle de sport"
-			title2='Actualités'
+			title3="Actualités"
 			center
-			classCustom=" min-h-[450px]"
+			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
 			<div className="container pt-20 pb-4 grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
 				{actus.map((actu, index) => {

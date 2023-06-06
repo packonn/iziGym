@@ -5,7 +5,7 @@ const SectionPrices = ({subscriptions, infoSubscription, bgColor}) => {
 bgColor= bgColor || "bg-[#F6F3F2]"
 
 	return (
-		<div className={`bg-[url('/assets-dev/fond-tarifs.png')] ${bgColor} py-10 md:py-20 pb-10 relative`}>
+		<div className={`bg-[url('/assets-dev/fond-tarifs.png')] ${bgColor} py-0 md:py-20 pt-10 pb-10 relative`}>
 			<div className="container">
 				<Title
 					title={"Les differents"}

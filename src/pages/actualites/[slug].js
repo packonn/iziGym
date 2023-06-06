@@ -19,7 +19,6 @@ import { gql } from "@apollo/client"
 
 export const getServerSideProps = async (context) => {
 	const slug = context.params.slug
-	console.log(slug)
 
 	let actu = {}
 
@@ -65,8 +64,6 @@ export const getServerSideProps = async (context) => {
 }
 
 const ActualiteSlug = ({ slug, actu }) => {
-	console.log(actu)
-	const router = useRouter()
 	const [showVideo, setShowVideo] = useState(false)
 
 	useEffect(() => {
