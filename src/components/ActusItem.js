@@ -15,7 +15,7 @@ const ActusItem = ({ item }) => {
 			<div className="absolute bottom-0 bg-gradient-to-t from-black opacity-75 w-full h-36 z-30"></div>
 
 			<Image
-				src={item.groupeChampsArticle.actuimage.sourceUrl}
+				src={item.groupeChampsArticle?.actuimage?.sourceUrl ? item.groupeChampsArticle.actuimage.sourceUrl : "/assets-dev/placeholder.png"}
 				alt={item.title}
 				fill
 				className="z-10 overflow-hidden absolute top-0 lef-0 w-full h-full transition duration-500 ease-in-out hover:scale-110 object-cover "
