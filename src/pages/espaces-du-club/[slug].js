@@ -72,20 +72,6 @@ const SpaceDetails = ({space}) => {
 		setShowVideo(true)
 	}, [])
 
-	const otherServices = [
-		{
-			id: 1,
-			title: "Musculation",
-			description: "Une salle tout équipée",
-			slug: "musculation",
-		},
-		{
-			id: 2,
-			title: "Cardio",
-			description: "des ballons, des tapis et des vélos pour se dépenser",
-			slug: "cardio",
-		},
-	]
 
 	return (
 		<Layout
@@ -102,7 +88,6 @@ const SpaceDetails = ({space}) => {
 				videoURL={space.groupeChampsEspacesDuClub.videourl}
 				collapse={space.groupeChampsEspacesDuClub.collapse}
 				subtitle={space.groupeChampsEspacesDuClub.subtitle}
-				otherServices={otherServices}
 				slidesPerView={slidesPerView}
 				content={space.content}
 				gallery={space.groupeChampsEspacesDuClub.galleriephotos}

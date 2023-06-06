@@ -19,9 +19,9 @@ export const images = [
         "/assets-dev/header.png",
     ]
 
-    export const slidesPerView = 1.3
+    export const slidesPerView = 1
 	export const breakPointsSwiper = {
-		768: { slidesPerView: 2.3 },
+		768: { slidesPerView: 1},
 		1024: { slidesPerView: 2.3 },
 		1280: { slidesPerView: 2.3 },
 	}

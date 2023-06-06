@@ -48,7 +48,7 @@ const Header = ({
 							} w-full `}
 						>
 							{title1 && <h2
-								className={`text-white break-keep !font-great lg:leading-[100px] md:leading-[70px] leading-[40px] lg:text-[130px] md:text-[60px]  text-[40px]  ${
+								className={`text-white break-keep !font-great lg:leading-[100px] leading-[70px] lg:text-[130px] text-[70px]  ${
 									center
 										? "text-center"
 										: "text-left -rotate-6"
@@ -57,7 +57,7 @@ const Header = ({
 								{title1}
 							</h2>}
 							{title2 &&<h1
-								className={` text-primary font-great lg:leading-[100px] md:leading-[70px] lg:text-[130px]  md:text-[60px]  text-[40px] leading-[40px]  whitespace-nowrap ${
+								className={` text-primary font-great lg:leading-[100px] md:leading-[70px] lg:text-[130px]  md:text-[60px]  text-[50px] leading-[50px]  whitespace-nowrap ${
 									center
 										? "text-center"
 										: "text-left -rotate-6"

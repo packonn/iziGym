@@ -9,7 +9,6 @@ import ButtonDestroy from "@/components/ButtonDestroy"
 export default function ContentDynamic({
 	showVideo,
 	gallery,
-	otherServices,
 	slidesPerView,
 	breakPointsSwiper,
 	title,
@@ -27,6 +26,7 @@ subscriptions
 					subtitle={subtitle}
 					color="secondary"
 				/>
+				
 				<div dangerouslySetInnerHTML={{__html:content}} className="font-roboto text-16">
 				</div>
 				{collapse && <div className="mt-10 pb-10">
@@ -34,14 +34,25 @@ subscriptions
 				</div>}
 				<div className="w-full ">
 					{(showVideo && videoURL ) && (
-						<div className="player-wrapper overflow-hidden p-[0px]  bg-black ">
-							<VideoPlayer
-								url={videoURL}
-								isPlaying={false}
-							/>
+<div>
+<h3
+				className={`font-great  text-[70px]  text-secondary     -mt-2  `}
+				
+			>Vidéo</h3>
+<div className="player-wrapper overflow-hidden p-[0px]  bg-black ">
+
+<VideoPlayer
+url={videoURL}
+isPlaying={false}
+/>
+</div>
 						</div>
 					)}
-					{gallery && <div className="mt-4">
+					{gallery && <div className="mt-10">
+					<h3
+				className={`font-great  text-[70px]  text-secondary      -mt-2  `}
+				
+			>Gallerie</h3>
 						<SwiperGallery
 							data={[...gallery.map((item) => item.sourceUrl)]}
 							breakpoints={breakPointsSwiper}

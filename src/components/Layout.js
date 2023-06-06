@@ -67,6 +67,7 @@ export default function Layout(props) {
 
 
 			<main>{children}
+		
 			{!getCookieConsentValue() &&
 				<CookieConsent enableDeclineButton flipButtons
 				
@@ -84,7 +85,7 @@ export default function Layout(props) {
 					}}
 					buttonText="Accepter"
 					declineButtonText="Refuser"
-					style={{ background: "#1C1C1E", alignItems: "center", fontSize: "13px" }}
+					style={{ background: "#1C1C1E", alignItems: "center", fontSize: "13px", zIndex: "99999",   }}
 					buttonStyle={{ background: "#D9712E", color: "white", fontSize: "15px", borderRadius: "5px" }}
 					declineButtonStyle={{ background: "#D9712E", color: "white", fontSize: "15px", borderRadius: "5px" }}
 					expires={150}
