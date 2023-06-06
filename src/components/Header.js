@@ -48,7 +48,7 @@ const Header = ({
 							} w-full `}
 						>
 							{title1 && <h2
-								className={`text-white break-all font-great lg:leading-[130px] md:leading-[70px] leading-[40px] lg:text-[130px] md:text-[60px]  text-[40px]  ${
+								className={`text-white break-all !font-great lg:leading-[130px] md:leading-[70px] leading-[40px] lg:text-[130px] md:text-[60px]  text-[40px]  ${
 									center
 										? "text-center"
 										: "text-left -rotate-6"
