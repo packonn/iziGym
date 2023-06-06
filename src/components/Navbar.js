@@ -77,7 +77,7 @@ export default function Navbar() {
 	const navigation = navigationURLS(router)
 	const {dataInfosGeneral} = useContext(DataContext)
 	return (
-		<Disclosure as="nav" className="bg-transparent w-full relative z-20 ">
+		<Disclosure as="nav" className="bg-transparent w-full relative z-[9999999999] ">
 			{({ open }) => (
 				<>
 					<div className="  container  ">
