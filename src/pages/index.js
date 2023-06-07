@@ -24,6 +24,7 @@ export const getServerSideProps = async (context) => {
 							address
 							discount
 							email
+							urlcalendar
 							phone
 							hoursacces
 							facebookurl
@@ -137,7 +138,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			/>*/}
 			<div className=" bg-bottomHeader absolute h-40 w-full -mt-[150px] z-[9999]  bg-repeat"></div>
 			
-			<iframe src="http://izigym.cloud4206.heitzsystem.com:8081/app/3579/instantPlanningTv/#/app" width="100%" height="700px"  frameborder="0" 
+			<iframe src={options.urlcalendar} width="100%" height="700px"  frameborder="0" 
 			
 			style={{marginBottom: 10 + 'em', marginTop: 5 + 'em'}} 
 			></iframe>

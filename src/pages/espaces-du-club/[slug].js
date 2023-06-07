@@ -8,6 +8,7 @@ import ContentDynamic from "@/components/ContentDynamic"
 import {  useEffect, useState } from "react"
 import apolloClient from "../../../apollo-client"
 import { gql } from "@apollo/client"
+import ButtonDestroy from "@/components/ButtonDestroy"
 
 export const getServerSideProps = async (context) => {
 	const slug = context.params.slug
@@ -22,6 +23,7 @@ try {
 				option {
 					email
 					phone
+					urlcalendar
 				}
 			}
 			space(idType: SLUG, id: "${slug}") {
@@ -67,7 +69,8 @@ try {
 return {
 	props: {
 		space:space,
-		dataInfoGeneral:dataInfoGeneral
+		dataInfoGeneral:dataInfoGeneral, 
+		slug:slug
 	},
 }
 
@@ -75,7 +78,8 @@ return {
 
 
 
-const SpaceDetails = ({space,dataInfoGeneral}) => {
+const SpaceDetails = ({space,dataInfoGeneral, slug}) => {
+	console.log("dataInfo", dataInfoGeneral)
 	const [showVideo, setShowVideo] = useState(false)
 
 	useEffect(() => {
@@ -91,6 +95,7 @@ const SpaceDetails = ({space,dataInfoGeneral}) => {
 			title1={space.title}
 			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
+		<div className="py-20">
 			<ContentDynamic
 			subscriptions={space.groupeChampsEspacesDuClub.subscription}
 				showVideo={showVideo}
@@ -104,6 +109,32 @@ const SpaceDetails = ({space,dataInfoGeneral}) => {
 				breakPointsSwiper={breakPointsSwiper}
 				dataInfoGeneral={dataInfoGeneral}
 			/>
+
+			
+{slug === 'cours-collectifs' &&
+<div className="container">
+<h3
+				className={`font-great leading-[60px] text-[70px] mb-10 mt-10 text-secondary      `}
+				
+			>Planning des cours collectifs</h3>
+<div className="md:flex hidden">
+			
+			<iframe src={dataInfoGeneral.urlcalendar} width="100%" height="700px"  frameborder="0" 
+			
+			
+			></iframe>
+			</div>
+			<div className="md:hidden flex">
+			
+			<div className="text-white bg-secondary px-3 py-2">
+			<a href={dataInfoGeneral.urlcalendar}>Voir le planning des cours collectifs</a>
+			</div>
+			
+			</div>
+</div>
+
+}
+</div>
 		</Layout>
 	)
 }

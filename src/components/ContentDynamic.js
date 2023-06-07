@@ -20,7 +20,7 @@ subscriptions,
 dataInfoGeneral
 }) {
 	return (
-		<div className="container py-20 grid grid-cols-4 gap-x-6">
+		<div className="container  grid grid-cols-4 gap-x-6">
 			<div className="lg:col-span-3 col-span-4">
 				<Title
 					title={title}
@@ -89,7 +89,7 @@ isPlaying={false}
 				</div>
 				{subscriptions && subscriptions.map((subscription, index) => {
 					return (
-						<SubscriptionCard data={subscription} key={index} customContainerClass={' !min-h-full odd:bg-[#f2f2f2] '}  />
+						<SubscriptionCard data={subscription} key={index} customContainerClass={' !min-h-full odd:bg-[#e8e8e8] '}  />
 					)
 				})}
 				</div>
