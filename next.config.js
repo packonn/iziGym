@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-		domains: ["www.izigym.fr",],
+		domains: ["www.izigym.fr","izigym.cloud4206.heitzsystem.com"],
 	},
 }
 

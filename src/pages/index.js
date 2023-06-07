@@ -138,7 +138,9 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			/>*/}
 			<div className=" bg-bottomHeader absolute h-40 w-full -mt-[150px] z-[9999]  bg-repeat"></div>
 			
-			<iframe src={options.urlcalendar} width="100%" height="700px"  frameborder="0" 
+			
+
+			<iframe loading="eager" src={options.urlcalendar} width="100%" height="700px"  frameborder="0" 
 			
 			style={{marginBottom: 10 + 'em', marginTop: 5 + 'em'}} 
 			></iframe>
