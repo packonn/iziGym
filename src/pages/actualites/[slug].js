@@ -76,6 +76,7 @@ export const getServerSideProps = async (context) => {
 				  }
 			  }
 			`,
+			fetchPolicy: "no-cache",
 		})
 		actu = await response.data.post
 		actus = await response.data.posts.nodes

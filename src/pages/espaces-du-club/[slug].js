@@ -46,7 +46,8 @@ try {
 				}
 			  }
 			}
-		  }`
+		  }`,
+		  fetchPolicy: "no-cache",
 	})
 	space = await response.data.space
 

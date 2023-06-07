@@ -8,7 +8,8 @@ import {
 	homeURL,
 	reglementInterieurURL,
 	spacesURL,
-	mentionslegalesURL
+	mentionslegalesURL,
+	cgvURL
 } from "../../helpers"
 import { infos } from "./Footer"
 import { useRouter } from "next/router"
@@ -54,6 +55,18 @@ export const navigationURLS = (router) => {
 			name: "Mentions légales",
 			href: mentionslegalesURL,
 			current: router.asPath.includes(mentionslegalesURL),
+			header: false,
+		},
+		{
+			name: "Conditions générales de vente",
+			href: cgvURL,
+			current: router.asPath.includes(cgvURL),
+			header: false,
+		},
+		{
+			name: "Règlement intérieur",
+			href: reglementInterieurURL,
+			current: router.asPath.includes(reglementInterieurURL),
 			header: false,
 		},
 		

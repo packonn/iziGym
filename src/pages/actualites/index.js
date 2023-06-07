@@ -54,6 +54,7 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
+			fetchPolicy: "no-cache",
 		})
 		actus = await response.data.posts.nodes
 		pageInfo = await response.data.posts.pageInfo

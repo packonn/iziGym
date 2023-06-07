@@ -14,7 +14,7 @@ export const getServerSideProps = async (context) => {
 				{
                     themeGeneralSettings {
 						option {
-							mentionslegales
+							cgv
 						}
 					}
 				}
@@ -24,7 +24,7 @@ export const getServerSideProps = async (context) => {
 
 
 mentionslegales = await response.data.themeGeneralSettings.option
-			.mentionslegales
+			.cgv
 
 	} catch (error) {
 		console.log("error", error)
@@ -43,7 +43,7 @@ export default function Abonnements({mentionslegales}){
         <Layout 
         contactBannerColor="white"
 			backgroundImageURL="/assets-dev/bg-abonnements.jpg"
-			title1="Conditions générales d'utilisation"
+			title1="Conditions générales de vente"
             center
 			classCustom=" min-h-[440px]"
         >
