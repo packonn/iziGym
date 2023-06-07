@@ -20,9 +20,13 @@ const ActusItem = ({ item }) => {
 						? item?.featuredImage?.node?.sourceUrl
 						: "/assets-dev/placeholder.png"
 				}
+				blurDataURL={item?.featuredImage?.node?.sourceUrl
+					? item?.featuredImage?.node?.sourceUrl
+					: "/assets-dev/placeholder.png"}
+				placeholder="blur"
 				alt={item.title}
 				fill
-				className="z-10 overflow-hidden absolute top-0 lef-0 w-full h-full transition duration-500 ease-in-out hover:scale-110 object-cover "
+				className="z-10 overflow-hidden absolute top-0 lef-0 w-full h-full transition duration-500 ease-in-out md:hover:scale-110 object-cover "
 			/>
 			<div className=" bg-[url('/logo/bottom-carousel-actu.png')] -bottom-[1px] relative bg-no-repeat bg-bottom h-full flex flex-col justify-end w-full p-4 pb-6 pt-0">
 				<div className="bg-primary z-10 absolute -top-1 left-4 text-white font-bold  text-4xl py-2 px-5 ">

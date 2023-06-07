@@ -12,11 +12,18 @@ import { gql } from "@apollo/client"
 export const getServerSideProps = async (context) => {
 	const slug = context.params.slug
 	let space = []
+	let dataInfoGeneral = []
 
 try {
 	const response = await apolloClient.query({
 		query: gql`
 		{
+			themeGeneralSettings {
+				option {
+					email
+					phone
+				}
+			}
 			space(idType: SLUG, id: "${slug}") {
 			  title
 			  content
@@ -50,6 +57,7 @@ try {
 		  fetchPolicy: "no-cache",
 	})
 	space = await response.data.space
+	dataInfoGeneral = await response.data.themeGeneralSettings.option
 
 } catch (error) {
 	console.log('error', error)
@@ -58,7 +66,8 @@ try {
 
 return {
 	props: {
-		space:space
+		space:space,
+		dataInfoGeneral:dataInfoGeneral
 	},
 }
 
@@ -66,7 +75,7 @@ return {
 
 
 
-const SpaceDetails = ({space}) => {
+const SpaceDetails = ({space,dataInfoGeneral}) => {
 	const [showVideo, setShowVideo] = useState(false)
 
 	useEffect(() => {
@@ -93,6 +102,7 @@ const SpaceDetails = ({space}) => {
 				content={space.content}
 				gallery={space.groupeChampsEspacesDuClub.galleriephotos}
 				breakPointsSwiper={breakPointsSwiper}
+				dataInfoGeneral={dataInfoGeneral}
 			/>
 		</Layout>
 	)

@@ -153,6 +153,19 @@ margin-top: auto;
 	  .dropdownContentCustomHtml p{
 padding: 2px 0;
 	  }
+	  .dropdownContentCustomHtml h1{
+font-size: 28px!important;
+margin-bottom: 5px!important;
+	  
+	  }
+	  .dropdownContentCustomHtml h2{
+font-size: 24px!important;
+margin-bottom: 5px!important;
+	  }
+	  .dropdownContentCustomHtml h3,.dropdownContentCustomHtml  h4,.dropdownContentCustomHtml  h5, .dropdownContentCustomHtml  h6{
+font-size: 20px!important;
+margin-bottom: 5px!important;
+	  }
 
 
 	  .customMentionLegaleHTML p {

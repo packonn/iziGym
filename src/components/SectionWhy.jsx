@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
 
-const SectionWhy = () => {
+const SectionWhy = ({options}) => {
 	const array = [
 		{
 			title: "des coachs à fond",
@@ -72,6 +72,8 @@ const SectionWhy = () => {
 							src={"/assets-dev/hero_image_05 1.svg"}
 							fill
 							alt="img"
+							placeholder="blur"
+							blurDataURL={"/assets-dev/hero_image_05 1.svg"}
 						/>
 					</div>
 					<div className="flex justify-center items-center ">
@@ -86,12 +88,14 @@ const SectionWhy = () => {
 						<ButtonDestroy
 							secondary
 							icon="/logo/white-mail.svg"
-							text="izigym@hotmail.com"
+							text={options?.email}
+							href={`mailto:${options?.email}`}
 						/>
 						<ButtonDestroy
 							white
 							icon="/logo/black-phone.svg"
-							text="09 54 59 76 86"
+							href={`tel:${options?.phone}`}
+							text={options?.phone}
 						/>
 					</div>
 				</div>

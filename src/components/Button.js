@@ -23,6 +23,8 @@ const Button = ({ text, onPress, icon, primary, secondary, white }) => {
 				height={14}
 				className="mr-2"
 				alt="icon"
+				blurDataURL={icon}
+						placeholder="blur" 
 			/>
 			<p
 				className={`${textColor} text-[17px] font-roboto uppercase tracking-widest font-regular `}

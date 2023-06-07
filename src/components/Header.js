@@ -29,6 +29,8 @@ const Header = ({
 					fill
 					className="object-top object-cover"
 					alt="banner"
+					blurDataURL={backgroundImageURL}
+					placeholder="blur" 
 				/>
 				<div className="gradient-black-top absolute top-0 left-0 w-full h-full"></div>
 				<Navbar />

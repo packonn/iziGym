@@ -20,6 +20,7 @@ const BandeauInfo = () => {
 						alt="clock logo"
 						width={20}
 						height={20}
+						
 					/>
 					<div
 						className="ml-2 text-16"

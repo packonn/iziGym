@@ -43,7 +43,8 @@ export default function SwiperGallery({ data, breakpoints, slidesPerView }) {
                                 className="shadow relative    rounded cursor-pointer"
                             >
                                 <div className='w-full h-[250px]  relative '>
-                                    <Image src={item} alt="veterinary" fill className="object-cover" />
+                                    <Image src={item} alt="veterinary" fill className="object-cover" placeholder="blur"
+                                    blurDataURL={item} />
                                 </div>
                             </SwiperSlide>
 

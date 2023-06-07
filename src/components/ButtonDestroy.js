@@ -12,6 +12,8 @@ const ButtonDestroy = ({ text, onPress,target, icon, primary, secondary, white,c
 						src={icon}
 						width={21}
 						height={21}
+						blurDataURL={icon}
+						placeholder="blur" 
 					/>}
 					<p className={`${classCustom} ${icon && " ml-4"} ${textColor} font-anton lg:text-xl text-16`}>
 						{text}

@@ -79,6 +79,8 @@ export default function SectionContact(props) {
 					fill
 					className="object-cover "
 					alt="banner"
+					blurDataURL={bannerBottomURL}
+					placeholder="blur" 
 				/>
 			</div>
 			{formIsLoading && <Loader />}

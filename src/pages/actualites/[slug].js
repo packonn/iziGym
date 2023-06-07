@@ -94,6 +94,7 @@ export const getServerSideProps = async (context) => {
 }
 
 const ActualiteSlug = ({ slug, actu, actus }) => {
+	console.log('actu', actu)
 	const [showVideo, setShowVideo] = useState(false)
 
 	useEffect(() => {
@@ -121,11 +122,15 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 						className="w-full h-full object-contain object-center  "
 						src={actu.groupeChampsArticle.actuimage.sourceUrl}
 						alt="header"
+						placeholder="blur"
+						blurDataURL={actu.groupeChampsArticle.actuimage.sourceUrl}
 					/>
 					<Image
 						fill
 						className="w-full h-full object-cover -z-10 blur-[5px] absolute top-0 left-0  "
 						src={actu.groupeChampsArticle.actuimage.sourceUrl}
+						placeholder="blur"
+						blurDataURL={actu.groupeChampsArticle.actuimage.sourceUrl}
 						alt="header"
 					/>
 				</div>
@@ -137,15 +142,26 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 						className="py-4"
 					></div>
 					{showVideo && (
-						<div className="player-wrapper overflow-hidden p-[0px]  bg-black ">
-							<VideoPlayer
-								url={actu.groupeChampsArticle.videourl}
-								isPlaying={false}
-							/>
-						</div>
+				<div>
+				<h3
+				className={`font-great  text-[70px]  text-secondary      -mt-2  `}
+				
+			>Vidéo</h3>
+				<div className="player-wrapper overflow-hidden p-[0px]  bg-black ">
+				<VideoPlayer
+				url={actu.groupeChampsArticle.videourl}
+				isPlaying={false}
+				/>
+				</div>
+				</div>
 					)}
-					{actu.groupeChampsArticle.gallery !== null ?? (
+
+					{actu.groupeChampsArticle.gallery !== null && (
 						<div className="mt-4">
+						<h3
+						className={`font-great  text-[70px]  text-secondary      -mt-2  `}
+						
+					>Gallerie</h3>
 							<SwiperGallery
 								data={[
 									...actu.groupeChampsArticle.gallery.map(

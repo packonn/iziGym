@@ -16,7 +16,8 @@ export default function ContentDynamic({
 content,
 collapse,
 videoURL,
-subscriptions
+subscriptions,
+dataInfoGeneral
 }) {
 	return (
 		<div className="container py-20 grid grid-cols-4 gap-x-6">
@@ -27,7 +28,7 @@ subscriptions
 					color="secondary"
 				/>
 				
-				<div dangerouslySetInnerHTML={{__html:content}} className="font-roboto text-16">
+				<div dangerouslySetInnerHTML={{__html:content}} className="font-roboto dropdownContentCustomHtml text-16">
 				</div>
 				{collapse && <div className="mt-10 pb-10">
 					<Dropdown collapse={collapse} />
@@ -63,7 +64,7 @@ isPlaying={false}
 				</div>
 			</div>
 			<div className="lg:col-span-1 col-span-4 relative">
-				<div className="sticky top-20">
+				<div className=" top-20">
 				<div className="bg-primary lg:p-6 px-4 py-4 ">
 				<p className="text-[37px] font-anton uppercase text-white">
 				Les abonnements
@@ -74,20 +75,21 @@ isPlaying={false}
 							secondary
 							icon="/logo/white-mail.svg"
 							text="S'inscire à la salle"
-							href="#contact"
+							href={`mailto:${dataInfoGeneral.email}`}
+
 							
 						/>
 						<ButtonDestroy
 							white
 							icon="/logo/black-phone.svg"
-							text="09 54 59 76 86"
-							href="tel:+3954597686"
+							text={dataInfoGeneral.phone}
+							href={`tel:${dataInfoGeneral.phone}`}
 						/>
 						</div>
 				</div>
 				{subscriptions && subscriptions.map((subscription, index) => {
 					return (
-						<SubscriptionCard data={subscription} key={index} customContainerClass={' !min-h-full odd:bg-[#F4F4F4] '}  />
+						<SubscriptionCard data={subscription} key={index} customContainerClass={' !min-h-full odd:bg-[#f2f2f2] '}  />
 					)
 				})}
 				</div>

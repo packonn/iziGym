@@ -128,7 +128,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 		>
 			<SectionServices spaces={spaces} />
 			<SectionActus bottomBanner actus={actus} />
-			<SectionWhy />
+			<SectionWhy options={options} />
 			<Planning
 				planning={options.planning}
 				urlDeReservatioDesCoursEnLigne={

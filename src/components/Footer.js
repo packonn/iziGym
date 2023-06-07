@@ -157,6 +157,8 @@ const Footer = ({ contactBannerColor }) => {
 								fill
 								className="lg:ml-4 mt-5 lg:mt-0  object-cover "
 								alt="logo maps"
+								blurDataURL="/assets-dev/maps.png"
+						placeholder="blur" 
 							/>
 						</Link>
 					</div>
