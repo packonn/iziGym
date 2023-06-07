@@ -100,9 +100,9 @@ const SectionWhy = ({options}) => {
 					</div>
 				</div>
 			</div>
-			<div className="relative  w-full h-20 -mt-16 z-50 ">
+			{/*<div className="relative  w-full h-20 -mt-16 z-50 ">
 				<Image src="/logo/wave-black.png" alt="banner" fill />
-			</div>
+			</div>*/}
 		</div>
 	)
 }

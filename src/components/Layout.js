@@ -100,6 +100,7 @@ export default function Layout(props) {
 			<DataContextProvider>
 			<Footer contactBannerColor={props.contactBannerColor} />
 			</DataContextProvider>
+
 		</>
 	)
 }
