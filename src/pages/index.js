@@ -127,6 +127,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			title3="La forme avant la frime !"
 			hours
 		>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> </meta>
 			<SectionServices spaces={spaces} />
 			<SectionActus bottomBanner actus={actus} />
 			<SectionWhy options={options} />
