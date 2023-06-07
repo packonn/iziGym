@@ -91,6 +91,7 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
+			fetchPolicy: "no-cache",
 		})
 
 		spaces = await response.data.spaces.nodes
@@ -119,7 +120,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			backgroundImageURL="/assets-dev/header.png"
 			title1="Club"
 			title2="IZI GYM"
-			title3="Deviens la meileure version de toi même !"
+			title3="La forme avant la frime !"
 			hours
 		>
 			<SectionServices spaces={spaces} />
