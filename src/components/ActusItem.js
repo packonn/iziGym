@@ -2,10 +2,11 @@ import dayjs from "dayjs"
 import Image from "next/image"
 import Link from "next/link"
 import { actusURL } from "../../helpers"
+import "dayjs/locale/fr"
 
 const ActusItem = ({ item }) => {
-	let dateEnd = dayjs(item.groupeChampsArticle.enddate).format("DD MMM")
-	let dateStart = dayjs(item.groupeChampsArticle.startdate).format("DD MMM")
+	let dateEnd = dayjs(item.groupeChampsArticle.enddate).locale("fr").format("DD MMM")
+	let dateStart = dayjs(item.groupeChampsArticle.startdate).locale("fr").format("DD MMM")
 
 	return (
 		<Link

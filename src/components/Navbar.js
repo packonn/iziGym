@@ -25,24 +25,28 @@ export const navigationURLS = (router) => {
 			href: homeURL,
 			current: router.asPath === homeURL,
 			header: true,
+			responsiveHeader: true,
 		},
 		{
 			name: "Actualités",
 			href: actusURL,
 			current: router.asPath.includes(actusURL),
 			header: true,
+			responsiveHeader: true,
 		},
 		{
 			name: "Cours collectif",
 			href: spacesURL + coursCollectifURL,
 			current: router.asPath.includes(coursCollectifURL),
 			header: true,
+			responsiveHeader: true,
 		},
 		{
 			name: "Abonnements",
 			href: abonnementsURL,
 			current: router.asPath.includes(abonnementsURL),
 			header: true,
+			responsiveHeader: true,
 		},
 		{
 			name: "Règlement intérieur",
@@ -50,24 +54,28 @@ export const navigationURLS = (router) => {
 			current: router.asPath.includes(reglementInterieurURL),
 			header: false,
 			header: false,
+			responsiveHeader: true,
 		},
 		{
 			name: "Mentions légales",
 			href: mentionslegalesURL,
 			current: router.asPath.includes(mentionslegalesURL),
 			header: false,
+			responsiveHeader: true,
 		},
 		{
 			name: "Conditions générales de vente",
 			href: cgvURL,
 			current: router.asPath.includes(cgvURL),
 			header: false,
+			responsiveHeader: true,
 		},
 		{
 			name: "Règlement intérieur",
 			href: reglementInterieurURL,
 			current: router.asPath.includes(reglementInterieurURL),
 			header: false,
+			responsiveHeader: true,
 		},
 		
 	]
@@ -166,7 +174,7 @@ export default function Navbar() {
 								alt="Your Company"
 							/>
 							{navigation
-								.filter((item) => item.header)
+								.filter((item) => item.responsiveHeader)
 								.map((item) => (
 									<Disclosure.Button
 										key={item.name}

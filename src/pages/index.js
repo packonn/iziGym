@@ -6,6 +6,9 @@ import SectionServices from "@/components/SectionServices"
 import SectionWhy from "@/components/SectionWhy"
 import { gql } from "@apollo/client"
 import apolloClient from "../../apollo-client"
+import dayjs from "dayjs"
+import "dayjs/locale/fr"
+
 
 export const getServerSideProps = async (context) => {
 	let subscriptions = []
