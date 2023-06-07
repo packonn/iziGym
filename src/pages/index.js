@@ -9,7 +9,6 @@ import apolloClient from "../../apollo-client"
 import dayjs from "dayjs"
 import "dayjs/locale/fr"
 
-
 export const getServerSideProps = async (context) => {
 	let subscriptions = []
 	let options = null
@@ -127,7 +126,6 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			title3="La forme avant la frime !"
 			hours
 		>
-		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> </meta>
 			<SectionServices spaces={spaces} />
 			<SectionActus bottomBanner actus={actus} />
 			<SectionWhy options={options} />
@@ -138,14 +136,15 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 				}
 			/>*/}
 			<div className=" bg-bottomHeader absolute h-40 w-full -mt-[150px] z-[9999]  bg-repeat"></div>
-			
-			
 
-			<iframe loading="eager" src={options.urlcalendar} width="100%" height="700px"  frameborder="0" 
-			
-			style={{marginBottom: 10 + 'em', marginTop: 5 + 'em'}} 
+			<iframe
+				loading="eager"
+				src={options.urlcalendar}
+				width="100%"
+				height="700px"
+				frameborder="0"
+				style={{ marginBottom: 10 + "em", marginTop: 5 + "em" }}
 			></iframe>
-
 
 			<div className="relative mt-20">
 				<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
