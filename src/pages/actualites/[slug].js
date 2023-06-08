@@ -5,7 +5,7 @@ import { useRouter } from "next/router"
 import Layout from "@/components/Layout"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import VideoPlayer from "@/components/Video"
+import VideoPlayer from "@/components/VideoXL"
 import SwiperGallery from "@/components/SwiperGallery"
 import SectionActus from "@/components/SectionActus"
 import {
@@ -94,8 +94,10 @@ export const getServerSideProps = async (context) => {
 }
 
 const ActualiteSlug = ({ slug, actu, actus }) => {
-	console.log("actu", actu)
 	const [showVideo, setShowVideo] = useState(false)
+	
+	const otherActus = actus.filter((actu) => actu.slug !== slug)
+	console.log("otherActus", otherActus)
 
 	useEffect(() => {
 		setShowVideo(true)
@@ -111,11 +113,11 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 			backgroundImageURL={actu.featuredImage.node.sourceUrl}
 			title1={actu.title}
 			title2={actu.groupeChampsArticle.subtitle}
-			title3={dateStart}
 			center
 			classCustom="md:h-[100vh] !md:min-h-[100vh] h-[60vh] min-h-[60vh]"
+			contactBannerColor={otherActus.lenght > 0 ? "cream" : "white"}
 		>
-			<div className="container md:w-[884px] w-full pb-[80px] -mt-[90px]">
+			<div className="container md:max-w-[884px] w-full pb-[80px] -mt-[90px]">
 				<div className=" z-[9999] overflow-hidden flex justify-center items-center relative  md:h-[600px]  h-[400px] ">
 					<Image
 						fill
@@ -146,7 +148,7 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 						className="py-4"
 					></div>
 					{showVideo && (
-						<div>
+						<div className="">
 							<h3
 								className={`font-great  text-[70px]  text-secondary      -mt-2  `}
 							>
@@ -160,6 +162,8 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 							</div>
 						</div>
 					)}
+					
+
 
 					{actu.groupeChampsArticle.gallery !== null && (
 						<div className="mt-4">
@@ -181,7 +185,11 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 					)}
 				</div>
 			</div>
-			<SectionActus actus={actus.filter((e, i) => e.slug !== slug)} />
+			{
+				(otherActus && otherActus.length > 0 ) && (
+					<SectionActus actus={otherActus} />
+				)
+			}
 		</Layout>
 	)
 }

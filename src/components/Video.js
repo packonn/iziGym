@@ -6,7 +6,7 @@ const VideoPlayer = ({url, isPlaying}) => {
     const playingVideo = isPlaying !== undefined ? isPlaying : true
 
     return (
-        <div className="flex items-center justify-center w-full h-[45Opx] sm:h-[450px] ">
+        <div className="flex items-center justify-center w-full h-[25Opx] md:h-[450px] ">
             <div className="relative w-full h-full overflow-hidden">
                 <ReactPlayer url={url} width="100%" height="100%" controls={false} playing={playingVideo}
                              playsinline={true} volume={0} muted={true} loop ref={ref}

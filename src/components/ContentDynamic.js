@@ -1,7 +1,7 @@
 import Dropdown from "./Dropdown"
 import Button from "@/components/ButtonDestroy"
 import { Title } from "@/components/Title"
-import VideoPlayer from "@/components/Video"
+import VideoPlayer from "@/components/VideoXL"
 import SwiperGallery from "@/components/SwiperGallery"
 import { SubscriptionCard } from "./SubscriptionCard"
 import ButtonDestroy from "@/components/ButtonDestroy"

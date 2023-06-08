@@ -22,6 +22,7 @@ let generalInfos = null
                   }
               }
             }`,
+            fetchPolicy: 'no-cache'
         });
 
         generalInfos = await response.data.themeGeneralSettings.option
