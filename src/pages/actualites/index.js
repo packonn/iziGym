@@ -85,7 +85,7 @@ const Actualites = ({  actus, pageInfo,last, first }) => {
 	return (
 		<Layout
 			contactBannerColor="white"
-			backgroundImageURL="/assets-dev/bg-actus.jpg"
+			backgroundImageURL="/assets-dev/bg-actus.webp"
 			title1="Actualités"
 			center
 			classCustom=" min-h-[300px] md:min-h-[400px]"
