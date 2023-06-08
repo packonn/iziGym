@@ -12,7 +12,7 @@ const BandeauInfo = () => {
 			<div className="flex flex-wrap justify-center items-center md:gap-10 gap-x-4 py-2 container">
 				<div className="flex items-center">
 					<Image src={pin} alt="Pin logo" width={15} height={20} />
-					<p className="ml-2 text-16">{dataInfosGeneral?.address}</p>
+					<p className="ml-2 text-16 text-center md:text-left">{dataInfosGeneral?.address}</p>
 				</div>
 				<div className="flex items-center">
 					<Image
