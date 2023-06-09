@@ -89,7 +89,7 @@ isPlaying={false}
 				</div>
 				{subscriptions && subscriptions.map((subscription, index) => {
 					return (
-						<SubscriptionCard data={subscription} key={index} customContainerClass={' !min-h-full odd:bg-[#e8e8e8] '}  />
+						<SubscriptionCard data={subscription} key={index} customContainerClass={' !min-h-full odd:bg-[#ededed] '}  />
 					)
 				})}
 				</div>

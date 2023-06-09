@@ -151,7 +151,7 @@ const Footer = ({ contactBannerColor }) => {
 								</div>
 							</div>
 						</div>
-						<Link target="_blank" href={`https://www.google.com/maps/search/${dataInfosGeneral?.address}`} className="lg:col-span-1 col-span-5  relative w-full overflow-hidden  md:h-[300px] h-[200px] lg:border-l lg:pl-4 lg:border-t-0  border-t lg:mt-0  mt-5 border-gray ">
+						{dataInfosGeneral?.addressurl && <Link target="_blank" href={dataInfosGeneral?.addressurl } className="lg:col-span-1 col-span-5  relative w-full overflow-hidden  md:h-[300px] h-[200px] lg:border-l lg:pl-4 lg:border-t-0  border-t lg:mt-0  mt-5 border-gray ">
 							<Image
 								src="/assets-dev/maps.png"
 								fill
@@ -160,7 +160,7 @@ const Footer = ({ contactBannerColor }) => {
 								blurDataURL="/assets-dev/maps.png"
 						placeholder="blur" 
 							/>
-						</Link>
+						</Link>}
 					</div>
 				</div>
 			</div>

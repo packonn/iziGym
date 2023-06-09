@@ -130,13 +130,13 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			<SectionServices spaces={spaces} />
 			<SectionActus bottomBanner actus={actus} />
 			<SectionWhy options={options} />
-			{/*<Planning
+			<Planning
 				planning={options.planning}
 				urlDeReservatioDesCoursEnLigne={
 					options.urlDeReservatioDesCoursEnLigne
 				}
-			/>*/}
-			<div className=" bg-bottomHeader absolute h-40 w-full -mt-[150px] z-[9999]  bg-repeat"></div>
+			/>
+			{/*<div className=" bg-bottomHeader absolute h-40 w-full -mt-[150px] z-[9999]  bg-repeat"></div>
 
 			<iframe
 				loading="eager"
@@ -145,7 +145,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 				height="700px"
 				frameborder="0"
 				style={{ marginBottom: 10 + "em", marginTop: 5 + "em" }}
-			></iframe>
+			></iframe>*/}
 
 			<div className="relative mt-20">
 				<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>

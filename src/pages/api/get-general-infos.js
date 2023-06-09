@@ -18,7 +18,7 @@ let generalInfos = null
                     hoursreception
                     instagramurl
                     urlDeReservatioDesCoursEnLigne
-                    
+                    addressurl
                   }
               }
             }`,

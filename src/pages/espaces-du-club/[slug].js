@@ -9,6 +9,7 @@ import {  useEffect, useState } from "react"
 import apolloClient from "../../../apollo-client"
 import { gql } from "@apollo/client"
 import ButtonDestroy from "@/components/ButtonDestroy"
+import Planning from "@/components/Planning"
 
 export const getServerSideProps = async (context) => {
 	const slug = context.params.slug
@@ -24,7 +25,18 @@ try {
 					email
 					phone
 					urlcalendar
+					urlDeReservatioDesCoursEnLigne
+							infosubscription
+							planning {
+								course {
+									activity
+									hours
+									when
+								}
+								day
+							}
 				}
+				
 			}
 			space(idType: SLUG, id: "${slug}") {
 			  title
@@ -117,6 +129,13 @@ const SpaceDetails = ({space,dataInfoGeneral, slug}) => {
 				className={`font-great leading-[60px] text-[70px] mb-10 mt-10 text-secondary      `}
 				
 			>Planning des cours collectifs</h3>
+			<Planning
+			planning={dataInfoGeneral.planning}
+			urlDeReservatioDesCoursEnLigne={
+				dataInfoGeneral.urlDeReservatioDesCoursEnLigne
+			}
+		/>
+			{/*
 <div className="md:flex hidden">
 			
 			<iframe src={dataInfoGeneral.urlcalendar} width="100%" height="700px"  frameborder="0" 
@@ -131,6 +150,7 @@ const SpaceDetails = ({space,dataInfoGeneral, slug}) => {
 			</div>
 			
 			</div>
+		*/}
 </div>
 
 }
