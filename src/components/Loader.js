@@ -3,7 +3,7 @@ import React from "react";
 
 const Loader = () => {
     return (
-        <div className="z-[99999999] w-full  top-0 bg-white/50   fixed h-full  m-auto left-0 right-0 flex justify-center items-center">
+        <div className="z-[9999999999999999] w-full  top-0 bg-white/50   fixed h-full  m-auto left-0 right-0 flex justify-center items-center">
 
         <div class="main-fader" responsive-height-comments>
   <div class="loader">

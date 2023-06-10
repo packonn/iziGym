@@ -32,16 +32,13 @@ const ActusItem = ({ item }) => {
 				<div className="bg-primary z-10 absolute -top-1 left-4 text-white font-bold  text-4xl py-2 px-5 ">
 					{item.groupeChampsArticle.enddate ? (
 						<div className="flex">
-							<p className="font-anton text-[37px] font-regular ">
-								{dateStart}
+							<p className="font-anton text-md md:text-[37px] font-regular ">
+								{dateStart} - {dateEnd}
 							</p>
-							<span className="mx-2">-</span>
-							<p className="font-anton text-[37px] font-regular">
-								{dateEnd}
-							</p>
+							
 						</div>
 					) : (
-						<p className="font-anton text-[37px] font-regular">
+						<p className="font-anton text-md md:text-[37px] font-regular">
 							{dateStart}
 						</p>
 					)}

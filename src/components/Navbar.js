@@ -81,7 +81,7 @@ export default function Navbar() {
 	const navigation = navigationURLS(router)
 	const {dataInfosGeneral} = useContext(DataContext)
 	return (
-		<Disclosure as="nav" className="bg-transparent w-full relative z-[9999999999] ">
+		<Disclosure as="nav" className="bg-transparent w-full relative z-[99999999] ">
 			{({ open }) => (
 				<>
 					<div className="  container  ">
@@ -109,12 +109,12 @@ export default function Navbar() {
 								<div className="flex flex-shrink-0 items-center">
 									<Link href={homeURL}>
 										<img
-											className="block md:h-14 h-12 bg-secondary w-auto lg:hidden"
+											className="block md:h-14 h-12 pb-1 bg-secondary w-auto lg:hidden"
 											src="/logo/logo.png"
 											alt="IziGym Salle de sport 17292 Le Thou"
 										/>
 										<img
-											className="hidden md:h-14 h-10 bg-secondary w-auto lg:block"
+											className="hidden md:h-14 h-10 pb-1 bg-secondary w-auto lg:block"
 											src="/logo/logo.png"
 											alt="IziGym Salle de sport 17290 Le Thou"
 										/>
@@ -161,7 +161,7 @@ export default function Navbar() {
 					<Disclosure.Panel className=" lg:hidden py-4 container bg-secondary flex  absolute  w-full top-0 left-0">
 						<div className="space-y-1 flex-1 px-2 pb-3 pt-2">
 							<img
-								className="block h-12 w-auto bg-secondary lg:hidden mb-4"
+								className="block h-12 w-auto bg-secondary pb-1 lg:hidden mb-4"
 								src="/logo/logo.png"
 								alt="Your Company"
 							/>
