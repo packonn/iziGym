@@ -36,7 +36,7 @@ export const ActusCarousel = ({ actus }) => {
 						return (
 							<SwiperSlide
 								key={i}
-								className="bg-red-400   !h-[420px] relative z-50 flex  justify-center items-center "
+								className="bg-secondary   !h-[420px] relative z-50 flex  justify-center items-center "
 							>
 								<ActusItem item={item} />
 							</SwiperSlide>

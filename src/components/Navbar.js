@@ -49,14 +49,6 @@ export const navigationURLS = (router) => {
 			responsiveHeader: true,
 		},
 		{
-			name: "Règlement intérieur",
-			href: reglementInterieurURL,
-			current: router.asPath.includes(reglementInterieurURL),
-			header: false,
-			header: false,
-			responsiveHeader: true,
-		},
-		{
 			name: "Mentions légales",
 			href: mentionslegalesURL,
 			current: router.asPath.includes(mentionslegalesURL),
@@ -117,12 +109,12 @@ export default function Navbar() {
 								<div className="flex flex-shrink-0 items-center">
 									<Link href={homeURL}>
 										<img
-											className="block h-14 bg-secondary w-auto lg:hidden"
+											className="block md:h-14 h-12 bg-secondary w-auto lg:hidden"
 											src="/logo/logo.png"
-											alt="IziGym Salle de sport 17290 Le Thou"
+											alt="IziGym Salle de sport 17292 Le Thou"
 										/>
 										<img
-											className="hidden h-14 bg-secondary w-auto lg:block"
+											className="hidden md:h-14 h-10 bg-secondary w-auto lg:block"
 											src="/logo/logo.png"
 											alt="IziGym Salle de sport 17290 Le Thou"
 										/>

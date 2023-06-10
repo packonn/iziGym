@@ -20,7 +20,7 @@ const ActusItem = ({ item }) => {
 						? item?.featuredImage?.node?.sourceUrl
 						: "/assets-dev/placeholder.png"
 				}
-				blurDataURL={item?.featuredImage?.node?.sourceUrl
+				blurDataURL={(item.featuredImage.node && item.featuredImage.node.sourceUrl)
 					? item?.featuredImage?.node?.sourceUrl
 					: "/assets-dev/placeholder.png"}
 				placeholder="blur"
