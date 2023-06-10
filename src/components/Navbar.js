@@ -117,12 +117,12 @@ export default function Navbar() {
 								<div className="flex flex-shrink-0 items-center">
 									<Link href={homeURL}>
 										<img
-											className="block h-8 w-auto lg:hidden"
+											className="block h-14 bg-secondary w-auto lg:hidden"
 											src="/logo/logo.png"
 											alt="IziGym Salle de sport 17290 Le Thou"
 										/>
 										<img
-											className="hidden h-8 w-auto lg:block"
+											className="hidden h-14 bg-secondary w-auto lg:block"
 											src="/logo/logo.png"
 											alt="IziGym Salle de sport 17290 Le Thou"
 										/>
@@ -169,7 +169,7 @@ export default function Navbar() {
 					<Disclosure.Panel className=" lg:hidden py-4 container bg-secondary flex  absolute  w-full top-0 left-0">
 						<div className="space-y-1 flex-1 px-2 pb-3 pt-2">
 							<img
-								className="block h-8 w-auto lg:hidden mb-4"
+								className="block h-12 w-auto bg-secondary lg:hidden mb-4"
 								src="/logo/logo.png"
 								alt="Your Company"
 							/>
