@@ -3,30 +3,37 @@ import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
 
 const SectionWhy = ({options}) => {
+	
 	const array = [
 		{
-			title: "des coachs à fond",
-			body: "Lorem ipsum dolor sit amet consectetur. Sollicitudin tincidunt purus scelerisque tempus libero et quam ullamcorper imperdiet. Tortor integer leo dolor.",
+			title: "Des coachs à fond",
+			body: "Bénéficiez d'un encadrement personnalisé par des coachs experts et hyper cool qui vous guident vers vos objectifs",
+			icon : "/logo/fitness.svg"
 		},
 		{
-			title: "des coachs à fond",
-			body: "Lorem ipsum dolor sit amet consectetur. Sollicitudin tincidunt purus scelerisque tempus libero et quam ullamcorper imperdiet. Tortor integer leo dolor.",
+			title: "Une salle hyper équipée",
+			body: "Découvrez une salle de sport ultra équipée, dotée d'équipements de pointe pour des entraînements performants.",
+			icon: "/logo/gym.svg"
 		},
 		{
-			title: "des coachs à fond",
-			body: "Lorem ipsum dolor sit amet consectetur. Sollicitudin tincidunt purus scelerisque tempus libero et quam ullamcorper imperdiet. Tortor integer leo dolor.",
+			title: "Un coaching personnalisé",
+			body: "Profitez d'un accompagnement personnalisé adapté à vos besoins et objectifs spécifiques.",
+			icon: "/logo/teacher.svg"
 		},
 		{
-			title: "des coachs à fond",
-			body: "Lorem ipsum dolor sit amet consectetur. Sollicitudin tincidunt purus scelerisque tempus libero et quam ullamcorper imperdiet. Tortor integer leo dolor.",
+			title: "Une ambiance de folie",
+			body: "Plongez dans une ambiance dynamique et stimulante qui vous motive à repousser vos limites",
+			icon: "/logo/party-popper.svg"
 		},
 		{
-			title: "des coachs à fond",
-			body: "Lorem ipsum dolor sit amet consectetur. Sollicitudin tincidunt purus scelerisque tempus libero et quam ullamcorper imperdiet. Tortor integer leo dolor.",
+			title: "Des cours collectifs fun",
+			body: "Participez à des cours collectifs énergiques qui vous permettent de vous dépenser intensément et de vous amuser en groupe.",
+			icon: "/logo/baseline-sports-gymnastics.svg"
 		},
 		{
-			title: "des coachs à fond",
-			body: "Lorem ipsum dolor sit amet consectetur. Sollicitudin tincidunt purus scelerisque tempus libero et quam ullamcorper imperdiet. Tortor integer leo dolor.",
+			title: "Des événements réguliers",
+			body: "Profitez d'une atmosphère conviviale et décontractée, ainsi que d'une variété d'événements et de sorties régulièrement organisés pour enrichir votre expérience sportive",
+			icon: "/logo/event-star.svg"	
 		},
 	]
 
@@ -46,7 +53,7 @@ const SectionWhy = ({options}) => {
 							<div key={i} className={"flex "}>
 								<div className="bg-rectangleOrange w-[66px] h-[66px] bg-contain relative ">
 									<Image
-										src={"/logo/runner.svg"}
+										src={e.icon}
 										fill
 										alt="runner"
 										className="p-3"
