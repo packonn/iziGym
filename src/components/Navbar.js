@@ -86,20 +86,20 @@ export default function Navbar() {
 				<>
 					<div className="  container  ">
 						<div className="relative flex h-16 items-center justify-between">
-							<div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
+							<div className="absolute inset-y-0  right-0 flex items-center lg:hidden">
 								{/* Mobile menu button*/}
-								<Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+								<Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white ">
 									<span className="sr-only">
 										Open main menu
 									</span>
 									{open ? (
 										<XMarkIcon
-											className="block h-6 w-6 text-white"
+											className="block h-8 w-8 text-white"
 											aria-hidden="true"
 										/>
 									) : (
 										<Bars3Icon
-											className="block h-6 w-6 text-white"
+											className="block h-8 w-8 text-white"
 											aria-hidden="true"
 										/>
 									)}
