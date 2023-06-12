@@ -41,12 +41,23 @@ export const getServerSideProps = async (context) => {
 							urlDeReservatioDesCoursEnLigne
 							infosubscription
 							planning {
+								day
 								course {
-									activity
+									name {
+										... on Cour {
+											id
+											infoCour {
+												color
+												calorie
+											}
+											title
+										}
+									}
 									hours
 									when
+									activity
+									semainesPaires
 								}
-								day
 							}
 						}
 					}
