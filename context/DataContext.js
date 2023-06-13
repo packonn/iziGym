@@ -17,7 +17,12 @@ const DataContextProvider = (props) => {
                 options
             );
             const response = await results.json();
-			setDataInfosGeneral(response.generalInfos)
+            if(response.error) {
+                console.log(response.message);
+              
+            }else{
+                setDataInfosGeneral(response.generalInfos)
+            }
          
         };
         getCategories();

@@ -9,12 +9,16 @@ import apolloClient from "../../apollo-client"
 import dayjs from "dayjs"
 import "dayjs/locale/fr"
 import Head from "next/head"
+import { redirect } from "next/dist/server/api-utils"
 
 export const getServerSideProps = async (context) => {
 	let subscriptions = []
 	let options = null
 	let spaces = []
 	let actus = {}
+
+
+
 	try {
 		const response = await apolloClient.query({
 			query: gql`
@@ -105,7 +109,18 @@ export const getServerSideProps = async (context) => {
 		actus = await response.data.posts.nodes
 	} catch (error) {
 		console.log("error", error)
+		// redirect to 404 page if an error occurred
+			// redirect to 404 page
+return {
+	redirect: {
+	  permanent: false,
+	  destination: `500`
+	},
+  };
+	
+
 	}
+	
 
 	return {
 		props: {
@@ -127,32 +142,30 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			title3="La forme sans la frime !"
 			hours
 		>
+		{spaces && 
 			<SectionServices spaces={spaces} />
+		}
+		{(actus  &&  actus.length > 0) &&
+		
 			<SectionActus bottomBanner actus={actus} />
+		}
+		{options && 
 			<SectionWhy options={options} />
-			<Planning
-				planning={options.planning}
+		}
+			{(options && options.planning) && <Planning
+				planning={options?.planning}
 				urlDeReservatioDesCoursEnLigne={
-					options.urlDeReservatioDesCoursEnLigne
+					options?.urlDeReservatioDesCoursEnLigne
 				}
-			/>
-			{/*<div className=" bg-bottomHeader absolute h-40 w-full -mt-[150px] z-[9999]  bg-repeat"></div>
-
-			<iframe
-				loading="eager"
-				src={options.urlcalendar}
-				width="100%"
-				height="700px"
-				frameborder="0"
-				style={{ marginBottom: 10 + "em", marginTop: 5 + "em" }}
-			></iframe>*/}
+			/>}
+			
 
 			<div className="relative mt-20">
 				<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
-				<SectionPrices
+				{(subscriptions && options && options.infosubscription ) && <SectionPrices
 					subscriptions={subscriptions}
 					infoSubscription={options.infosubscription}
-				/>
+				/>}
 			</div>
 		</Layout>
 	)
