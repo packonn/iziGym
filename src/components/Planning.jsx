@@ -1,23 +1,10 @@
 import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
-import { useState } from "react"
-import ModalPlanning from "./ModalPlanning"
-const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
-	const [modale, setModale] = useState(false)
 
-	const openModalPlanning = (value) => {
-		setModale(value)
-	}
+const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 	return (
 		<>
-			<div
-				className="bg-black2  relative z-50 md:pb-20 pb-40"
-				onClick={() => {
-					if (modale) {
-						openModalPlanning(false)
-					}
-				}}
-			>
+			<div className="bg-black2  relative z-50 md:pb-20 pb-40">
 				{modale && <ModalPlanning />}
 				<div className="bg-floatLeftGray absolute top-0 right-0 h-full w-full bg-right bg-no-repeat -z-30"></div>
 				<div className="bg-floatRightGray absolute top-0 left-0 h-full w-full bg-no-repeat -z-30"></div>
