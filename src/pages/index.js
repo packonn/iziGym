@@ -6,9 +6,7 @@ import SectionServices from "@/components/SectionServices"
 import SectionWhy from "@/components/SectionWhy"
 import { gql } from "@apollo/client"
 import apolloClient from "../../apollo-client"
-import dayjs from "dayjs"
 import "dayjs/locale/fr"
-import Head from "next/head"
 import { redirect } from "next/dist/server/api-utils"
 
 export const getServerSideProps = async (context) => {
@@ -16,8 +14,6 @@ export const getServerSideProps = async (context) => {
 	let options = null
 	let spaces = []
 	let actus = {}
-
-
 
 	try {
 		const response = await apolloClient.query({
@@ -110,7 +106,6 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
-			fetchPolicy: "no-cache",
 		})
 
 		spaces = await response.data.spaces.nodes
@@ -121,17 +116,14 @@ export const getServerSideProps = async (context) => {
 	} catch (error) {
 		console.log("error", error)
 		// redirect to 404 page if an error occurred
-			// redirect to 404 page
-return {
-	redirect: {
-	  permanent: false,
-	  destination: `500`
-	},
-  };
-	
-
+		// redirect to 404 page
+		return {
+			redirect: {
+				permanent: false,
+				destination: `500`,
+			},
+		}
 	}
-	
 
 	return {
 		props: {
@@ -153,30 +145,28 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			title3="La forme sans la frime !"
 			hours
 		>
-		{spaces && 
-			<SectionServices spaces={spaces} />
-		}
-		{(actus  &&  actus.length > 0) &&
-		
-			<SectionActus bottomBanner actus={actus} />
-		}
-		{options && 
-			<SectionWhy options={options} />
-		}
-			{(options && options.planning) && <Planning
-				planning={options?.planning}
-				urlDeReservatioDesCoursEnLigne={
-					options?.urlDeReservatioDesCoursEnLigne
-				}
-			/>}
-			
+			{spaces && <SectionServices spaces={spaces} />}
+			{actus && actus.length > 0 && (
+				<SectionActus bottomBanner actus={actus} />
+			)}
+			{options && <SectionWhy options={options} />}
+			{options && options.planning && (
+				<Planning
+					planning={options?.planning}
+					urlDeReservatioDesCoursEnLigne={
+						options?.urlDeReservatioDesCoursEnLigne
+					}
+				/>
+			)}
 
 			<div className="relative mt-20">
 				<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
-				{(subscriptions && options && options.infosubscription ) && <SectionPrices
-					subscriptions={subscriptions}
-					infoSubscription={options.infosubscription}
-				/>}
+				{subscriptions && options && options.infosubscription && (
+					<SectionPrices
+						subscriptions={subscriptions}
+						infoSubscription={options.infosubscription}
+					/>
+				)}
 			</div>
 		</Layout>
 	)

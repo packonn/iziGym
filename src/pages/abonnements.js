@@ -32,7 +32,6 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
-			fetchPolicy: "no-cache",
 		})
 
 		subscriptions = await response.data.themeGeneralSettings.option
@@ -56,17 +55,14 @@ export default function Abonnements({ subscriptions, options }) {
 			contactBannerColor="white"
 			backgroundImageURL="/assets-dev/bg-abonnements.jpg"
 			title1="Les Abonnements"
-            center
+			center
 			classCustom=" min-h-[300px] md:min-h-[400px]"
-        >
-
-       
-        <SectionPrices
-        bgColor="white"
-        subscriptions={subscriptions}
-        infoSubscription={options.infosubscription}
-        />
-
-        </Layout>
-    )
+		>
+			<SectionPrices
+				bgColor="white"
+				subscriptions={subscriptions}
+				infoSubscription={options.infosubscription}
+			/>
+		</Layout>
+	)
 }

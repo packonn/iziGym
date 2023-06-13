@@ -1,11 +1,7 @@
 import Layout from "@/components/Layout"
-import {
-	breakPointsSwiper,
-	images,
-	slidesPerView,
-} from "../../../helpers"
+import { breakPointsSwiper, images, slidesPerView } from "../../../helpers"
 import ContentDynamic from "@/components/ContentDynamic"
-import {  useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import apolloClient from "../../../apollo-client"
 import { gql } from "@apollo/client"
 import ButtonDestroy from "@/components/ButtonDestroy"
@@ -16,9 +12,9 @@ export const getServerSideProps = async (context) => {
 	let space = []
 	let dataInfoGeneral = []
 
-try {
-	const response = await apolloClient.query({
-		query: gql`
+	try {
+		const response = await apolloClient.query({
+			query: gql`
 		{
 			themeGeneralSettings {
 				option {
@@ -28,12 +24,23 @@ try {
 					urlDeReservatioDesCoursEnLigne
 							infosubscription
 							planning {
+								day
 								course {
-									activity
+									name {
+										... on Cour {
+											id
+											infoCour {
+												color
+												calorie
+											}
+											title
+										}
+									}
 									hours
 									when
+									activity
+									semainesPaires
 								}
-								day
 							}
 				}
 				
@@ -68,36 +75,29 @@ try {
 			  }
 			}
 		  }`,
-		  fetchPolicy: "no-cache",
-	})
-	space = await response.data.space
-	dataInfoGeneral = await response.data.themeGeneralSettings.option
+		})
+		space = await response.data.space
+		dataInfoGeneral = await response.data.themeGeneralSettings.option
+	} catch (error) {
+		console.log("error", error)
+	}
 
-} catch (error) {
-	console.log('error', error)
-	
+	return {
+		props: {
+			space: space,
+			dataInfoGeneral: dataInfoGeneral,
+			slug: slug,
+		},
+	}
 }
 
-return {
-	props: {
-		space:space,
-		dataInfoGeneral:dataInfoGeneral, 
-		slug:slug
-	},
-}
-
-}
-
-
-
-const SpaceDetails = ({space,dataInfoGeneral, slug}) => {
+const SpaceDetails = ({ space, dataInfoGeneral, slug }) => {
 	console.log("dataInfo", dataInfoGeneral)
 	const [showVideo, setShowVideo] = useState(false)
 
 	useEffect(() => {
 		setShowVideo(true)
 	}, [])
-
 
 	return (
 		<Layout
@@ -107,35 +107,35 @@ const SpaceDetails = ({space,dataInfoGeneral, slug}) => {
 			title1={space.title}
 			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
-		<div className="py-20">
-			<ContentDynamic
-			subscriptions={space.groupeChampsEspacesDuClub.subscription}
-				showVideo={showVideo}
-				title={space.title}
-				videoURL={space.groupeChampsEspacesDuClub.videourl}
-				collapse={space.groupeChampsEspacesDuClub.collapse}
-				subtitle={space.groupeChampsEspacesDuClub.subtitle}
-				slidesPerView={slidesPerView}
-				content={space.content}
-				gallery={space.groupeChampsEspacesDuClub.galleriephotos}
-				breakPointsSwiper={breakPointsSwiper}
-				dataInfoGeneral={dataInfoGeneral}
-			/>
+			<div className="py-20">
+				<ContentDynamic
+					subscriptions={space.groupeChampsEspacesDuClub.subscription}
+					showVideo={showVideo}
+					title={space.title}
+					videoURL={space.groupeChampsEspacesDuClub.videourl}
+					collapse={space.groupeChampsEspacesDuClub.collapse}
+					subtitle={space.groupeChampsEspacesDuClub.subtitle}
+					slidesPerView={slidesPerView}
+					content={space.content}
+					gallery={space.groupeChampsEspacesDuClub.galleriephotos}
+					breakPointsSwiper={breakPointsSwiper}
+					dataInfoGeneral={dataInfoGeneral}
+				/>
 
-			
-{slug === 'cours-collectifs' &&
-<div className="container">
-<h3
-				className={`font-great leading-[60px] text-[70px] mb-10 mt-10 text-secondary      `}
-				
-			>Planning des cours collectifs</h3>
-			<Planning
-			planning={dataInfoGeneral.planning}
-			urlDeReservatioDesCoursEnLigne={
-				dataInfoGeneral.urlDeReservatioDesCoursEnLigne
-			}
-		/>
-			{/*
+				{slug === "cours-collectifs" && (
+					<div className="container">
+						<h3
+							className={`font-great leading-[60px] text-[70px] mb-10 mt-10 text-secondary      `}
+						>
+							Planning des cours collectifs
+						</h3>
+						<Planning
+							planning={dataInfoGeneral.planning}
+							urlDeReservatioDesCoursEnLigne={
+								dataInfoGeneral.urlDeReservatioDesCoursEnLigne
+							}
+						/>
+						{/*
 <div className="md:flex hidden">
 			
 			<iframe src={dataInfoGeneral.urlcalendar} width="100%" height="700px"  frameborder="0" 
@@ -151,10 +151,9 @@ const SpaceDetails = ({space,dataInfoGeneral, slug}) => {
 			
 			</div>
 		*/}
-</div>
-
-}
-</div>
+					</div>
+				)}
+			</div>
 		</Layout>
 	)
 }

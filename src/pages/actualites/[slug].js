@@ -76,7 +76,6 @@ export const getServerSideProps = async (context) => {
 				  }
 			  }
 			`,
-			fetchPolicy: "no-cache",
 		})
 		actu = await response.data.post
 		actus = await response.data.posts.nodes
@@ -95,7 +94,7 @@ export const getServerSideProps = async (context) => {
 
 const ActualiteSlug = ({ slug, actu, actus }) => {
 	const [showVideo, setShowVideo] = useState(false)
-	
+
 	const otherActus = actus.filter((actu) => actu.slug !== slug)
 	console.log("otherActus", otherActus)
 
@@ -162,8 +161,6 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 							</div>
 						</div>
 					)}
-					
-
 
 					{actu.groupeChampsArticle.gallery !== null && (
 						<div className="mt-4">
@@ -185,11 +182,9 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 					)}
 				</div>
 			</div>
-			{
-				(otherActus && otherActus.length > 0 ) && (
-					<SectionActus actus={otherActus} />
-				)
-			}
+			{otherActus && otherActus.length > 0 && (
+				<SectionActus actus={otherActus} />
+			)}
 		</Layout>
 	)
 }

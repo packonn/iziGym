@@ -1,31 +1,28 @@
-import Layout from "@/components/Layout";
-import SectionPrices from "@/components/SectionPrice";
+import Layout from "@/components/Layout"
+import SectionPrices from "@/components/SectionPrice"
 import { gql } from "@apollo/client"
-import apolloClient from "../../apollo-client";
+import apolloClient from "../../apollo-client"
 
 export const getServerSideProps = async (context) => {
 	let subscriptions = []
 	let options = null
-    let mentionslegales = null
+	let mentionslegales = null
 
 	try {
 		const response = await apolloClient.query({
-			query: gql `
+			query: gql`
 				{
-                    themeGeneralSettings {
+					themeGeneralSettings {
 						option {
 							mentionslegales
 						}
 					}
 				}
 			`,
-			fetchPolicy: "no-cache",
 		})
 
-
-mentionslegales = await response.data.themeGeneralSettings.option
+		mentionslegales = await response.data.themeGeneralSettings.option
 			.mentionslegales
-
 	} catch (error) {
 		console.log("error", error)
 	}
@@ -37,20 +34,19 @@ mentionslegales = await response.data.themeGeneralSettings.option
 	}
 }
 
-
-export default function Abonnements({mentionslegales}){
-    return (
-        <Layout 
-        contactBannerColor="white"
+export default function Abonnements({ mentionslegales }) {
+	return (
+		<Layout
+			contactBannerColor="white"
 			backgroundImageURL="/assets-dev/bg-abonnements.jpg"
 			title1="Mentions légales"
-            center
+			center
 			classCustom=" min-h-[440px]"
-        >
-
-       
-       <div className="container customMentionLegaleHTML py-20" dangerouslySetInnerHTML={{ __html: mentionslegales }}></div>
-
-        </Layout>
-    )
+		>
+			<div
+				className="container customMentionLegaleHTML py-20"
+				dangerouslySetInnerHTML={{ __html: mentionslegales }}
+			></div>
+		</Layout>
+	)
 }

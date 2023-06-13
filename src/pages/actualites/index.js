@@ -8,14 +8,15 @@ import Pagination from "@/components/Pagination"
 import { actusURL } from "../../../helpers"
 
 export const getServerSideProps = async (context) => {
-
 	let actus = []
 	let first = 6
 	let last = 6
 
-	const query = (context.query.paramsQuery) ? context.query.paramsQuery : `first: ${first}`
-    const currentPage = (context.query.page) ? context.query.page : 1;
-    let pageInfo = []
+	const query = context.query.paramsQuery
+		? context.query.paramsQuery
+		: `first: ${first}`
+	const currentPage = context.query.page ? context.query.page : 1
+	let pageInfo = []
 
 	try {
 		const response = await apolloClient.query({
@@ -54,7 +55,6 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
-			fetchPolicy: "no-cache",
 		})
 		actus = await response.data.posts.nodes
 		pageInfo = await response.data.posts.pageInfo
@@ -62,25 +62,22 @@ export const getServerSideProps = async (context) => {
 		console.log("error", error)
 	}
 
-
 	return {
 		props: {
 			actus: actus,
 			currentPage: currentPage,
 			pageInfo: pageInfo,
 			last: last,
-			first:first
+			first: first,
 		},
 	}
 }
 
-const Actualites = ({  actus, pageInfo,last, first }) => {
-
-
-    const hasPreviousPage = pageInfo.hasPreviousPage
-    const hasNextPage = pageInfo.hasNextPage
-    const startCursor = pageInfo.startCursor
-    const endCursor = pageInfo.endCursor
+const Actualites = ({ actus, pageInfo, last, first }) => {
+	const hasPreviousPage = pageInfo.hasPreviousPage
+	const hasNextPage = pageInfo.hasNextPage
+	const startCursor = pageInfo.startCursor
+	const endCursor = pageInfo.endCursor
 
 	return (
 		<Layout
@@ -100,7 +97,15 @@ const Actualites = ({  actus, pageInfo,last, first }) => {
 				})}
 			</div>
 			<div className="container pb-10">
-			<Pagination first={Number(first)} last={Number(last)} href={actusURL} hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} startCursor={startCursor} endCursor={endCursor} />
+				<Pagination
+					first={Number(first)}
+					last={Number(last)}
+					href={actusURL}
+					hasNextPage={hasNextPage}
+					hasPreviousPage={hasPreviousPage}
+					startCursor={startCursor}
+					endCursor={endCursor}
+				/>
 			</div>
 		</Layout>
 	)
