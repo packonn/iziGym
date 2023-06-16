@@ -106,7 +106,7 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
-			fetchPolicy: "no-cache",
+			//fetchPolicy: "no-cache",licy: "no-cache",
 		})
 
 		spaces = await response.data.spaces.nodes

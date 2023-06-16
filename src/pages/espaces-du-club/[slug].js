@@ -74,7 +74,7 @@ export const getServerSideProps = async (context) => {
 			  }
 			}
 		  }`,
-			fetchPolicy: "no-cache",
+			//fetchPolicy: "no-cache",licy: "no-cache",
 		})
 		space = await response.data.space
 		dataInfoGeneral = await response.data.themeGeneralSettings.option
