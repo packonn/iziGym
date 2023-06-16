@@ -82,7 +82,6 @@ export const getServerSideProps = async (context) => {
 }
 
 const SpaceDetails = ({ space, dataInfoGeneral, slug }) => {
-	console.log("dataInfo", dataInfoGeneral)
 	const [showVideo, setShowVideo] = useState(false)
 
 	useEffect(() => {
