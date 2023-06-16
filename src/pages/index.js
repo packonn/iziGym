@@ -7,7 +7,7 @@ import SectionWhy from "@/components/SectionWhy"
 import { gql } from "@apollo/client"
 import apolloClient from "../../apollo-client"
 import "dayjs/locale/fr"
-import { redirect } from "next/dist/server/api-utils"
+import Head from "next/head"
 
 export const getServerSideProps = async (context) => {
 	let subscriptions = []
@@ -106,6 +106,7 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
+			fetchPolicy: "no-cache",
 		})
 
 		spaces = await response.data.spaces.nodes
@@ -137,37 +138,42 @@ export const getServerSideProps = async (context) => {
 
 export default function Home({ subscriptions, options, spaces, actus }) {
 	return (
-		<Layout
-			contactBannerColor="cream"
-			backgroundImageURL="/assets-dev/bg-home.jpeg"
-			title1="Club"
-			title2="IZI GYM"
-			title3="La forme sans la frime !"
-			hours
-		>
-			{spaces && <SectionServices spaces={spaces} />}
-			{actus && actus.length > 0 && (
-				<SectionActus bottomBanner actus={actus} />
-			)}
-			{options && <SectionWhy options={options} />}
-			{options && options.planning && (
-				<Planning
-					planning={options?.planning}
-					urlDeReservatioDesCoursEnLigne={
-						options?.urlDeReservatioDesCoursEnLigne
-					}
-				/>
-			)}
-
-			<div className="relative mt-20">
-				<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
-				{subscriptions && options && options.infosubscription && (
-					<SectionPrices
-						subscriptions={subscriptions}
-						infoSubscription={options.infosubscription}
+		<>
+			<Head>
+				<title>Accueil Izi GYM</title>
+			</Head>
+			<Layout
+				contactBannerColor="cream"
+				backgroundImageURL="/assets-dev/bg-home.jpeg"
+				title1="Club"
+				title2="IZI GYM"
+				title3="La forme sans la frime !"
+				hours
+			>
+				{spaces && <SectionServices spaces={spaces} />}
+				{actus && actus.length > 0 && (
+					<SectionActus bottomBanner actus={actus} />
+				)}
+				{options && <SectionWhy options={options} />}
+				{options && options.planning && (
+					<Planning
+						planning={options?.planning}
+						urlDeReservatioDesCoursEnLigne={
+							options?.urlDeReservatioDesCoursEnLigne
+						}
 					/>
 				)}
-			</div>
-		</Layout>
+
+				<div className="relative mt-20">
+					<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
+					{subscriptions && options && options.infosubscription && (
+						<SectionPrices
+							subscriptions={subscriptions}
+							infoSubscription={options.infosubscription}
+						/>
+					)}
+				</div>
+			</Layout>
+		</>
 	)
 }

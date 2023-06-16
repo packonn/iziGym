@@ -4,7 +4,6 @@ import ContentDynamic from "@/components/ContentDynamic"
 import { useEffect, useState } from "react"
 import apolloClient from "../../../apollo-client"
 import { gql } from "@apollo/client"
-import ButtonDestroy from "@/components/ButtonDestroy"
 import Planning from "@/components/Planning"
 
 export const getServerSideProps = async (context) => {
@@ -75,6 +74,7 @@ export const getServerSideProps = async (context) => {
 			  }
 			}
 		  }`,
+			fetchPolicy: "no-cache",
 		})
 		space = await response.data.space
 		dataInfoGeneral = await response.data.themeGeneralSettings.option

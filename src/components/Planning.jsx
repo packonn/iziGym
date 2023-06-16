@@ -27,7 +27,6 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 					<div className="grid grid-cols-3 gap-10 mt-20 ">
 						{planning &&
 							planning.map((item, index) => {
-								console.log("item", item)
 								// verification si il y a des cours le matin
 								const verifMat = (tab) => {
 									let exist = false
@@ -77,42 +76,34 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 													<div
 														key={index}
 														className="flex justify-between items-center tracking-[1.5px] mt-3"
-														onClick={() =>
-															openModalPlanning(
-																true
-															)
-														}
 													>
 														<div className="flex justify-between items-center ">
 															{cours.semainesPaires ===
 															"semaines paires" ? (
-																<p
-																	className="font-roboto text-16 text-white font-regular uppercase "
-																	style={{
-																		color: `${cours.name.infoCour.color}`,
-																	}}
-																>
+																<p className="font-roboto text-16 text-white font-bold uppercase ">
 																	{
-																		cours
-																			.name
-																			.title
+																		cours.activity
 																	}
 																	<span className="text-[8px] ml-2">
 																		(Semaine
 																		Paire)
 																	</span>
 																</p>
-															) : (
-																<p
-																	className="font-roboto text-16 text-white font-bold uppercase "
-																	style={{
-																		color: `${cours.name.infoCour.color}`,
-																	}}
-																>
+															) : cours.semainesPaires ===
+															  "semaines impaires" ? (
+																<p className="font-roboto text-16 text-white font-bold uppercase ">
 																	{
-																		cours
-																			.name
-																			.title
+																		cours.activity
+																	}
+																	<span className="text-[8px] ml-2">
+																		(Semaine
+																		Impaire)
+																	</span>
+																</p>
+															) : (
+																<p className="font-roboto text-16 text-white font-bold uppercase ">
+																	{
+																		cours.activity
 																	}
 																</p>
 															)}
@@ -142,25 +133,13 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 													<div
 														key={index}
 														className="flex justify-between items-center tracking-[1.5px] mt-3"
-														onClick={() =>
-															openModalPlanning(
-																true
-															)
-														}
 													>
 														<div className="flex justify-between items-center">
 															{cours.semainesPaires ===
 															"semaines paires" ? (
-																<p
-																	className="font-roboto text-14 text-white font-regular uppercase "
-																	style={{
-																		color: `${cours.name.infoCour.color}`,
-																	}}
-																>
+																<p className="font-roboto text-16 text-white font-bold uppercase ">
 																	{
-																		cours
-																			.name
-																			.title
+																		cours.activity
 																	}
 																	<span className="text-[8px] ml-2">
 																		(Semaine
@@ -168,16 +147,9 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 																	</span>
 																</p>
 															) : (
-																<p
-																	className="font-roboto text-14 text-white font-bold uppercase  "
-																	style={{
-																		color: `${cours.name.infoCour.color}`,
-																	}}
-																>
+																<p className="font-roboto text-15 text-white font-bold uppercase  ">
 																	{
-																		cours
-																			.name
-																			.title
+																		cours.activity
 																	}
 																</p>
 															)}

@@ -1,6 +1,4 @@
-import { useRouter } from "next/router"
 import Layout from "@/components/Layout"
-import { useEffect, useState } from "react"
 import ActusItem from "@/components/ActusItem"
 import apolloClient from "../../../apollo-client"
 import { gql } from "@apollo/client"
