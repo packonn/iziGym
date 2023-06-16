@@ -18,7 +18,7 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 					<div className="flex justify-center">
 						<ButtonDestroy
 							primary
-							icon="logo/calendar.svg"
+							icon="/logo/calendar.svg"
 							text="Réserver mon cours"
 							href={urlDeReservatioDesCoursEnLigne}
 							target="_blank"
