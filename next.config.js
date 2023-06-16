@@ -15,6 +15,16 @@ const nextConfig = {
 			permanent: true,
 		},
 		{
+			source: "/musculation",
+			destination: "/espaces-du-club/salle-de-musculation-et-cardio", // Matched parameters can be used in the destination
+			permanent: true,
+		},
+		{
+			source: "/cardio",
+			destination: "/espaces-du-club/salle-de-musculation-et-cardio", // Matched parameters can be used in the destination
+			permanent: true,
+		},
+		{
 			source: "/fitness",
 			destination: "/espaces-du-club/salle-de-musculation-et-cardio", // Matched parameters can be used in the destination
 			permanent: true,

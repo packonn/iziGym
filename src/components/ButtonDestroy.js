@@ -38,7 +38,6 @@ const ButtonDestroy = ({
 		<Link
 			href={url}
 			target={target}
-			onclick="return false;"
 			className={`${bgImageDestroy} bg-no-repeat relative z-20 flex items-center px-3 py-3 `}
 		>
 			{icon && (
