@@ -43,16 +43,6 @@ export const getServerSideProps = async (context) => {
 							planning {
 								day
 								course {
-									name {
-										... on Cour {
-											id
-											infoCour {
-												color
-												calorie
-											}
-											title
-										}
-									}
 									hours
 									when
 									activity
@@ -106,7 +96,7 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
-			//fetchPolicy: "no-cache",licy: "no-cache",
+			fetchPolicy: "no-cache",
 		})
 
 		spaces = await response.data.spaces.nodes

@@ -24,7 +24,7 @@ async function getGeneralInfos(req, res) {
 					}
 				}
 			`,
-			//fetchPolicy: "no-cache",licy: 'no-cache'
+			fetchPolicy: "no-cache",
 		})
 
 		generalInfos = await response.data.themeGeneralSettings.option

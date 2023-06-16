@@ -32,7 +32,7 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
-			//fetchPolicy: "no-cache",licy: "no-cache",
+			fetchPolicy: "no-cache",
 		})
 
 		subscriptions = await response.data.themeGeneralSettings.option
