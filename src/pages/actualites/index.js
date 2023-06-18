@@ -26,15 +26,15 @@ export const getServerSideProps = async (context) => {
 							title
 							featuredImage {
 								node {
-									sourceUrl
+									sourceUrl(size: MEDIUM_LARGE)
 								}
 							}
 							groupeChampsArticle {
 								actuimage {
-									sourceUrl
+									sourceUrl(size: MEDIUM_LARGE)
 								}
 								gallery {
-									sourceUrl
+									sourceUrl(size: MEDIUM_LARGE)
 								}
 								startdate
 								subtitle

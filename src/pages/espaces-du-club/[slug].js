@@ -39,7 +39,7 @@ export const getServerSideProps = async (context) => {
 			  content
 			  featuredImage {
 				node {
-				  sourceUrl
+				  sourceUrl(size: MEDIUM_LARGE)
 				}
 			  }
 			  groupeChampsEspacesDuClub {
@@ -58,7 +58,7 @@ export const getServerSideProps = async (context) => {
 				}
 				galleriephotos {
 				  altText
-				  sourceUrl
+				  sourceUrl(size: MEDIUM_LARGE)
 				  title
 				}
 			  }

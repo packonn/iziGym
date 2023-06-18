@@ -24,7 +24,7 @@ export const getServerSideProps = async (context) => {
 				  content
 				  featuredImage {
 					node {
-					  sourceUrl
+						sourceUrl(size: MEDIUM_LARGE)
 					}
 				  }
 				  slug
@@ -34,10 +34,10 @@ export const getServerSideProps = async (context) => {
 					subtitle
 					videourl
 					gallery {
-					  sourceUrl
+						sourceUrl(size: MEDIUM_LARGE)
 					}
 					actuimage {
-					  sourceUrl
+						sourceUrl(size: MEDIUM_LARGE)
 					}
 				  }
 				}
@@ -47,7 +47,7 @@ export const getServerSideProps = async (context) => {
 					  content
 					  featuredImage {
 						node {
-						  sourceUrl
+							sourceUrl(size: MEDIUM_LARGE)
 						}
 					  }
 					  groupeChampsArticle {
@@ -56,7 +56,7 @@ export const getServerSideProps = async (context) => {
 						videourl
 						enddate
 						actuimage {
-						  sourceUrl
+							sourceUrl(size: MEDIUM_LARGE)
 						}
 						enddate
 						startdate
