@@ -28,16 +28,16 @@ export default function Layout(props) {
 					crossOrigin=""
 				/>
 				<title>
-					Izi gym - Salle de sport à Aigrefeuille d'Aunis, Le thou
+					Izi gym - Salle de sport à Aigrefeuille d'Aunis 17290, proche de La Rochelle
 				</title>
 				<meta name="description" content="Description du site" />
 				<meta
 					property="og:image"
-					content={"https://site.com/image-de-partage-fb.png"}
+					content={"/logo/logo.png"}
 				/>
 				<meta
 					name="og:title"
-					content="Izi gym - Salle de sport à Aigrefeuille d'Aunis, Le thou"
+					content="Izi gym - Salle de sport à Aigrefeuille d'Aunis, 17290, proche de La Rochelle"
 				/>
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
