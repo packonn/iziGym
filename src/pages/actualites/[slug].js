@@ -25,6 +25,7 @@ export const getServerSideProps = async (context) => {
 				  featuredImage {
 					node {
 						sourceUrl(size: MEDIUM_LARGE)
+						slug
 					}
 				  }
 				  slug
@@ -35,9 +36,11 @@ export const getServerSideProps = async (context) => {
 					videourl
 					gallery {
 						sourceUrl(size: MEDIUM_LARGE)
+						slug
 					}
 					actuimage {
 						sourceUrl(size: MEDIUM_LARGE)
+						slug
 					}
 				  }
 				}
@@ -48,6 +51,7 @@ export const getServerSideProps = async (context) => {
 					  featuredImage {
 						node {
 							sourceUrl(size: MEDIUM_LARGE)
+							slug
 						}
 					  }
 					  groupeChampsArticle {
@@ -57,6 +61,7 @@ export const getServerSideProps = async (context) => {
 						enddate
 						actuimage {
 							sourceUrl(size: MEDIUM_LARGE)
+							slug
 						}
 						enddate
 						startdate
@@ -117,7 +122,7 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 							fill
 							className="w-full h-full object-contain object-center  "
 							src={actu.groupeChampsArticle.actuimage.sourceUrl}
-							alt="header"
+							alt={actu.title}
 							placeholder="blur"
 							blurDataURL={
 								actu.groupeChampsArticle.actuimage.sourceUrl
@@ -131,7 +136,7 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 							blurDataURL={
 								actu.groupeChampsArticle.actuimage.sourceUrl
 							}
-							alt="header"
+							alt={actu.title}
 						/>
 					</div>
 					<div className="z-10 ">

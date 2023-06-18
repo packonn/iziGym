@@ -8,7 +8,7 @@ const Loader = () => {
 				<div className="loader">
 					<Image
 						src="/logo/loader.gif"
-						alt="Logo US Aigrefeuille Football"
+						alt="Logo Salle de sport izigym à Aigrefeuille d'Aunis 17290, proche de La Rochelle 17000"
 						width={130}
 						height={124}
 						className={`animate-spin  bg-white rounded-full`}

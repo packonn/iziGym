@@ -111,12 +111,12 @@ export default function Navbar() {
 										<img
 											className="block md:h-14 h-12 pb-1 bg-secondary w-auto lg:hidden"
 											src="/logo/logo.png"
-											alt="IziGym Salle de sport 17292 Le Thou"
+											alt="IziGym Salle de sport 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 										/>
 										<img
 											className="hidden md:h-14 h-10 pb-1 bg-secondary w-auto lg:block"
 											src="/logo/logo.png"
-											alt="IziGym Salle de sport 17290 Le Thou"
+											alt="IziGym Salle de sport 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 										/>
 									</Link>
 								</div>
@@ -163,7 +163,7 @@ export default function Navbar() {
 							<img
 								className="block h-12 w-auto bg-secondary pb-1 lg:hidden mb-4"
 								src="/logo/logo.png"
-								alt="Your Company"
+								alt="Logo de la Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 							/>
 							{navigation
 								.filter((item) => item.responsiveHeader)
@@ -251,7 +251,7 @@ export default function Navbar() {
 												width={20}
 												height={20}
 												className="object-contain w-5 h-5"
-												alt="logo facebook"
+												alt="logo facebook de la Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 											/>
 										</Link>
 										<Link
@@ -263,7 +263,7 @@ export default function Navbar() {
 												width={20}
 												height={20}
 												className="object-contain w-5 h-5"
-												alt="logo instagram"
+												alt="logo instagram de la Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 											/>
 										</Link>
 								</div>

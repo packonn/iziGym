@@ -29,7 +29,7 @@ const SectionServices = ({spaces}) => {
 										placeholder="blur"
 						blurDataURL={e.featuredImage.node.sourceUrl}
 										fill
-										alt="img"
+										alt={e.title}
 										className=" hover:saturate-100  transition duration-500 ease-in-out md:hover:scale-110  object-cover"
 									/>
 									<div className="p-2">
@@ -40,7 +40,7 @@ const SectionServices = ({spaces}) => {
 											<Image
 												src={"/logo/fleche_orange.png"}
 												fill
-												alt="img"
+												alt="Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 											/>
 										</div>
 									</div>

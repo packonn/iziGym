@@ -55,7 +55,7 @@ const SectionWhy = ({options}) => {
 									<Image
 										src={e.icon}
 										fill
-										alt="runner"
+										alt="icon runner"
 										className="p-3"
 									/>
 								</div>
@@ -78,7 +78,7 @@ const SectionWhy = ({options}) => {
 						<Image
 							src={"/assets-dev/hero_image_05 1.svg"}
 							fill
-							alt="img"
+							alt={"Salle de sport Izi gym 17290 Aigrefeuilel d'Aunis, proche de La Rochelle 17000"}
 							placeholder="blur"
 							blurDataURL={"/assets-dev/hero_image_05 1.svg"}
 						/>

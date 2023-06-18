@@ -9,7 +9,7 @@ const SectionActus = ({ bottomBanner, actus }) => {
 				<Image
 					src="/assets-dev/banner-white.png"
 					fill
-					alt="white banner"
+					alt="white banner de la Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 				/>
 			</div>
 			<div className="container  py-10 ">
@@ -25,7 +25,7 @@ const SectionActus = ({ bottomBanner, actus }) => {
 					<Image
 						src="/assets-dev/white_bottom_wave_03.png"
 						fill
-						alt="white_bottom_wave"
+						alt="Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 					/>
 				</div>
 			)}
