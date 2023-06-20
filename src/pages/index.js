@@ -52,12 +52,27 @@ export const getServerSideProps = async (context) => {
 							}
 						}
 					}
-					subscriptions {
-						nodes {
-							content
-							title
-						}
-					}
+					
+				}
+			`,
+		})
+		options = await response.data.themeGeneralSettings.option
+		subscriptions = await response.data.themeGeneralSettings.option
+			.ordersubscription
+	} catch (error) {
+		// redirect to 404 page if an error occurred
+		// redirect to 404 page
+		return {
+			redirect: {
+				permanent: false,
+				destination: `500`,
+			},
+		}
+	}
+	try {
+		const response = await apolloClient.query({
+			query: gql`
+				{
 					spaces {
 						nodes {
 							title
@@ -69,6 +84,30 @@ export const getServerSideProps = async (context) => {
 							}
 						}
 					}
+					
+				}
+			`,
+		})
+
+		spaces = await response.data.spaces.nodes
+		
+		
+	} catch (error) {
+		console.log("error", error)
+		// redirect to 404 page if an error occurred
+		// redirect to 404 page
+		return {
+			redirect: {
+				permanent: false,
+				destination: `500`,
+			},
+		}
+	}
+	try {
+		const response = await apolloClient.query({
+			query: gql`
+				{
+					
 					posts {
 						nodes {
 							title
@@ -100,10 +139,6 @@ export const getServerSideProps = async (context) => {
 			fetchPolicy: "no-cache",
 		})
 
-		spaces = await response.data.spaces.nodes
-		subscriptions = await response.data.themeGeneralSettings.option
-			.ordersubscription
-		options = await response.data.themeGeneralSettings.option
 		actus = await response.data.posts.nodes
 	} catch (error) {
 		console.log("error", error)

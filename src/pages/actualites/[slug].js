@@ -95,7 +95,6 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 	const [showVideo, setShowVideo] = useState(false)
 
 	const otherActus = actus.filter((actu) => actu.slug !== slug)
-	console.log("otherActus", otherActus)
 
 	useEffect(() => {
 		setShowVideo(true)

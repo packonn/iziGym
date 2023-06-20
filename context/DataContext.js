@@ -3,9 +3,10 @@ const { createContext, useState, useEffect } = require("react")
 export const DataContext = createContext()
 
 const DataContextProvider = (props) => {
-	const [dataInfosGeneral, setDataInfosGeneral] = useState(null)
+	const [dataInfosGeneral, setDataInfosGeneral] = useState()
 	
 	useEffect(() => {
+       
         const getCategories = async () => {
             const options = {
                 method: "POST",
@@ -18,14 +19,14 @@ const DataContextProvider = (props) => {
             );
             const response = await results.json();
             if(response.error) {
-                console.log(response.message);
+                console.log(response);
               
             }else{
                 setDataInfosGeneral(response.generalInfos)
             }
          
         };
-        getCategories();
+            getCategories();
     }, []);
 
 	return (

@@ -4,6 +4,7 @@ import { gql } from "@apollo/client"
 async function getGeneralInfos(req, res) {
 	let generalInfos = null
 
+
 	try {
 		const response = await apolloClient.query({
 			query: gql`
@@ -24,9 +25,7 @@ async function getGeneralInfos(req, res) {
 					}
 				}
 			`,
-			fetchPolicy: "no-cache",
 		})
-
 		generalInfos = await response.data.themeGeneralSettings.option
 		res.send({ error: false, generalInfos: generalInfos })
 	} catch (error) {
