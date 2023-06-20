@@ -8,6 +8,7 @@ import { gql } from "@apollo/client"
 import apolloClient from "../../apollo-client"
 import "dayjs/locale/fr"
 import Head from "next/head"
+import Image from "next/image"
 
 export const getServerSideProps = async (context) => {
 	let subscriptions = []
@@ -145,6 +146,9 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 					<SectionActus bottomBanner actus={actus} />
 				)}
 				{options && <SectionWhy options={options} />}
+				<div className="relative w-full h-20 -mt-20 z-[999]">
+				<Image src="/assets-dev/banner-top-footer.png" fill className="object-cover w-full h-20 " alt="separation entre section planning et présentation de la salle de sport izigym à Aigrefeuille d'aunis 17290" />
+				</div>
 				{options && options.planning && (
 					<Planning
 						planning={options?.planning}
@@ -154,7 +158,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 					/>
 				)}
 
-				<div className="relative mt-20">
+				<div className="relative ">
 					<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
 					{subscriptions && options && options.infosubscription && (
 						<SectionPrices

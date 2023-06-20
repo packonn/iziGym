@@ -74,11 +74,11 @@ const SectionWhy = ({options}) => {
 			</div>
 			<div className=" w-full bg-[url('/logo/bandeau-orange.png')]  lg:pb-0 md:pb-14 pb-14 bg-no-repeat bg-cover relative z-50">
 				<div className="container md:pb-0 pb-10 flex flex-col md:flex-row items-center justify-between">
-					<div className="flex relative   md:w-[480px] md:h-[371px] w-full h-[231px] z-[60] left-0 ">
+					<div className="flex relative   md:w-[480px] md:h-[371px] w-full h-[231px] z-[999] left-0 ">
 						<Image
 							src={"/assets-dev/hero_image_05 1.svg"}
 							fill
-							alt={"Salle de sport Izi gym 17290 Aigrefeuilel d'Aunis, proche de La Rochelle 17000"}
+							alt={"Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"}
 							placeholder="blur"
 							blurDataURL={"/assets-dev/hero_image_05 1.svg"}
 						/>

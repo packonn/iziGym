@@ -44,7 +44,6 @@ module.exports = {
 				},
 			},
 			backgroundImage: {
-				header: "url('/assets-dev/header.png')",
 				floatRight: "url('/assets-dev/floating-right.png')",
 				floatLeft: "url('/assets-dev/floating-left.png')",
 				floatRightGray: "url('/assets-dev/floating-left-gray.png')",
