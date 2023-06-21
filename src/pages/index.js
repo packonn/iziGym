@@ -165,7 +165,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			</Head>
 			<Layout
 				contactBannerColor="cream"
-				backgroundImageURL="/assets-dev/bg-home.webp"
+				backgroundImageURL="/assets-dev/bg-home.jpeg"
 				title1="Club"
 				title2="IZI GYM"
 				title3="La forme sans la frime !"
