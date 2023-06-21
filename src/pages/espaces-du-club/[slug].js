@@ -113,13 +113,6 @@ const SpaceDetails = ({ space, dataInfoGeneral, slug }) => {
 
 				{slug === "cours-collectifs" && (
 					<>
-						<div className="container">
-							<h3
-								className={`font-great leading-[60px] text-[70px] mb-10 mt-10 text-secondary`}
-							>
-								Planning des cours collectifs
-							</h3>
-						</div>
 						<Planning
 							planning={dataInfoGeneral.planning}
 							urlDeReservatioDesCoursEnLigne={
