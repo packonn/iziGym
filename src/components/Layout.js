@@ -29,13 +29,13 @@ export default function Layout(props) {
 					proche de La Rochelle
 				</title>
 				<meta name="description" content="Description du site" />
-				<meta property="og:image" content={"/logo/logo.png"} />
+				<meta property="og:image" content={"/logo/logo.webp"} />
 				<meta
 					name="og:title"
 					content="Izi gym - Salle de sport à Aigrefeuille d'Aunis, 17290, proche de La Rochelle"
 				/>
 				<meta property="og:type" content="website" />
-				<meta property="og:image" content="/logo/logo.png" />
+				<meta property="og:image" content="/logo/logo.webp" />
 				<meta property="og:url" content="https://www.izigym.fr" />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>

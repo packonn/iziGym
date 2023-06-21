@@ -37,7 +37,7 @@ export default function Abonnements({ mentionslegales }) {
 	return (
 		<Layout
 			contactBannerColor="white"
-			backgroundImageURL="/assets-dev/bg-abonnements.jpg"
+			backgroundImageURL="/assets-dev/bg-abonnements.webp"
 			title1="Conditions générales de vente"
 			center
 			classCustom=" min-h-[440px]"

@@ -3,7 +3,7 @@ const { createContext, useState, useEffect } = require("react")
 export const DataContext = createContext()
 
 const DataContextProvider = (props) => {
-	const [dataInfosGeneral, setDataInfosGeneral] = useState()
+	const [dataInfosGeneral, setDataInfosGeneral] = useState(null)
 	useEffect(() => {
 		console.log("effectContext")
 		const getCategories = async () => {

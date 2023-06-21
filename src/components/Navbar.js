@@ -9,7 +9,7 @@ import {
 	reglementInterieurURL,
 	spacesURL,
 	mentionslegalesURL,
-	cgvURL
+	cgvURL,
 } from "../../helpers"
 import { infos } from "./Footer"
 import { useRouter } from "next/router"
@@ -69,7 +69,6 @@ export const navigationURLS = (router) => {
 			header: false,
 			responsiveHeader: true,
 		},
-		
 	]
 }
 function classNames(...classes) {
@@ -79,9 +78,12 @@ function classNames(...classes) {
 export default function Navbar() {
 	const router = useRouter()
 	const navigation = navigationURLS(router)
-	const {dataInfosGeneral} = useContext(DataContext)
+	const { dataInfosGeneral } = useContext(DataContext)
 	return (
-		<Disclosure as="nav" className="bg-transparent w-full relative z-[99999999] ">
+		<Disclosure
+			as="nav"
+			className="bg-transparent w-full relative z-[99999999] "
+		>
 			{({ open }) => (
 				<>
 					<div className="  container  ">
@@ -110,12 +112,12 @@ export default function Navbar() {
 									<Link href={homeURL}>
 										<img
 											className="block md:h-14 h-12 pb-1 bg-secondary w-auto lg:hidden"
-											src="/logo/logo.png"
+											src="/logo/logo.webp"
 											alt="IziGym Salle de sport 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 										/>
 										<img
 											className="hidden md:h-14 h-10 pb-1 bg-secondary w-auto lg:block"
-											src="/logo/logo.png"
+											src="/logo/logo.webp"
 											alt="IziGym Salle de sport 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 										/>
 									</Link>
@@ -125,7 +127,8 @@ export default function Navbar() {
 										{navigation
 											.filter((item) => item.header)
 											.map((item) => (
-												<Link href={item.href}
+												<Link
+													href={item.href}
 													key={item.name}
 													className={classNames(
 														item.current
@@ -149,8 +152,10 @@ export default function Navbar() {
 											}
 											primary
 											text="Réserver un cours"
-										target={"_blank"}
-										href={dataInfosGeneral?.urlDeReservatioDesCoursEnLigne} 
+											target={"_blank"}
+											href={
+												dataInfosGeneral?.urlDeReservatioDesCoursEnLigne
+											}
 										/>
 									</div>
 								</div>
@@ -162,7 +167,7 @@ export default function Navbar() {
 						<div className="space-y-1 flex-1 px-2 pb-3 pt-2">
 							<img
 								className="block h-12 w-auto bg-secondary pb-1 lg:hidden mb-4"
-								src="/logo/logo.png"
+								src="/logo/logo.webp"
 								alt="Logo de la Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 							/>
 							{navigation
@@ -183,61 +188,63 @@ export default function Navbar() {
 									</Disclosure.Button>
 								))}
 
-
-								<div className="lg:col-span-2 col-span-5   lg:border-l lg:pl-4  border-gray border-t lg:border-t-0 lg:pt-0 mt-5 lg:mt-0 pt-5  grid grid-cols-2 gap-x-2 gap-y-4">
-						
-
-							<div className="md:col-span-1 col-span-2">
-								<>
-									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-										Horaire d'accueil
-									</p>
-									<div
-										className="text-roboto  !text-16 text-white"
-										dangerouslySetInnerHTML={{
-											__html: dataInfosGeneral?.hoursreception,
-										}}
-									/>
-								</>
-								<>
-									<p className="bg-primary mt-2 text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-										Horaire d'accès
-									</p>
-									<div
-										className="text-roboto  !text-16 text-white"
-										dangerouslySetInnerHTML={{
-											__html: dataInfosGeneral?.hoursacces,
-										}}
-									/>
-								</>
-							</div>
-
+							<div className="lg:col-span-2 col-span-5   lg:border-l lg:pl-4  border-gray border-t lg:border-t-0 lg:pt-0 mt-5 lg:mt-0 pt-5  grid grid-cols-2 gap-x-2 gap-y-4">
+								<div className="md:col-span-1 col-span-2">
+									<>
+										<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+											Horaire d'accueil
+										</p>
+										<div
+											className="text-roboto  !text-16 text-white"
+											dangerouslySetInnerHTML={{
+												__html: dataInfosGeneral?.hoursreception,
+											}}
+										/>
+									</>
+									<>
+										<p className="bg-primary mt-2 text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+											Horaire d'accès
+										</p>
+										<div
+											className="text-roboto  !text-16 text-white"
+											dangerouslySetInnerHTML={{
+												__html: dataInfosGeneral?.hoursacces,
+											}}
+										/>
+									</>
+								</div>
 
 								<div className="md:col-span-1 col-span-2">
-								<div className="">
-								<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-									Adresse
-								</p>
-								<div
-									className="text-roboto  !text-16 text-white"
-									dangerouslySetInnerHTML={{
-										__html: dataInfosGeneral?.address,
-									}}
-								/>
-							</div>
-							
-								<p className="bg-primary mt-2  text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-									Téléphone
-								</p>
-								<a href={"'tel:" + dataInfosGeneral?.phone +"'" }>
-									<div
-										className="text-roboto  !text-16 text-white"
-										dangerouslySetInnerHTML={{
-											__html: dataInfosGeneral?.phone,
-										}}
-									/>
-								</a>
-						
+									<div className="">
+										<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+											Adresse
+										</p>
+										<div
+											className="text-roboto  !text-16 text-white"
+											dangerouslySetInnerHTML={{
+												__html: dataInfosGeneral?.address,
+											}}
+										/>
+									</div>
+
+									<p className="bg-primary mt-2  text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+										Téléphone
+									</p>
+									<a
+										href={
+											"'tel:" +
+											dataInfosGeneral?.phone +
+											"'"
+										}
+									>
+										<div
+											className="text-roboto  !text-16 text-white"
+											dangerouslySetInnerHTML={{
+												__html: dataInfosGeneral?.phone,
+											}}
+										/>
+									</a>
+
 									<p className="bg-primary mt-2 text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-3">
 										Réseaux
 									</p>
@@ -266,10 +273,9 @@ export default function Navbar() {
 												alt="logo instagram de la Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 											/>
 										</Link>
+									</div>
 								</div>
 							</div>
-						</div>
-							
 						</div>
 						<Disclosure.Button className="flex items-start justify-end rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
 							<span className="sr-only">Open main menu</span>

@@ -47,7 +47,7 @@ const Footer = ({ contactBannerColor }) => {
 					<div className="container py-10 relative grid gap-x-2 grid-cols-4">
 						<div className="lg:col-span-1 col-span-5 ">
 							<Image
-								src="/logo/logo.png"
+								src="/logo/logo.webp"
 								width={150}
 								height={150}
 								alt="logo"
@@ -67,8 +67,6 @@ const Footer = ({ contactBannerColor }) => {
 							</div>
 						</div>
 						<div className="lg:col-span-2 col-span-5   lg:border-l lg:pl-4  border-gray border-t lg:border-t-0 lg:pt-0 mt-5 lg:mt-0 pt-5  grid grid-cols-2 gap-x-2 gap-y-4">
-						
-
 							<div className="md:col-span-1 col-span-2">
 								<>
 									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
@@ -94,24 +92,27 @@ const Footer = ({ contactBannerColor }) => {
 								</>
 							</div>
 
-
-								<div className="md:col-span-1 col-span-2">
+							<div className="md:col-span-1 col-span-2">
 								<div className="">
-								<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
-									Adresse
-								</p>
-								<div
-									className="text-roboto  !text-16 text-white"
-									dangerouslySetInnerHTML={{
-										__html: dataInfosGeneral?.address,
-									}}
-								/>
-							</div>
-							
+									<p className="bg-primary text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
+										Adresse
+									</p>
+									<div
+										className="text-roboto  !text-16 text-white"
+										dangerouslySetInnerHTML={{
+											__html: dataInfosGeneral?.address,
+										}}
+									/>
+								</div>
+
 								<p className="bg-primary mt-2  text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-2">
 									Téléphone
 								</p>
-								<a href={"'tel:" + dataInfosGeneral?.phone +"'" }>
+								<a
+									href={
+										"'tel:" + dataInfosGeneral?.phone + "'"
+									}
+								>
 									<div
 										className="text-roboto  !text-16 text-white"
 										dangerouslySetInnerHTML={{
@@ -119,48 +120,54 @@ const Footer = ({ contactBannerColor }) => {
 										}}
 									/>
 								</a>
-						
-									<p className="bg-primary mt-2 text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-3">
-										Réseaux
-									</p>
-									<div className="flex items-center gap-x-6">
-										<Link
-											href={`${dataInfosGeneral?.facebookurl}`}
-											target={"_blank"}
-										>
-											<Image
-												src="/logo/fb.svg"
-												width={20}
-												height={20}
-												className="object-contain w-5 h-5"
-												alt="logo facebook"
-											/>
-										</Link>
-										<Link
-											target={"_blank"}
-											href={`${dataInfosGeneral?.instagramurl}`}
-										>
-											<Image
-												src="/logo/instagram.svg"
-												width={20}
-												height={20}
-												className="object-contain w-5 h-5"
-												alt="logo instagram"
-											/>
-										</Link>
+
+								<p className="bg-primary mt-2 text-roboto !text-14 uppercase text-white py-1 px-3 w-fit mb-3">
+									Réseaux
+								</p>
+								<div className="flex items-center gap-x-6">
+									<Link
+										href={`${dataInfosGeneral?.facebookurl}`}
+										target={"_blank"}
+									>
+										<Image
+											src="/logo/fb.svg"
+											width={20}
+											height={20}
+											className="object-contain w-5 h-5"
+											alt="logo facebook"
+										/>
+									</Link>
+									<Link
+										target={"_blank"}
+										href={`${dataInfosGeneral?.instagramurl}`}
+									>
+										<Image
+											src="/logo/instagram.svg"
+											width={20}
+											height={20}
+											className="object-contain w-5 h-5"
+											alt="logo instagram"
+										/>
+									</Link>
 								</div>
 							</div>
 						</div>
-						{dataInfosGeneral?.addressurl && <Link target="_blank" href={dataInfosGeneral?.addressurl } className="lg:col-span-1 col-span-5  relative w-full overflow-hidden  md:h-[300px] h-[200px] lg:border-l lg:pl-4 lg:border-t-0  border-t lg:mt-0  mt-5 border-gray ">
-							<Image
-								src="/assets-dev/maps.png"
-								fill
-								className="lg:ml-4 mt-5 lg:mt-0  object-cover "
-								alt="logo maps"
-								blurDataURL="/assets-dev/maps.png"
-						placeholder="blur" 
-							/>
-						</Link>}
+						{dataInfosGeneral?.addressurl && (
+							<Link
+								target="_blank"
+								href={dataInfosGeneral?.addressurl}
+								className="lg:col-span-1 col-span-5  relative w-full overflow-hidden  md:h-[300px] h-[200px] lg:border-l lg:pl-4 lg:border-t-0  border-t lg:mt-0  mt-5 border-gray "
+							>
+								<Image
+									src="/assets-dev/maps.png"
+									fill
+									className="lg:ml-4 mt-5 lg:mt-0  object-cover "
+									alt="logo maps"
+									blurDataURL="/assets-dev/maps.png"
+									placeholder="blur"
+								/>
+							</Link>
+						)}
 					</div>
 				</div>
 			</div>

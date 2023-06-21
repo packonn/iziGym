@@ -52,7 +52,6 @@ export const getServerSideProps = async (context) => {
 							}
 						}
 					}
-					
 				}
 			`,
 		})
@@ -84,14 +83,11 @@ export const getServerSideProps = async (context) => {
 							}
 						}
 					}
-					
 				}
 			`,
 		})
 
 		spaces = await response.data.spaces.nodes
-		
-		
 	} catch (error) {
 		console.log("error", error)
 		// redirect to 404 page if an error occurred
@@ -107,7 +103,6 @@ export const getServerSideProps = async (context) => {
 		const response = await apolloClient.query({
 			query: gql`
 				{
-					
 					posts {
 						nodes {
 							title
@@ -170,7 +165,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 			</Head>
 			<Layout
 				contactBannerColor="cream"
-				backgroundImageURL="/assets-dev/bg-home.jpeg"
+				backgroundImageURL="/assets-dev/bg-home.webp"
 				title1="Club"
 				title2="IZI GYM"
 				title3="La forme sans la frime !"
@@ -182,7 +177,12 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 				)}
 				{options && <SectionWhy options={options} />}
 				<div className="relative w-full h-20 -mt-20 z-[999]">
-				<Image src="/assets-dev/banner-top-footer.png" fill className="object-cover w-full h-20 " alt="separation entre section planning et présentation de la salle de sport izigym à Aigrefeuille d'aunis 17290" />
+					<Image
+						src="/assets-dev/banner-top-footer.png"
+						fill
+						className="object-cover w-full h-20 "
+						alt="separation entre section planning et présentation de la salle de sport izigym à Aigrefeuille d'aunis 17290"
+					/>
 				</div>
 				{options && options.planning && (
 					<Planning
