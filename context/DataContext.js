@@ -4,30 +4,24 @@ export const DataContext = createContext()
 
 const DataContextProvider = (props) => {
 	const [dataInfosGeneral, setDataInfosGeneral] = useState()
-	
 	useEffect(() => {
-       
-        const getCategories = async () => {
-            const options = {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-            };
+		console.log("effectContext")
+		const getCategories = async () => {
+			const options = {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+			}
 
-            const results = await fetch(
-                "/api/get-general-infos",
-                options
-            );
-            const response = await results.json();
-            if(response.error) {
-                console.log(response);
-              
-            }else{
-                setDataInfosGeneral(response.generalInfos)
-            }
-         
-        };
-            getCategories();
-    }, []);
+			const results = await fetch("/api/get-general-infos", options)
+			const response = await results.json()
+			if (response.error) {
+				console.log(response)
+			} else {
+				setDataInfosGeneral(response.generalInfos)
+			}
+		}
+		getCategories()
+	}, [])
 
 	return (
 		<DataContext.Provider value={{ dataInfosGeneral }}>

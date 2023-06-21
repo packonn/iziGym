@@ -47,6 +47,7 @@ const ButtonDestroy = ({
 					height={21}
 					blurDataURL={icon}
 					placeholder="blur"
+					alt="icon"
 				/>
 			)}
 			<p

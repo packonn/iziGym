@@ -2,11 +2,8 @@ import * as React from "react"
 import Head from "next/head"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import DataContextProvider, { DataContext } from "../../context/DataContext"
-import CookieConsent, {
-	Cookies,
-	getCookieConsentValue,
-} from "react-cookie-consent"
+import DataContextProvider from "../../context/DataContext"
+import CookieConsent, { getCookieConsentValue } from "react-cookie-consent"
 import Script from "next/script"
 import { useState } from "react"
 import { mentionslegalesURL } from "../../helpers"
@@ -28,20 +25,18 @@ export default function Layout(props) {
 					crossOrigin=""
 				/>
 				<title>
-					Izi gym - Salle de sport à Aigrefeuille d'Aunis 17290, proche de La Rochelle
+					Izi gym - Salle de sport à Aigrefeuille d'Aunis 17290,
+					proche de La Rochelle
 				</title>
 				<meta name="description" content="Description du site" />
-				<meta
-					property="og:image"
-					content={"/logo/logo.png"}
-				/>
+				<meta property="og:image" content={"/logo/logo.png"} />
 				<meta
 					name="og:title"
 					content="Izi gym - Salle de sport à Aigrefeuille d'Aunis, 17290, proche de La Rochelle"
 				/>
-<meta property="og:type" content="website" />
-<meta property="og:image" content="/logo/logo.png" />
-<meta property="og:url" content="https://www.izigym.fr" />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="/logo/logo.png" />
+				<meta property="og:url" content="https://www.izigym.fr" />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
 			<header>

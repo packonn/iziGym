@@ -112,35 +112,21 @@ const SpaceDetails = ({ space, dataInfoGeneral, slug }) => {
 				/>
 
 				{slug === "cours-collectifs" && (
-					<div className="container">
-						<h3
-							className={`font-great leading-[60px] text-[70px] mb-10 mt-10 text-secondary      `}
-						>
-							Planning des cours collectifs
-						</h3>
+					<>
+						<div className="container">
+							<h3
+								className={`font-great leading-[60px] text-[70px] mb-10 mt-10 text-secondary`}
+							>
+								Planning des cours collectifs
+							</h3>
+						</div>
 						<Planning
 							planning={dataInfoGeneral.planning}
 							urlDeReservatioDesCoursEnLigne={
 								dataInfoGeneral.urlDeReservatioDesCoursEnLigne
 							}
 						/>
-						{/*
-<div className="md:flex hidden">
-			
-			<iframe src={dataInfoGeneral.urlcalendar} width="100%" height="700px"  frameborder="0" 
-			
-			
-			></iframe>
-			</div>
-			<div className="md:hidden flex">
-			
-			<div className="text-white bg-secondary px-3 py-2">
-			<a href={dataInfoGeneral.urlcalendar}>Voir le planning des cours collectifs</a>
-			</div>
-			
-			</div>
-		*/}
-					</div>
+					</>
 				)}
 			</div>
 		</Layout>
