@@ -3,7 +3,7 @@ import pin from "../../public/logo/pin.svg"
 import clock from "../../public/logo/clock.svg"
 import phone from "../../public/logo/phone.svg"
 import { DataContext } from "../../context/DataContext"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 
 const BandeauInfo = () => {
 	const { dataInfosGeneral } = useContext(DataContext)
@@ -18,9 +18,9 @@ const BandeauInfo = () => {
 						height={20}
 						className="object-contain "
 					/>
-					<p className="md:   md:ml-2 text-16 text-center md:text-left">
+					<div className="md:   md:ml-2 text-16 text-center md:text-left">
 						{dataInfosGeneral?.address}
-					</p>
+					</div>
 				</div>
 				<div className="flex items-center">
 					<Image

@@ -146,7 +146,7 @@ export default function Navbar() {
 												</Link>
 											))}
 
-										<ButtonDestroy
+										{/* <ButtonDestroy
 											classCustom={
 												" uppercase font-bold  !text-[17px] !leading-[20px] font-roboto "
 											}
@@ -156,7 +156,7 @@ export default function Navbar() {
 											href={
 												dataInfosGeneral?.urlDeReservatioDesCoursEnLigne
 											}
-										/>
+										/> */}
 									</div>
 								</div>
 							</div>

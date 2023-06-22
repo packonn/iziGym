@@ -122,7 +122,6 @@ export default function Layout(props) {
 							href={mentionslegalesURL}
 							style={{ color: "#D9712E" }}
 						>
-							{" "}
 							Politique de confidentialité
 						</a>
 					</CookieConsent>

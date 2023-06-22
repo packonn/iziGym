@@ -1,11 +1,15 @@
+import Cookies from "js-cookie"
+
 const { createContext, useState, useEffect } = require("react")
 
 export const DataContext = createContext()
 
 const DataContextProvider = (props) => {
-	const [dataInfosGeneral, setDataInfosGeneral] = useState(null)
+	const cookie = Cookies.get("dataOption")
+		? JSON.parse(Cookies.get("dataOption"))
+		: null
+	const [dataInfosGeneral, setDataInfosGeneral] = useState(cookie)
 	useEffect(() => {
-		console.log("effectContext")
 		const getCategories = async () => {
 			const options = {
 				method: "POST",
@@ -18,9 +22,12 @@ const DataContextProvider = (props) => {
 				console.log(response)
 			} else {
 				setDataInfosGeneral(response.generalInfos)
+				Cookies.set("dataOption", JSON.stringify(response.generalInfos))
 			}
 		}
-		getCategories()
+		if (!Cookies.get("dataOption")) {
+			getCategories()
+		}
 	}, [])
 
 	return (
