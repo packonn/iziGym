@@ -5,8 +5,12 @@ import { actusURL } from "../../helpers"
 import "dayjs/locale/fr"
 
 const ActusItem = ({ item }) => {
-	let dateEnd = dayjs(item.groupeChampsArticle.enddate).locale("fr").format("DD MMM")
-	let dateStart = dayjs(item.groupeChampsArticle.startdate).locale("fr").format("DD MMM")
+	let dateEnd = dayjs(item.groupeChampsArticle.enddate)
+		.locale("fr")
+		.format("DD MMM")
+	let dateStart = dayjs(item.groupeChampsArticle.startdate)
+		.locale("fr")
+		.format("DD MMM")
 
 	return (
 		<Link
@@ -20,9 +24,12 @@ const ActusItem = ({ item }) => {
 						? item?.featuredImage?.node?.sourceUrl
 						: "/assets-dev/placeholder.png"
 				}
-				blurDataURL={(item.featuredImage.node && item.featuredImage.node.sourceUrl)
-					? item?.featuredImage?.node?.sourceUrl
-					: "/assets-dev/placeholder.png"}
+				blurDataURL={
+					item.featuredImage?.node &&
+					item.featuredImage.node.sourceUrl
+						? item?.featuredImage?.node?.sourceUrl
+						: "/assets-dev/placeholder.png"
+				}
 				placeholder="blur"
 				alt={item.title}
 				fill
@@ -35,7 +42,6 @@ const ActusItem = ({ item }) => {
 							<p className="font-anton text-md md:text-[37px] font-regular ">
 								{dateStart} - {dateEnd}
 							</p>
-							
 						</div>
 					) : (
 						<p className="font-anton text-md md:text-[37px] font-regular">
