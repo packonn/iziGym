@@ -105,10 +105,12 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 		.locale("fr")
 		.format("dddd DD MMMM YYYY")
 
+	const featuredImageURL = actu.featuredImage.node ?  actu.featuredImage.node.sourceUrl : null
+const videoURL = actu.groupeChampsArticle.videourl ? actu.groupeChampsArticle.videourl : null
 	return (
 		<>
 			<Layout
-				backgroundImageURL={actu.featuredImage.node.sourceUrl}
+				backgroundImageURL={featuredImageURL}
 				title1={actu.title}
 				title2={actu.groupeChampsArticle.subtitle}
 				center
@@ -145,7 +147,7 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 							}}
 							className="py-4"
 						></div>
-						{showVideo && (
+						{(showVideo && videoURL) && (
 							<div className="">
 								<h3
 									className={`font-great  text-[70px]  text-secondary      -mt-2  `}
@@ -154,7 +156,7 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 								</h3>
 								<div className="player-wrapper overflow-hidden p-[0px]  bg-black ">
 									<VideoPlayer
-										url={actu.groupeChampsArticle.videourl}
+										url={videoURL}
 										isPlaying={false}
 									/>
 								</div>

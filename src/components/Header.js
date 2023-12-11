@@ -13,6 +13,7 @@ const Header = ({
 	classCustom,
 	hours,
 }) => {
+	const image = backgroundImageURL ? backgroundImageURL : "/assets-dev/placeholder.png"
 	return (
 		<DataContextProvider>
 			<div>
@@ -22,12 +23,12 @@ const Header = ({
 				</div>
 
 				<div
-					className={`min-h-[90vh] bg-primary   w-full  relative  flex flex-col ${classCustom}`}
+					className={`min-h-[90vh] bg-secondary   w-full  relative  flex flex-col ${classCustom}`}
 				>
 					<Image
-						src={backgroundImageURL}
+						src={image}
 						fill
-						className="object-top object-cover"
+						className="object-top object-cover  opacity-20"
 						alt="banner"
 						// blurDataURL={backgroundImageURL}
 						// placeholder="blur"
