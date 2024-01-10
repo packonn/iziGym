@@ -135,6 +135,19 @@ export const getServerSideProps = async (context) => {
 		})
 
 		actus = await response.data.posts.nodes
+		if(actus){
+			// filter actus to get only the ones that are not expired
+			actus = actus.filter((actu) => {
+				if (actu.groupeChampsArticle) {
+					if (actu.groupeChampsArticle.enddate) {
+						return new Date(actu.groupeChampsArticle.enddate) >
+							new Date()
+					}
+				}
+				return true
+			})
+		}
+
 	} catch (error) {
 		console.log("error", error)
 		// redirect to 404 page if an error occurred

@@ -4,7 +4,11 @@ import Link from "next/link"
 import { actusURL } from "../../helpers"
 import "dayjs/locale/fr"
 
-const ActusItem = ({ item }) => {
+const ActusItem = (props) => {
+
+	const item = props.item
+	const expired = props.expired
+
 	let dateEnd = dayjs(item.groupeChampsArticle.enddate)
 		.locale("fr")
 		.format("DD MMM")
@@ -12,10 +16,11 @@ const ActusItem = ({ item }) => {
 		.locale("fr")
 		.format("DD MMM")
 
+
 	return (
 		<Link
 			href={actusURL + "/" + item.slug}
-			className="flex h-full w-full overflow-hidden relative"
+			className={("flex h-full w-full overflow-hidden relative" + (expired ? " opacity-50" : ""))}
 		>
 			<div className="absolute bottom-0 bg-gradient-to-t from-black opacity-75 w-full h-36 z-30"></div>
 			<Image
