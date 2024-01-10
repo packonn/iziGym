@@ -78,18 +78,19 @@ const Actualites = ({ actus, pageInfo, last, first }) => {
 	const endCursor = pageInfo.endCursor
 
 	const actusExpired = actus.filter((actu) => {
-		const endDate = actu.groupeChampsArticle.enddate
-		const today = new Date()
-		return endDate ? new Date(endDate) > today : true
-	}
-	)
+		const endDate = actu.groupeChampsArticle.enddate;
+		const today = new Date();
+		const endDateTime = new Date(endDate);
+		return endDate ? endDateTime < today : false; // Check if the endDateTime is before today
+	  });
 
-	const actusNotExpired = actus.filter((actu) => {
-		const endDate = actu.groupeChampsArticle.enddate
-		const today = new Date()
-		return endDate ? new Date(endDate) < today : false
-	}
-	)
+	
+	  const actusNotExpired = actus.filter((actu) => {
+		const endDate = actu.groupeChampsArticle.enddate;
+		const today = new Date();
+		const endDateTime = new Date(endDate);
+		return endDate ? endDateTime >= today : false; // Check if the endDateTime is today or in the future
+	  });
 
 	return (
 		<Layout
@@ -99,31 +100,35 @@ const Actualites = ({ actus, pageInfo, last, first }) => {
 			center
 			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
-			<div className="container pt-20 pb-4 grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
+			<div className="container pt-20 pb-4 ">
 			<div className="flex flex-col">
 			<h3 className="text-2xl font-bold mb-4">Évènements en cours</h3>
-			{actusNotExpired.map((actu, index) => {
+			<div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
+				{actusNotExpired.map((actu, index) => {
 					return (
 						<div className="!h-[420px]" key={index}>
-							<ActusItem item={actu} key={index} />
+						<ActusItem item={actu} key={index} />
 						</div>
-					)
-				})}
+						)
+					})}
 			</div>
 			</div>
-			<div className="container pt-20 pb-4 grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
+			</div>
+			<div className="container pt-20 pb-4 ">
 			<div className="flex flex-col">
 			<h3 className="text-2xl font-bold mb-4">Évènements passés</h3>
-			{actusExpired.map((actu, index) => {
-				return (
-					<div className="!h-[420px]" key={index}>
-					<ActusItem item={actu} key={index} expired />
-					</div>
-					)
-				})}
+			<div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
+				{actusExpired.map((actu, index) => {
+					return (
+						<div className="!h-[420px]" key={index}>
+						<ActusItem item={actu} key={index} expired />
+						</div>
+						)
+					})}
 				
 				</div>
-			</div>
+				</div>
+				</div>
 			<div className="container pb-10">
 				<Pagination
 					first={Number(first)}
