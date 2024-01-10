@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Title } from "./Title"
 import { ActusCarousel } from "./ActusCarousel"
+import ButtonDestroy from "./ButtonDestroy"
 
 const SectionActus = ({ bottomBanner, actus }) => {
 	return (
@@ -19,6 +20,14 @@ const SectionActus = ({ bottomBanner, actus }) => {
 					color={"white"}
 				/>
 				<ActusCarousel actus={actus} />
+				<div className="flex justify-start">
+							<ButtonDestroy
+								primary
+								text="Voir toutes les actualités"
+								href={"/actualites"}
+							
+							/>
+						</div>
 			</div>
 			{bottomBanner && (
 				<div className="absolute -bottom-[1px] w-full h-20 pt-20">

@@ -20,9 +20,9 @@ const ActusItem = (props) => {
 	return (
 		<Link
 			href={actusURL + "/" + item.slug}
-			className={("flex h-full w-full overflow-hidden relative" + (expired ? " opacity-50" : ""))}
+			className={("flex h-full w-full overflow-hidden relative " + (expired ? " opacity-50" : ""))}
 		>
-			<div className="absolute bottom-0 bg-gradient-to-t from-black opacity-75 w-full h-36 z-30"></div>
+			<div className="absolute bottom-0 bg-gradient-to-t from-black opacity-95 w-full h-36 z-30"></div>
 			<Image
 				src={
 					item?.featuredImage?.node?.sourceUrl
