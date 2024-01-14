@@ -30,9 +30,6 @@ export const getServerSideProps = async (context) => {
 								}
 							}
 							groupeChampsArticle {
-								actuimage {
-									sourceUrl(size: MEDIUM_LARGE)
-								}
 								gallery {
 									sourceUrl(size: MEDIUM_LARGE)
 								}

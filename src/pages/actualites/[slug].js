@@ -38,10 +38,6 @@ export const getServerSideProps = async (context) => {
 						sourceUrl(size: MEDIUM_LARGE)
 						slug
 					}
-					actuimage {
-						sourceUrl(size: MEDIUM_LARGE)
-						slug
-					}
 				  }
 				}
 				posts {
@@ -58,11 +54,6 @@ export const getServerSideProps = async (context) => {
 						subtitle
 						startdate
 						videourl
-						enddate
-						actuimage {
-							sourceUrl(size: MEDIUM_LARGE)
-							slug
-						}
 						enddate
 						startdate
 						subtitle
@@ -105,8 +96,9 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 		.locale("fr")
 		.format("dddd DD MMMM YYYY")
 
-	const featuredImageURL = actu.featuredImage.node ?  actu.featuredImage.node.sourceUrl : "/assets-dev/placeholder.png"
+	const featuredImageURL = actu.featuredImage ?  actu.featuredImage.node.sourceUrl : "/assets-dev/placeholder.png"
 const videoURL = actu.groupeChampsArticle.videourl ? actu.groupeChampsArticle.videourl : null
+const content = actu.content ? actu.content : ""
 	return (
 		<>
 			<Layout
@@ -143,7 +135,7 @@ const videoURL = actu.groupeChampsArticle.videourl ? actu.groupeChampsArticle.vi
 					<div className="z-10 ">
 						<div
 							dangerouslySetInnerHTML={{
-								__html: `${actu.content}`,
+								__html: `${content}`,
 							}}
 							className="py-4"
 						></div>

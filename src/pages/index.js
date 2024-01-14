@@ -117,10 +117,6 @@ export const getServerSideProps = async (context) => {
 								startdate
 								videourl
 								enddate
-								actuimage {
-									sourceUrl(size: MEDIUM_LARGE)
-								}
-								enddate
 								startdate
 								subtitle
 								videourl
