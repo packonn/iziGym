@@ -25,9 +25,9 @@ const SectionServices = ({spaces}) => {
 									key={i}
 								>
 									<Image
-										src={e.featuredImage.node.sourceUrl}
+										src={e.featuredImage.node ? e.featuredImage.node.sourceUrl : "/assets-dev/placeholder.png"}
 										placeholder="blur"
-						blurDataURL={e.featuredImage.node.sourceUrl}
+						blurDataURL={e.featuredImage.node ? e.featuredImage.node.sourceUrl : "/assets-dev/placeholder.png"}
 										fill
 										alt={e.title}
 										className=" hover:saturate-100  transition duration-500 ease-in-out md:hover:scale-110  object-cover"

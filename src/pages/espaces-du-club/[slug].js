@@ -92,21 +92,21 @@ const SpaceDetails = ({ space, dataInfoGeneral, slug }) => {
 		<Layout
 			contactBannerColor="white"
 			center
-			backgroundImageURL={space.featuredImage?.node?.sourceUrl}
+			backgroundImageURL={space.featuredImage?.node ? space.featuredImage?.node.sourceUrl : "/assets-dev/placeholder.png"}
 			title1={space.title}
 			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
 			<div className="py-20">
 				<ContentDynamic
-					subscriptions={space.groupeChampsEspacesDuClub.subscription}
+					subscriptions={space.groupeChampsEspacesDuClub?.subscription}
 					showVideo={showVideo}
 					title={space.title}
-					videoURL={space.groupeChampsEspacesDuClub.videourl}
-					collapse={space.groupeChampsEspacesDuClub.collapse}
-					subtitle={space.groupeChampsEspacesDuClub.subtitle}
+					videoURL={space.groupeChampsEspacesDuClub?.videourl}
+					collapse={space.groupeChampsEspacesDuClub?.collapse}
+					subtitle={space.groupeChampsEspacesDuClub?.subtitle}
 					slidesPerView={slidesPerView}
 					content={space.content}
-					gallery={space.groupeChampsEspacesDuClub.galleriephotos}
+					gallery={space.groupeChampsEspacesDuClub?.galleriephotos}
 					breakPointsSwiper={breakPointsSwiper}
 					dataInfoGeneral={dataInfoGeneral}
 				/>

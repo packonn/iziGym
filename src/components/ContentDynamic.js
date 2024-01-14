@@ -19,6 +19,7 @@ videoURL,
 subscriptions,
 dataInfoGeneral
 }) {
+	
 	return (
 		<div className="container  grid grid-cols-4 gap-x-6">
 			<div className="lg:col-span-3 col-span-4">

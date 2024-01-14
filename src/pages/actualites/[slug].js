@@ -105,7 +105,7 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 		.locale("fr")
 		.format("dddd DD MMMM YYYY")
 
-	const featuredImageURL = actu.featuredImage.node ?  actu.featuredImage.node.sourceUrl : null
+	const featuredImageURL = actu.featuredImage.node ?  actu.featuredImage.node.sourceUrl : "/assets-dev/placeholder.png"
 const videoURL = actu.groupeChampsArticle.videourl ? actu.groupeChampsArticle.videourl : null
 	return (
 		<>
@@ -122,20 +122,20 @@ const videoURL = actu.groupeChampsArticle.videourl ? actu.groupeChampsArticle.vi
 						<Image
 							fill
 							className="w-full h-full object-contain object-center  "
-							src={actu.groupeChampsArticle.actuimage.sourceUrl}
+							src={featuredImageURL}
 							alt={actu.title}
 							placeholder="blur"
 							blurDataURL={
-								actu.groupeChampsArticle.actuimage.sourceUrl
+								featuredImageURL
 							}
 						/>
 						<Image
 							fill
 							className="w-full h-full object-cover -z-10 blur-[5px] absolute top-0 left-0  "
-							src={actu.groupeChampsArticle.actuimage.sourceUrl}
+							src={featuredImageURL}
 							placeholder="blur"
 							blurDataURL={
-								actu.groupeChampsArticle.actuimage.sourceUrl
+								featuredImageURL
 							}
 							alt={actu.title}
 						/>
