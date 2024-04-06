@@ -18,9 +18,12 @@ const BandeauInfo = () => {
 						height={20}
 						className="object-contain "
 					/>
-					<div className="md:   md:ml-2 text-16 text-center md:text-left">
-						{dataInfosGeneral?.address}
-					</div>
+					<div
+						dangerouslySetInnerHTML={{
+							__html: dataInfosGeneral?.address,
+						}}
+						className="md:ml-2 text-16 text-center md:text-left"
+					></div>
 				</div>
 				<div className="flex items-center">
 					<Image

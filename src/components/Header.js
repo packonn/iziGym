@@ -13,7 +13,9 @@ const Header = ({
 	classCustom,
 	hours,
 }) => {
-	const image = backgroundImageURL ? backgroundImageURL : "/assets-dev/placeholder.png"
+	const image = backgroundImageURL
+		? backgroundImageURL
+		: "/assets-dev/placeholder.png"
 	return (
 		<DataContextProvider>
 			<div>
