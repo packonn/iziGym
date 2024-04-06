@@ -68,7 +68,6 @@ const Footer = ({ contactBannerColor }) => {
 										<ButtonDestroy
 											primary
 											text="Je veux ma 1ère séance GRATUITE !"
-											target={"_blank"}
 											href={
 												process.env.SITE_URL +
 												"#contact"

@@ -28,7 +28,6 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 							primary
 							icon="/logo/gift.svg"
 							text="Je veux ma 1ère séance GRATUITE !"
-							target={"_blank"}
 							href={process.env.SITE_URL + "#contact"}
 						/>
 					</div>
