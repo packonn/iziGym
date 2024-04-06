@@ -127,7 +127,7 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
-			fetchPolicy: "no-cache",
+			// fetchPolicy: "no-cache",
 		})
 
 		actus = await response.data.posts.nodes
