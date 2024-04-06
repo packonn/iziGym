@@ -15,12 +15,20 @@ const BandeauInfo = () => {
 					href={process.env.SITE_URL + "#contact"}
 					className="ml-2 text-14 leading-[16px] bg-primary py-2 pb-4 px-4 rounded-xl flex items-center justify-center flex-col drop-shadow-xl"
 				>
-					<div className="flex flex-col">
-						<span className="text-center">1ère</span>
+					<div className="flex flex-col font-anton">
+						<span className="text-center font-anton tracking-[1px]">
+							1ère
+						</span>
 
-						<span className="text-center">séance</span>
-						<span className="text-center">GRATUITE</span>
-						<span className="text-center">ICI</span>
+						<span className="text-center font-anton tracking-[1px]">
+							SÉANCE
+						</span>
+						<span className="text-center font-anton tracking-[1px]">
+							GRATUITE
+						</span>
+						<span className="text-center font-anton tracking-[1px] underline">
+							ICI
+						</span>
 					</div>
 					<Image
 						src={"/logo/gift.svg"}

@@ -16,22 +16,43 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 						center
 						textColor1={"primary"}
 					/>
-					<div className="flex justify-center gap-4 items-center">
-						<ButtonDestroy
-							secondary
-							icon="/logo/calendar.svg"
-							text="Réserver mon cours"
-							href={urlDeReservatioDesCoursEnLigne}
-							target="_blank"
-						/>
-						<ButtonDestroy
-							primary
-							icon="/logo/gift.svg"
-							text="Je veux ma 1ère séance GRATUITE !"
-							href={process.env.SITE_URL + "#contact"}
-						/>
+					<div className="flex justify-center gap-4 items-center mt-20 ">
+						<div className="w-fit relative">
+							{/* <div className="text-black rotate-[5deg] ml-auto z-40  relative bg-white w-fit rounded px-2 py-1">
+								Réservé aux abonnés
+							</div> */}
+
+							<div className="rotate-[5deg] z-40  absolute right-0 -top-8 bg-white w-fit rounded px-2 py-1">
+								<div className="w-2 h-2 bg-black rounded-full absolute bottom-[1px] border-black border right-[1px] transform "></div>
+								<span className="text-black text-center flex justify-center text-sm pt-1">
+									Réservé aux abonnés
+								</span>
+							</div>
+							<ButtonDestroy
+								secondary
+								icon="/logo/calendar.svg"
+								text="Réserver mon cours en ligne"
+								href={urlDeReservatioDesCoursEnLigne}
+								target="_blank"
+							/>
+						</div>
+						<div className="relative">
+							<ButtonDestroy
+								primary
+								icon="/logo/gift.svg"
+								text="Je veux ma 1ère séance GRATUITE !"
+								href={process.env.SITE_URL + "#contact"}
+							/>
+							<div className="-rotate-[5deg] z-40  absolute -right-10 -bottom-10 bg-white w-fit rounded px-2 py-1">
+								<div className="w-2 h-2 bg-primary rounded-full absolute top-[6px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+								<span className="text-black text-center flex justify-center text-sm pt-1">
+									Offre réservée <br />
+									aux nouveaux clients
+								</span>
+							</div>
+						</div>
 					</div>
-					<div className="grid grid-cols-3 gap-10 mt-20 ">
+					<div className="grid grid-cols-3 gap-10 mt-24 ">
 						{planning &&
 							planning.map((item, index) => {
 								// verification si il y a des cours le matin

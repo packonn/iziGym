@@ -186,7 +186,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 					<SectionActus bottomBanner actus={actus} />
 				)}
 				{options && <SectionWhy options={options} />}
-				<div className="relative w-full h-20 -mt-20 z-10">
+				<div className="relative w-full h-20 -mt-20 z-20">
 					<Image
 						src="/assets-dev/banner-top-footer.png"
 						fill
