@@ -2,38 +2,37 @@ import Image from "next/image"
 import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
 
-const SectionWhy = ({options}) => {
-	
+const SectionWhy = ({ options }) => {
 	const array = [
 		{
 			title: "Des coachs à fond",
 			body: "Bénéficiez d'un encadrement personnalisé par des coachs experts et hyper cool qui vous guident vers vos objectifs",
-			icon : "/logo/fitness.svg"
+			icon: "/logo/fitness.svg",
 		},
 		{
 			title: "Une salle hyper équipée",
 			body: "Découvrez une salle de sport ultra équipée, dotée d'équipements de pointe pour des entraînements performants.",
-			icon: "/logo/gym.svg"
+			icon: "/logo/gym.svg",
 		},
 		{
 			title: "Un coaching personnalisé",
 			body: "Profitez d'un accompagnement personnalisé adapté à vos besoins et objectifs spécifiques.",
-			icon: "/logo/teacher.svg"
+			icon: "/logo/teacher.svg",
 		},
 		{
 			title: "Une ambiance de folie",
 			body: "Plongez dans une ambiance dynamique et stimulante qui vous motive à repousser vos limites",
-			icon: "/logo/party-popper.svg"
+			icon: "/logo/party-popper.svg",
 		},
 		{
 			title: "Des cours collectifs fun",
 			body: "Participez à des cours collectifs énergiques qui vous permettent de vous dépenser intensément et de vous amuser en groupe.",
-			icon: "/logo/baseline-sports-gymnastics.svg"
+			icon: "/logo/baseline-sports-gymnastics.svg",
 		},
 		{
 			title: "Des événements réguliers",
 			body: "Profitez d'une atmosphère conviviale et décontractée, ainsi que d'une variété d'événements et de sorties régulièrement organisés pour enrichir votre expérience sportive",
-			icon: "/logo/event-star.svg"	
+			icon: "/logo/event-star.svg",
 		},
 	]
 
@@ -72,13 +71,15 @@ const SectionWhy = ({options}) => {
 					})}
 				</div>
 			</div>
-			<div className=" w-full bg-[url('/logo/bandeau-orange.png')]  lg:pb-0 md:pb-14 pb-14 bg-no-repeat bg-cover relative z-50">
+			<div className=" w-full bg-[url('/logo/bandeau-orange.png')]  lg:pb-0 md:pb-14 pb-14 bg-no-repeat bg-cover relative z-20">
 				<div className="container md:pb-0 pb-10 flex flex-col md:flex-row items-center justify-between">
-					<div className="flex relative   md:w-[480px] md:h-[371px] w-full h-[231px] z-[999] left-0 ">
+					<div className="flex relative   md:w-[480px] md:h-[371px] w-full h-[231px] z-10 left-0 ">
 						<Image
 							src={"/assets-dev/hero_image_05 1.svg"}
 							fill
-							alt={"Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"}
+							alt={
+								"Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
+							}
 							placeholder="blur"
 							blurDataURL={"/assets-dev/hero_image_05 1.svg"}
 						/>
@@ -107,7 +108,7 @@ const SectionWhy = ({options}) => {
 					</div>
 				</div>
 			</div>
-			{/*<div className="relative  w-full h-20 -mt-16 z-50 ">
+			{/*<div className="relative  w-full h-20 -mt-16 z-10 ">
 				<Image src="/logo/wave-black.png" alt="banner" fill />
 			</div>*/}
 		</div>

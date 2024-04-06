@@ -131,19 +131,20 @@ export const getServerSideProps = async (context) => {
 		})
 
 		actus = await response.data.posts.nodes
-		if(actus){
+		if (actus) {
 			// filter actus to get only the ones that are not expired
 			actus = actus.filter((actu) => {
 				if (actu.groupeChampsArticle) {
 					if (actu.groupeChampsArticle.enddate) {
-						return new Date(actu.groupeChampsArticle.enddate) >
+						return (
+							new Date(actu.groupeChampsArticle.enddate) >
 							new Date()
+						)
 					}
 				}
 				return true
 			})
 		}
-
 	} catch (error) {
 		console.log("error", error)
 		// redirect to 404 page if an error occurred
@@ -185,7 +186,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 					<SectionActus bottomBanner actus={actus} />
 				)}
 				{options && <SectionWhy options={options} />}
-				<div className="relative w-full h-20 -mt-20 z-[999]">
+				<div className="relative w-full h-20 -mt-20 z-10">
 					<Image
 						src="/assets-dev/banner-top-footer.png"
 						fill
@@ -203,7 +204,7 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 				)}
 
 				<div className="relative ">
-					<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-50  bg-no-repeat bg-cover "></div>
+					<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-10  bg-no-repeat bg-cover "></div>
 					{subscriptions && options && options.infosubscription && (
 						<SectionPrices
 							subscriptions={subscriptions}

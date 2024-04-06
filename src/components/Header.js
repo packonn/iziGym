@@ -19,7 +19,7 @@ const Header = ({
 	return (
 		<DataContextProvider>
 			<div>
-				<div className="z-20 relative">
+				<div className="z-40 relative">
 					<BandeauInfo />
 					<BandeauPromo />
 				</div>
@@ -40,7 +40,7 @@ const Header = ({
 
 					<div className="bg-floatRight absolute top-0 left-0 h-full w-full bg-no-repeat"></div>
 					<div
-						className={`flex md:py-0 py-20 container flex-1 items-center md:flex-row flex-col h-full pb-[100px] z-[9999] ${
+						className={`flex md:py-0 py-20 container flex-1 items-center md:flex-row flex-col h-full pb-[100px] z-10 ${
 							center
 								? " justify-center "
 								: " justify-center xl:justify-start"
@@ -88,7 +88,7 @@ const Header = ({
 							</div>
 						</div>
 						{hours && (
-							<div className="mt-4 pb-4   container flex justify-center md:justify-end  md:absolute  bottom-10 ">
+							<div className="mt-4 pb-4   container flex justify-center md:justify-end  md:absolute  bottom-40 right-40 ">
 								<div className="relative   md:h-[225px] md:w-[225px] h-[175px] w-[175px] ">
 									<Image
 										fill

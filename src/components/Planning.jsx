@@ -4,7 +4,7 @@ import ButtonDestroy from "./ButtonDestroy"
 const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 	return (
 		<>
-			<div className="bg-black2 relative z-50 md:pb-20 pb-40">
+			<div className="bg-black2 relative z-10 md:pb-20 pb-40">
 				<div className="bg-floatLeftGray absolute top-0 right-0 h-full w-full bg-right bg-no-repeat -z-30"></div>
 				<div className="bg-floatRightGray absolute top-0 left-0 h-full w-full bg-no-repeat -z-30"></div>
 

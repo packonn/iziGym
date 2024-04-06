@@ -80,11 +80,14 @@ export default function SectionContact(props) {
 					className="object-cover "
 					alt="banner"
 					blurDataURL={bannerBottomURL}
-					placeholder="blur" 
+					placeholder="blur"
 				/>
 			</div>
 			{formIsLoading && <Loader />}
-			<div className="gap-10 grid grid-cols-1 md:grid-cols-2 ">
+			<div
+				id="contact"
+				className="gap-10 grid grid-cols-1 md:grid-cols-2 "
+			>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
 					className=" md:pl-[40px] container lg:py-32 py-20"
@@ -113,10 +116,7 @@ export default function SectionContact(props) {
 					</div>
 
 					<div className="mt-[20px]">
-						<label className={formsStyles.label}>
-							{" "}
-							Email *
-						</label>
+						<label className={formsStyles.label}> Email *</label>
 						<input
 							autoCapitalize="off"
 							type="email"
@@ -150,12 +150,13 @@ export default function SectionContact(props) {
 							{...register("phone", {
 								required: {
 									value: true,
-									message: "Veuillez entrer votre numéro de téléphone",
+									message:
+										"Veuillez entrer votre numéro de téléphone",
 								},
 								pattern: {
 									message:
 										"Veuillez entrer un numéro de téléphone valide",
-										value: /^((\+)33|0)[1-9](\d{2}){4}$/,
+									value: /^((\+)33|0)[1-9](\d{2}){4}$/,
 								},
 							})}
 							className={formsStyles.field}
@@ -165,9 +166,7 @@ export default function SectionContact(props) {
 						</p>
 					</div>
 					<div className="mt-[20px] font-light">
-						<label className={formsStyles.label}>
-							Message *
-						</label>
+						<label className={formsStyles.label}>Message *</label>
 						<textarea
 							placeholder=""
 							{...register("message", {
