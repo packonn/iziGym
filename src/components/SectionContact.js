@@ -57,7 +57,8 @@ export default function SectionContact(props) {
 				reset()
 				setFormIsLoading(false)
 				setFormFeedback({
-					message: "Message bien envoyé",
+					message:
+						"Votre meessage a bien été envoyé. Nous vous remercions et nous reviendrons vers vous rapidement ! À bientôt chez IZI GYM !",
 					error: false,
 				})
 			}
