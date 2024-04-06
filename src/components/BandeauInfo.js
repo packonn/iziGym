@@ -7,6 +7,7 @@ import { useContext } from "react"
 import Link from "next/link"
 
 const BandeauInfo = () => {
+	const { dataInfosGeneral } = useContext(DataContext)
 	return (
 		<div className=" bg-secondary text-white text-xs relative  ">
 			<div className=" fixed  bottom-4  right-4  gap-2 flex flex-col">
