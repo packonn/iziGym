@@ -7,9 +7,9 @@ import Loader from "./Loader"
 import { Title } from "./Title"
 
 export const formsStyles = {
-	field: "font-20 w-full outline-none  text-black text-black block  border-b-black border-b ",
+	field: "w-full outline-none  text-black text-black block  border-b-black border-b ",
 	textarea:
-		"text-20 w-full outline-none  text-black text-black block  border-b-black border-b ",
+		"font-normal w-full outline-none  text-black text-black block  border-b-black border-b ",
 	label: "text-black font-medium text-14 mb-1 text-center w-full flex text-left",
 	error: "text-red-500 text-[12px] min-h-2 font-light",
 	select: "block  h-[40px] w-full pl-3  text-base border-gray-9 border font-light sm:text-sm rounded-2xl py-2 px-4",
@@ -97,6 +97,10 @@ export default function SectionContact(props) {
 						subtitle="contactez-nous"
 						color="secondary"
 					/>
+					<p className="font-bold text-xl mb-10">
+						Obtenez votre première séance{" "}
+						<span className="text-primary">GRATUITE !</span>
+					</p>
 					<div className="mt-6">
 						<label className={formsStyles.label}>
 							{" "}
@@ -104,7 +108,7 @@ export default function SectionContact(props) {
 						</label>
 						<input
 							type="text"
-							placeholder=""
+							placeholder="John Doe"
 							{...register("name", {
 								required: "Veuillez entrer votre nom",
 							})}
@@ -120,7 +124,7 @@ export default function SectionContact(props) {
 						<input
 							autoCapitalize="off"
 							type="email"
-							placeholder=""
+							placeholder="john.doe@email.com"
 							{...register("email", {
 								required: {
 									value: true,
@@ -146,7 +150,7 @@ export default function SectionContact(props) {
 						<input
 							autoCapitalize="off"
 							type="phone"
-							placeholder=""
+							placeholder="06 00 00 00 00"
 							{...register("phone", {
 								required: {
 									value: true,
@@ -168,7 +172,7 @@ export default function SectionContact(props) {
 					<div className="mt-[20px] font-light">
 						<label className={formsStyles.label}>Message *</label>
 						<textarea
-							placeholder=""
+							placeholder="Bonjour, je suis intéressé par votre offre..."
 							{...register("message", {
 								required: "Veuillez entrer votre message",
 							})}

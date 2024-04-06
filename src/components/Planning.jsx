@@ -14,14 +14,22 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 						subtitle="Cours collectifs"
 						color={"white"}
 						center
+						textColor1={"primary"}
 					/>
-					<div className="flex justify-center">
+					<div className="flex justify-center gap-4 items-center">
 						<ButtonDestroy
-							primary
+							secondary
 							icon="/logo/calendar.svg"
 							text="Réserver mon cours"
 							href={urlDeReservatioDesCoursEnLigne}
 							target="_blank"
+						/>
+						<ButtonDestroy
+							primary
+							icon="/logo/gift.svg"
+							text="Je veux ma 1ère séance GRATUITE !"
+							target={"_blank"}
+							href={process.env.SITE_URL + "#contact"}
 						/>
 					</div>
 					<div className="grid grid-cols-3 gap-10 mt-20 ">

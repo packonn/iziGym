@@ -1,3 +1,4 @@
+import ButtonDestroy from "./ButtonDestroy"
 import { SubscriptionCard } from "./SubscriptionCard"
 import { Title } from "./Title"
 
@@ -31,6 +32,14 @@ const SectionPrices = ({ subscriptions, infoSubscription, bgColor }) => {
 					<div
 						dangerouslySetInnerHTML={{ __html: infoSubscription }}
 					></div>
+				</div>
+				<div className="w-fit mx-auto mt-4">
+					<ButtonDestroy
+						primary
+						text="Je veux ma 1ère séance GRATUITE !"
+						target={"_blank"}
+						href={process.env.SITE_URL + "#contact"}
+					/>
 				</div>
 			</div>
 		</div>

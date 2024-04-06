@@ -7,13 +7,11 @@ import { useContext } from "react"
 import Link from "next/link"
 
 const BandeauInfo = () => {
-	const { dataInfosGeneral } = useContext(DataContext)
-	console.log(dataInfosGeneral)
 	return (
 		<div className=" bg-secondary text-white text-xs relative  ">
-			<div className=" fixed md:bottom-20 bottom-4  right-4  gap-2 flex flex-col">
+			<div className=" fixed  bottom-4  right-4  gap-2 flex flex-col">
 				<Link
-					href={"http://localhost:3000#contact"}
+					href={process.env.SITE_URL + "#contact"}
 					className="ml-2 text-14 leading-[16px] bg-primary py-2 pb-4 px-4 rounded-xl flex items-center justify-center flex-col drop-shadow-xl"
 				>
 					<div className="flex flex-col">

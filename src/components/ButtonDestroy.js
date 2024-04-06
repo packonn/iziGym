@@ -38,7 +38,7 @@ const ButtonDestroy = ({
 		<Link
 			href={url}
 			target={target}
-			className={`${bgImageDestroy} bg-no-repeat relative z-20 flex items-center px-3 py-3 `}
+			className={`${bgImageDestroy} bg-no-repeat bg-cover relative z-20 flex items-center px-3 py-3 hover:opacity-80 `}
 		>
 			{icon && (
 				<Image
@@ -52,7 +52,7 @@ const ButtonDestroy = ({
 			)}
 			<p
 				className={`${classCustom} ${
-					icon && " ml-4"
+					icon && " ml-4 "
 				} ${textColor} font-anton lg:text-xl text-16`}
 			>
 				{text}

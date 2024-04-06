@@ -146,17 +146,15 @@ export default function Navbar() {
 												</Link>
 											))}
 
-										{/* <ButtonDestroy
-											classCustom={
-												" uppercase font-bold  !text-[17px] !leading-[20px] font-roboto "
-											}
+										<ButtonDestroy
 											primary
-											text="Réserver un cours"
+											text="Je veux ma 1ère séance GRATUITE !"
 											target={"_blank"}
 											href={
-												dataInfosGeneral?.urlDeReservatioDesCoursEnLigne
+												process.env.SITE_URL +
+												"#contact"
 											}
-										/> */}
+										/>
 									</div>
 								</div>
 							</div>

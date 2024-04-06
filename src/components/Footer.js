@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useContext } from "react"
 import { DataContext } from "../../context/DataContext"
+import ButtonDestroy from "./ButtonDestroy"
 
 export const infos = [
 	{
@@ -63,6 +64,17 @@ const Footer = ({ contactBannerColor }) => {
 											</Link>
 										)
 									})}
+									<div className="w-fit">
+										<ButtonDestroy
+											primary
+											text="Je veux ma 1ère séance GRATUITE !"
+											target={"_blank"}
+											href={
+												process.env.SITE_URL +
+												"#contact"
+											}
+										/>
+									</div>
 								</div>
 							</div>
 						</div>

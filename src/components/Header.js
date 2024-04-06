@@ -3,6 +3,8 @@ import BandeauPromo from "@/components/BandeauPromo"
 import Navbar from "@/components/Navbar"
 import Image from "next/image"
 import DataContextProvider from "../../context/DataContext"
+import { Title } from "./Title"
+import ButtonDestroy from "./ButtonDestroy"
 
 const Header = ({
 	backgroundImageURL,
@@ -85,8 +87,34 @@ const Header = ({
 										{title3}
 									</p>
 								)}
+
+								{hours && (
+									<div className="flex flex-col gap-2 -rotate-6 bg-white p-10 py-5 rounded-2xl ml-10 mt-10">
+										<Title
+											title={"1ère séance"}
+											subtitle={"GRATUITE!"}
+											color={"black"}
+											textColor1={"primary"}
+											style={"mb-0"}
+										/>
+										<div className="-mt-10">
+											<ButtonDestroy
+												primary
+												icon="/logo/gift.svg"
+												text={
+													"Je veux profiter de l'offre !"
+												}
+												href={
+													process.env.SITE_URL +
+													"#contact"
+												}
+											/>
+										</div>
+									</div>
+								)}
 							</div>
 						</div>
+
 						{hours && (
 							<div className="mt-4 pb-4   container flex justify-center md:justify-end  md:absolute  bottom-40 right-40 ">
 								<div className="relative   md:h-[225px] md:w-[225px] h-[175px] w-[175px] ">

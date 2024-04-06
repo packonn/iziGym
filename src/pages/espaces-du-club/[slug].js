@@ -92,13 +92,19 @@ const SpaceDetails = ({ space, dataInfoGeneral, slug }) => {
 		<Layout
 			contactBannerColor="white"
 			center
-			backgroundImageURL={space.featuredImage?.node ? space.featuredImage?.node.sourceUrl : "/assets-dev/placeholder.png"}
+			backgroundImageURL={
+				space.featuredImage?.node
+					? space.featuredImage?.node.sourceUrl
+					: "/assets-dev/placeholder.png"
+			}
 			title1={space.title}
 			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
 			<div className="py-20">
 				<ContentDynamic
-					subscriptions={space.groupeChampsEspacesDuClub?.subscription}
+					subscriptions={
+						space.groupeChampsEspacesDuClub?.subscription
+					}
 					showVideo={showVideo}
 					title={space.title}
 					videoURL={space.groupeChampsEspacesDuClub?.videourl}
@@ -112,14 +118,14 @@ const SpaceDetails = ({ space, dataInfoGeneral, slug }) => {
 				/>
 
 				{slug === "cours-collectifs" && (
-					<>
+					<div className="mt-10">
 						<Planning
 							planning={dataInfoGeneral.planning}
 							urlDeReservatioDesCoursEnLigne={
 								dataInfoGeneral.urlDeReservatioDesCoursEnLigne
 							}
 						/>
-					</>
+					</div>
 				)}
 			</div>
 		</Layout>
