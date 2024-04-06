@@ -16,7 +16,7 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 						center
 						textColor1={"primary"}
 					/>
-					<div className="flex justify-center gap-4 items-center mt-20 ">
+					<div className="flex md:flex-row flex-col justify-center gap-4 items-center mt-20 ">
 						<div className="w-fit relative">
 							{/* <div className="text-black rotate-[5deg] ml-auto z-40  relative bg-white w-fit rounded px-2 py-1">
 								Réservé aux abonnés
