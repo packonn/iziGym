@@ -104,10 +104,7 @@ const Header = ({
 												text={
 													"Je veux profiter de l'offre !"
 												}
-												href={
-													process.env.SITE_URL +
-													"#contact"
-												}
+												href={"#contact"}
 											/>
 										</div>
 									</div>

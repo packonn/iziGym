@@ -149,10 +149,7 @@ export default function Navbar() {
 										<ButtonDestroy
 											primary
 											text="Je veux ma 1ère séance GRATUITE !"
-											href={
-												process.env.SITE_URL +
-												"#contact"
-											}
+											href={"#contact"}
 										/>
 									</div>
 								</div>
@@ -270,6 +267,14 @@ export default function Navbar() {
 												alt="logo instagram de la Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 											/>
 										</Link>
+										<ButtonDestroy
+											primary
+											icon="/logo/gift.svg"
+											text={
+												"Je veux profiter de l'offre !"
+											}
+											href={"#contact"}
+										/>
 									</div>
 								</div>
 							</div>

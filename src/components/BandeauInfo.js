@@ -12,7 +12,7 @@ const BandeauInfo = () => {
 		<div className=" bg-secondary text-white text-xs relative  ">
 			<div className=" fixed  bottom-4  right-4  gap-2 flex flex-col">
 				<Link
-					href={process.env.SITE_URL + "#contact"}
+					href={"#contact"}
 					className="ml-2 text-14 leading-[16px] bg-primary py-2 pb-4 px-4 rounded-xl flex items-center justify-center flex-col drop-shadow-xl"
 				>
 					<div className="flex flex-col font-anton">

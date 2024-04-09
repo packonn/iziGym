@@ -41,7 +41,7 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 								primary
 								icon="/logo/gift.svg"
 								text="Je veux ma 1ère séance GRATUITE !"
-								href={process.env.SITE_URL + "#contact"}
+								href={"#contact"}
 							/>
 							<div className="-rotate-[5deg] z-40  absolute -right-10 -bottom-10 bg-white w-fit rounded px-2 py-1">
 								<div className="w-2 h-2 bg-primary rounded-full absolute top-[6px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
