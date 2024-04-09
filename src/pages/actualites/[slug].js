@@ -84,8 +84,19 @@ export const getServerSideProps = async (context) => {
 
 const ActualiteSlug = ({ slug, actu, actus }) => {
 	const [showVideo, setShowVideo] = useState(false)
+	// test if actus is ana array and filter the current actu
 
-	const otherActus = actus.filter((actu) => actu.slug !== slug)
+	//filter actus by date and remove the current actu
+	const otherActus = Array.isArray(actus)
+		? actus
+				.filter((actu) => {
+					const endDate = actu.groupeChampsArticle.enddate
+					const today = new Date()
+					const endDateTime = new Date(endDate)
+					return endDate ? endDateTime > today : false // Check if the endDateTime is before today
+				})
+				.filter((actu) => actu.slug !== slug)
+		: []
 
 	useEffect(() => {
 		setShowVideo(true)
@@ -96,9 +107,13 @@ const ActualiteSlug = ({ slug, actu, actus }) => {
 		.locale("fr")
 		.format("dddd DD MMMM YYYY")
 
-	const featuredImageURL = actu.featuredImage ?  actu.featuredImage.node.sourceUrl : "/assets-dev/placeholder.png"
-const videoURL = actu.groupeChampsArticle.videourl ? actu.groupeChampsArticle.videourl : null
-const content = actu.content ? actu.content : ""
+	const featuredImageURL = actu.featuredImage
+		? actu.featuredImage.node.sourceUrl
+		: "/assets-dev/placeholder.png"
+	const videoURL = actu.groupeChampsArticle.videourl
+		? actu.groupeChampsArticle.videourl
+		: null
+	const content = actu.content ? actu.content : ""
 	return (
 		<>
 			<Layout
@@ -117,18 +132,14 @@ const content = actu.content ? actu.content : ""
 							src={featuredImageURL}
 							alt={actu.title}
 							placeholder="blur"
-							blurDataURL={
-								featuredImageURL
-							}
+							blurDataURL={featuredImageURL}
 						/>
 						<Image
 							fill
 							className="w-full h-full object-cover -z-10 blur-[5px] absolute top-0 left-0  "
 							src={featuredImageURL}
 							placeholder="blur"
-							blurDataURL={
-								featuredImageURL
-							}
+							blurDataURL={featuredImageURL}
 							alt={actu.title}
 						/>
 					</div>
@@ -139,7 +150,7 @@ const content = actu.content ? actu.content : ""
 							}}
 							className="py-4"
 						></div>
-						{(showVideo && videoURL) && (
+						{showVideo && videoURL && (
 							<div className="">
 								<h3
 									className={`font-great  text-[70px]  text-secondary      -mt-2  `}
