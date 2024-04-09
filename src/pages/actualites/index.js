@@ -106,7 +106,7 @@ const Actualites = ({ actus, pageInfo, last, first }) => {
 							Pas d'évènements en cours
 						</p>
 					)}
-					<div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
+					<div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-20   justify-center items-center ">
 						{actusNotExpired.map((actu, index) => {
 							return (
 								<div className="!h-[420px]" key={index}>
@@ -127,7 +127,7 @@ const Actualites = ({ actus, pageInfo, last, first }) => {
 							Pas d'évènements passés
 						</p>
 					)}
-					<div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-50   justify-center items-center ">
+					<div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4  grid-cols-1    relative z-20   justify-center items-center ">
 						{actusExpired.map((actu, index) => {
 							return (
 								<div className="!h-[420px]" key={index}>
