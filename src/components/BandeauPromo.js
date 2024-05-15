@@ -1,8 +1,6 @@
-import { useContext } from "react"
-import { DataContext } from "../../context/DataContext"
+import { dataInfosGeneral } from "../data"
 
 const BandeauPromo = () => {
-	const { dataInfosGeneral } = useContext(DataContext)
 	return (
 		<div
 			className={

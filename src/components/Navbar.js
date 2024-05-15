@@ -1,6 +1,7 @@
 import { Disclosure, Menu, Transition } from "@headlessui/react"
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
+import { dataInfosGeneral } from "../data"
 import {
 	abonnementsURL,
 	actusURL,
@@ -15,8 +16,6 @@ import { infos } from "./Footer"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import ButtonDestroy from "./ButtonDestroy"
-import { useContext } from "react"
-import { DataContext } from "../../context/DataContext"
 
 export const navigationURLS = (router) => {
 	return [
@@ -78,7 +77,6 @@ function classNames(...classes) {
 export default function Navbar() {
 	const router = useRouter()
 	const navigation = navigationURLS(router)
-	const { dataInfosGeneral } = useContext(DataContext)
 	return (
 		<Disclosure
 			as="nav"

@@ -3,7 +3,7 @@ import SectionPrices from "@/components/SectionPrice"
 import { gql } from "@apollo/client"
 import apolloClient from "../../apollo-client"
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async () => {
 	let subscriptions = []
 	let options = null
 	let mentionslegales = null

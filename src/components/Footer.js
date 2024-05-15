@@ -3,8 +3,7 @@ import SectionContact from "./SectionContact"
 import { navigationURLS } from "./Navbar"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { useContext } from "react"
-import { DataContext } from "../../context/DataContext"
+import { dataInfosGeneral } from "../data"
 import ButtonDestroy from "./ButtonDestroy"
 
 export const infos = [
@@ -32,7 +31,6 @@ export const infos = [
 const Footer = ({ contactBannerColor }) => {
 	const router = useRouter()
 	const navigation = navigationURLS(router)
-	const { dataInfosGeneral } = useContext(DataContext)
 	return (
 		<footer className="relative">
 			<SectionContact contactBannerColor={contactBannerColor} />

@@ -2,7 +2,6 @@ import * as React from "react"
 import Head from "next/head"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import DataContextProvider from "../../context/DataContext"
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent"
 import Script from "next/script"
 import { useState } from "react"
@@ -130,9 +129,7 @@ export default function Layout(props) {
 				)}
 			</main>
 
-			<DataContextProvider>
-				<Footer contactBannerColor={props.contactBannerColor} />
-			</DataContextProvider>
+			<Footer contactBannerColor={props.contactBannerColor} />
 		</>
 	)
 }

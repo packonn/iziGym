@@ -10,7 +10,7 @@ import "dayjs/locale/fr"
 import Head from "next/head"
 import Image from "next/image"
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async () => {
 	let subscriptions = []
 	let options = null
 	let spaces = []
@@ -59,8 +59,7 @@ export const getServerSideProps = async (context) => {
 		subscriptions = await response.data.themeGeneralSettings.option
 			.ordersubscription
 	} catch (error) {
-		// redirect to 404 page if an error occurred
-		// redirect to 404 page
+		console.log("error 1", error)
 		return {
 			redirect: {
 				permanent: false,
@@ -89,7 +88,7 @@ export const getServerSideProps = async (context) => {
 
 		spaces = await response.data.spaces.nodes
 	} catch (error) {
-		console.log("error", error)
+		console.log("error 2", error)
 		// redirect to 404 page if an error occurred
 		// redirect to 404 page
 		return {
@@ -146,7 +145,7 @@ export const getServerSideProps = async (context) => {
 			})
 		}
 	} catch (error) {
-		console.log("error", error)
+		console.log("error 3", error)
 		// redirect to 404 page if an error occurred
 		// redirect to 404 page
 		return {

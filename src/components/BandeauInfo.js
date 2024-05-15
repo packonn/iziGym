@@ -2,12 +2,10 @@ import Image from "next/image"
 import pin from "../../public/logo/pin.svg"
 import clock from "../../public/logo/clock.svg"
 import phone from "../../public/logo/phone.svg"
-import { DataContext } from "../../context/DataContext"
-import { useContext } from "react"
 import Link from "next/link"
+import { dataInfosGeneral } from "../data"
 
 const BandeauInfo = () => {
-	const { dataInfosGeneral } = useContext(DataContext)
 	return (
 		<div className=" bg-secondary text-white text-xs relative  ">
 			<div className=" fixed  bottom-4  right-4  gap-2 flex flex-col">
