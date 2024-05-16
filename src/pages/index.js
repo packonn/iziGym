@@ -61,12 +61,20 @@ export const getServerSideProps = async () => {
 	} catch (error) {
 		console.log("error 1", error)
 		return {
-			redirect: {
-				permanent: false,
-				destination: `500`,
+			props: {
+				subscriptions: subscriptions,
+				options: options,
+				spaces: spaces,
+				actus: actus,
 			},
 		}
+		// return {
+		// 	redirect: {
+		// 		permanent: false,
+		// 		destination: `500`,
+		// 	},
 	}
+
 	try {
 		const response = await apolloClient.query({
 			query: gql`
@@ -91,10 +99,18 @@ export const getServerSideProps = async () => {
 		console.log("error 2", error)
 		// redirect to 404 page if an error occurred
 		// redirect to 404 page
+		// return {
+		// 	redirect: {
+		// 		permanent: false,
+		// 		destination: `500`,
+		// 	},
+		// }
 		return {
-			redirect: {
-				permanent: false,
-				destination: `500`,
+			props: {
+				subscriptions: subscriptions,
+				options: options,
+				spaces: spaces,
+				actus: actus,
 			},
 		}
 	}
@@ -148,12 +164,20 @@ export const getServerSideProps = async () => {
 		console.log("error 3", error)
 		// redirect to 404 page if an error occurred
 		// redirect to 404 page
+		// return {
+		// 	redirect: {
+		// 		permanent: false,
+		// 		destination: `500`,
+		// 	},
 		return {
-			redirect: {
-				permanent: false,
-				destination: `500`,
+			props: {
+				subscriptions: subscriptions,
+				options: options,
+				spaces: spaces,
+				actus: actus,
 			},
 		}
+		// }
 	}
 
 	return {
@@ -180,7 +204,9 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 				title3="La forme sans la frime !"
 				hours
 			>
-				{spaces && <SectionServices spaces={spaces} />}
+				{spaces && spaces.length > 0 && (
+					<SectionServices spaces={spaces} />
+				)}
 				{actus && actus.length > 0 && (
 					<SectionActus bottomBanner actus={actus} />
 				)}
