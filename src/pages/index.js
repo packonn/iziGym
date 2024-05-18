@@ -16,9 +16,24 @@ export const getServerSideProps = async () => {
 	let spaces = []
 	let actus = {}
 
+	const fetchWithRetry = async (query, retries = 3) => {
+		for (let i = 0; i < retries; i++) {
+			try {
+				const response = await apolloClient.query(
+					{ query },
+					{ fetchPolicy: "cache-first" }
+				)
+				return response
+			} catch (error) {
+				if (i === retries - 1) throw error
+				console.log(`Retrying... (${i + 1}/${retries})`)
+			}
+		}
+	}
+
 	try {
-		const response = await apolloClient.query({
-			query: gql`
+		const response = await fetchWithRetry(
+			gql`
 				{
 					themeGeneralSettings {
 						option {
@@ -53,100 +68,76 @@ export const getServerSideProps = async () => {
 						}
 					}
 				}
-			`,
-		})
+			`
+		)
 		options = await response.data.themeGeneralSettings.option
 		subscriptions = await response.data.themeGeneralSettings.option
 			.ordersubscription
 	} catch (error) {
-		console.log("error 1", error)
-		return {
-			props: {
-				subscriptions: subscriptions,
-				options: options,
-				spaces: spaces,
-				actus: actus,
-			},
-		}
-		// return {
-		// 	redirect: {
-		// 		permanent: false,
-		// 		destination: `500`,
-		// 	},
+		console.log(
+			"Error in fetching themeGeneralSettings:",
+			error.message,
+			error.networkError,
+			error.graphQLErrors
+		)
 	}
 
 	try {
-		const response = await apolloClient.query({
-			query: gql`
-				{
-					spaces {
-						nodes {
-							title
-							slug
-							featuredImage {
-								node {
-									sourceUrl(size: MEDIUM_LARGE)
-								}
+		const response = await fetchWithRetry(gql`
+			{
+				spaces {
+					nodes {
+						title
+						slug
+						featuredImage {
+							node {
+								sourceUrl(size: MEDIUM_LARGE)
 							}
 						}
 					}
 				}
-			`,
-		})
+			}
+		`)
 
 		spaces = await response.data.spaces.nodes
 	} catch (error) {
-		console.log("error 2", error)
-		// redirect to 404 page if an error occurred
-		// redirect to 404 page
-		// return {
-		// 	redirect: {
-		// 		permanent: false,
-		// 		destination: `500`,
-		// 	},
-		// }
-		return {
-			props: {
-				subscriptions: subscriptions,
-				options: options,
-				spaces: spaces,
-				actus: actus,
-			},
-		}
+		console.log(
+			"Error in fetching spaces:",
+			error.message,
+			error.networkError,
+			error.graphQLErrors
+		)
 	}
 	try {
-		const response = await apolloClient.query({
-			query: gql`
-				{
-					posts {
-						nodes {
-							title
-							content
-							featuredImage {
-								node {
-									sourceUrl(size: MEDIUM_LARGE)
-								}
+		const response = awaifetchWithRetry(gql`
+			{
+				posts {
+					nodes {
+						title
+						content
+						featuredImage {
+							node {
+								sourceUrl(size: MEDIUM_LARGE)
 							}
-							groupeChampsArticle {
-								subtitle
-								startdate
-								videourl
-								enddate
-								startdate
-								subtitle
-								videourl
-							}
-							slug
-							content
 						}
+						groupeChampsArticle {
+							subtitle
+							startdate
+							videourl
+							enddate
+							startdate
+							subtitle
+							videourl
+						}
+						slug
+						content
 					}
 				}
-			`,
-			// fetchPolicy: "no-cache",
-		})
+			}
+		`)
 
 		actus = await response.data.posts.nodes
-		if (actus) {
+		if (Array.isArray(actus) && actus.length > 0) {
 			// filter actus to get only the ones that are not expired
 			actus = actus.filter((actu) => {
 				if (actu.groupeChampsArticle) {
@@ -161,23 +152,12 @@ export const getServerSideProps = async () => {
 			})
 		}
 	} catch (error) {
-		console.log("error 3", error)
-		// redirect to 404 page if an error occurred
-		// redirect to 404 page
-		// return {
-		// 	redirect: {
-		// 		permanent: false,
-		// 		destination: `500`,
-		// 	},
-		return {
-			props: {
-				subscriptions: subscriptions,
-				options: options,
-				spaces: spaces,
-				actus: actus,
-			},
-		}
-		// }
+		console.log(
+			"Error in fetching actus:",
+			error.message,
+			error.networkError,
+			error.graphQLErrors
+		)
 	}
 
 	return {
