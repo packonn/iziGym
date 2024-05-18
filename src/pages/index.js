@@ -109,7 +109,7 @@ export const getServerSideProps = async () => {
 		)
 	}
 	try {
-		const response = awaifetchWithRetry(gql`
+		const response = await fetchWithRetry(gql`
 			{
 				posts {
 					nodes {
