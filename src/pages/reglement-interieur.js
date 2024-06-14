@@ -1,5 +1,4 @@
-import Layout from "@/components/Layout"
-import SectionPrices from "@/components/SectionPrice"
+import Layout from "../components/Layout"
 import { gql } from "@apollo/client"
 import apolloClient from "../../apollo-client"
 

@@ -1,10 +1,10 @@
-import Layout from "@/components/Layout"
+import Layout from "../../components/Layout"
 import { breakPointsSwiper, images, slidesPerView } from "../../../helpers"
-import ContentDynamic from "@/components/ContentDynamic"
+import ContentDynamic from "../../components/ContentDynamic"
 import { useEffect, useState } from "react"
 import apolloClient from "../../../apollo-client"
 import { gql } from "@apollo/client"
-import Planning from "@/components/Planning"
+import Planning from "../../components/Planning"
 
 export const getServerSideProps = async (context) => {
 	const slug = context.params.slug
