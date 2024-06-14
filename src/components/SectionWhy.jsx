@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
 
-const SectionWhy = ({ options }) => {
+const SectionWhy = ({ options, withoutBanner }) => {
 	const array = [
 		{
 			title: "Des coachs à fond",
@@ -71,43 +71,45 @@ const SectionWhy = ({ options }) => {
 					})}
 				</div>
 			</div>
-			<div className=" w-full bg-[url('/logo/bandeau-orange.png')]  lg:pb-0 md:pb-14 pb-14 bg-no-repeat bg-cover relative z-20">
-				<div className="container md:pb-0 pb-10 flex flex-col md:flex-row items-center justify-between">
-					<div className="flex relative   md:w-[480px] md:h-[371px] w-full h-[231px] z-10 left-0 ">
-						<Image
-							src={"/assets-dev/hero_image_05 1.svg"}
-							fill
-							alt={
-								"Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
-							}
-							placeholder="blur"
-							blurDataURL={"/assets-dev/hero_image_05 1.svg"}
-						/>
-					</div>
-					<div className="flex justify-center items-center ">
-						<Title
-							title={"1ère séance"}
-							subtitle={"GRATUITE!"}
-							color={"secondary"}
-							textColor1={"white"}
-						/>
-					</div>
-					<div className="gap-y-4 flex flex-col md:items-start items-center">
-						<ButtonDestroy
-							secondary
-							icon="/logo/white-mail.svg"
-							text={options?.email}
-							href={`mailto:${options?.email}`}
-						/>
-						<ButtonDestroy
-							white
-							icon="/logo/black-phone.svg"
-							href={`tel:${options?.phone}`}
-							text={options?.phone}
-						/>
+			{!withoutBanner && (
+				<div className=" w-full bg-[url('/logo/bandeau-orange.png')]  lg:pb-0 md:pb-14 pb-14 bg-no-repeat bg-cover relative z-20">
+					<div className="container md:pb-0 pb-10 flex flex-col md:flex-row items-center justify-between">
+						<div className="flex relative   md:w-[480px] md:h-[371px] w-full h-[231px] z-10 left-0 ">
+							<Image
+								src={"/assets-dev/hero_image_05 1.svg"}
+								fill
+								alt={
+									"Salle de sport Izi gym 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
+								}
+								placeholder="blur"
+								blurDataURL={"/assets-dev/hero_image_05 1.svg"}
+							/>
+						</div>
+						<div className="flex justify-center items-center ">
+							<Title
+								title={"1ère séance"}
+								subtitle={"GRATUITE!"}
+								color={"secondary"}
+								textColor1={"white"}
+							/>
+						</div>
+						<div className="gap-y-4 flex flex-col md:items-start items-center">
+							<ButtonDestroy
+								secondary
+								icon="/logo/white-mail.svg"
+								text={options?.email}
+								href={`mailto:${options?.email}`}
+							/>
+							<ButtonDestroy
+								white
+								icon="/logo/black-phone.svg"
+								href={`tel:${options?.phone}`}
+								text={options?.phone}
+							/>
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 			{/*<div className="relative  w-full h-20 -mt-16 z-10 ">
 				<Image src="/logo/wave-black.png" alt="banner" fill />
 			</div>*/}

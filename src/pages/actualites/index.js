@@ -1,8 +1,8 @@
-import Layout from "@/components/Layout"
-import ActusItem from "@/components/ActusItem"
+import Layout from "../../components/Layout"
+import ActusItem from "../../components/ActusItem"
 import apolloClient from "../../../apollo-client"
 import { gql } from "@apollo/client"
-import Pagination from "@/components/Pagination"
+import Pagination from "../../components/Pagination"
 import { actusURL } from "../../../helpers"
 
 export const getServerSideProps = async (context) => {

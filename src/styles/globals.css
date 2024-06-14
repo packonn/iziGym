@@ -195,3 +195,7 @@ h2 span strong {
 html {
 	scroll-behavior: smooth;
 }
+
+.calendly-inline-widget iframe {
+	height: 800px;
+}

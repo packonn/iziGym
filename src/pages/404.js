@@ -1,5 +1,5 @@
-import ButtonDestroy from "@/components/ButtonDestroy"
-import { Title } from "@/components/Title"
+import ButtonDestroy from "../components/ButtonDestroy"
+import { Title } from "../components/Title"
 
 const PageNotFound = () => {
 	return (
