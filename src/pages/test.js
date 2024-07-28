@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Image from "next/image"
+import BrevoEmbed from "src/components/BrevoEmbed"
 import CalendlyEmbed from "src/components/CalendlyEmbed"
 import FooterLandingPage from "src/components/FooterLandingPage"
 import SectionWhy from "src/components/SectionWhy"
@@ -70,6 +71,9 @@ export default function Test() {
 
 				<div className="container h-full">
 					<CalendlyEmbed url="https://calendly.com/izigym" />
+				</div>
+				<div className="container h-full">
+					<BrevoEmbed />
 				</div>
 
 				<SectionWhy withoutBanner={true} />
