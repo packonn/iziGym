@@ -23,7 +23,7 @@ const SharePage = () => {
 					<div className="flex justify-center">
 						<Link
 							href={
-								"sms:?body=Hey viens me rejoindre chez IZI gym pour une sceance decouverte. Clique ici : https://reservation.izigym.fr/"
+								"sms:?body=Hey viens me rejoindre chez IZI GYM pour une sceance decouverte. Clique ici : https://reservation.izigym.fr/"
 							}
 							className={`bg-[url("/assets-dev/button-bg-orange.svg")] bg-no-repeat bg-cover relative z-20 flex items-center px-10 py-5 hover:opacity-80 `}
 						>
