@@ -7,14 +7,15 @@ import "dayjs/locale/fr"
 const ActusItem = (props) => {
 
 	const item = props.item
+	if(!item) return null
 	const expired = props.expired
 
-	let dateEnd = dayjs(item.groupeChampsArticle.enddate)
+	let dateEnd = item.groupeChampsArticle?.enddate ? dayjs(item.groupeChampsArticle.enddate)
 		.locale("fr")
-		.format("DD MMM")
-	let dateStart = dayjs(item.groupeChampsArticle.startdate)
+		.format("DD MMM") : null
+	let dateStart = item.groupeChampsArticle?.startdate ? dayjs(item.groupeChampsArticle.startdate)
 		.locale("fr")
-		.format("DD MMM")
+		.format("DD MMM") : null
 
 
 	return (
@@ -42,17 +43,14 @@ const ActusItem = (props) => {
 			/>
 			<div className=" bg-[url('/logo/bottom-carousel-actu.png')] -bottom-[1px] relative bg-no-repeat bg-bottom h-full flex flex-col justify-end w-full p-4 pb-6 pt-0">
 				<div className="bg-primary z-10 absolute -top-1 left-4 text-white font-bold  text-4xl py-2 px-5 ">
-					{item.groupeChampsArticle.enddate ? (
-						<div className="flex">
+					
+						{(dateEnd || dateStart) && <div className="flex">
 							<p className="font-anton text-md md:text-[37px] font-regular ">
-								{dateStart} - {dateEnd}
+								{dateStart ? dateStart : ""} {dateStart && dateEnd ? " - " : ""} {dateEnd ? dateEnd : ""}
 							</p>
-						</div>
-					) : (
-						<p className="font-anton text-md md:text-[37px] font-regular">
-							{dateStart}
-						</p>
-					)}
+						</div>}
+					
+						
 				</div>
 				<div className="text-white relative z-50   ">
 					{item.groupeChampsArticle.subtitle && (
