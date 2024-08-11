@@ -147,7 +147,7 @@ export default function Navbar() {
 										<ButtonDestroy
 											primary
 											text="Je veux ma 1ère séance GRATUITE !"
-											href={"#contact"}
+											href={"https://www.landing-page.izigym.fr/"}
 										/>
 									</div>
 								</div>

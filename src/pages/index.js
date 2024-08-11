@@ -12,6 +12,7 @@ import Image from "next/image"
 import Prices from "@/components/Price"
 import { SubscriptionCard } from "@/components/SubscriptionCard"
 import { subscriptions } from "../../helpers"
+import { Title } from "@/components/Title"
 
 export const getServerSideProps = async () => {
 	let options = null
@@ -211,7 +212,12 @@ export default function Home({options, spaces, actus }) {
 			<div className="py-0 md:py-20 pt-10 pb-10 bg-[#F6F3F2] relative w-full h-full">
 
 
-
+			<Title
+						title={"Les tarifs"}
+						subtitle={"chez IZI GYM"}
+						color={"secondary"}
+						center={true}
+					/>
 				<Image
 					src="/assets-dev/fond-tarifs.png"
 					fill
@@ -225,7 +231,7 @@ export default function Home({options, spaces, actus }) {
 			{subscriptions.map((subscription) => {
 				
 				return (
-					<SubscriptionCard key={subscription.id} data={subscription}/>
+					<SubscriptionCard key={subscription.id} subscription={subscription}/>
 				)
 			})}
 

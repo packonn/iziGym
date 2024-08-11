@@ -102,7 +102,7 @@ const Header = ({
 											text={
 												"Je veux profiter de l'offre !"
 											}
-											href={"#contact"}
+											href={"https://www.landing-page.izigym.fr/"}
 										/>
 									</div>
 								</div>

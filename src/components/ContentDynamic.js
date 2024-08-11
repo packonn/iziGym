@@ -92,10 +92,10 @@ export default function ContentDynamic({
 						subscriptions.map((subscription, index) => {
 							return (
 								<SubscriptionCard
-									data={subscription}
+								subscription={subscription}
 									key={index}
 									customContainerClass={
-										" !min-h-full odd:bg-[#ededed] "
+										" !min-h-full odd:bg-[#ededed] even:bg-secondary even:text-white"
 									}
 								/>
 							)
