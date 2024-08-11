@@ -9,6 +9,7 @@ import apolloClient from "../../apollo-client"
 import "dayjs/locale/fr"
 import Head from "next/head"
 import Image from "next/image"
+import Prices from "@/components/Price"
 
 export const getServerSideProps = async () => {
 	let subscriptions = []
@@ -171,11 +172,10 @@ export const getServerSideProps = async () => {
 }
 
 export default function Home({ subscriptions, options, spaces, actus }) {
+	const planning = options.planning
+	const urlDeReservatioDesCoursEnLigne = options.urlDeReservatioDesCoursEnLigne
 	return (
-		<>
-			<Head>
-				<title>Accueil Izi GYM</title>
-			</Head>
+			
 			<Layout
 				contactBannerColor="cream"
 				backgroundImageURL="/assets-dev/bg-home.jpeg"
@@ -199,25 +199,37 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 						alt="separation entre section planning et présentation de la salle de sport izigym à Aigrefeuille d'aunis 17290"
 					/>
 				</div>
-				{options && options.planning && (
+				{(planning) && (
 					<Planning
-						planning={options?.planning}
+						planning={planning}
 						urlDeReservatioDesCoursEnLigne={
-							options?.urlDeReservatioDesCoursEnLigne
+							urlDeReservatioDesCoursEnLigne
 						}
 					/>
 				)}
 
-				<div className="relative ">
-					<div className="bg-[url(/assets-dev/wave-cream.svg)] h-40 w-full -top-40 absolute z-10  bg-no-repeat bg-cover "></div>
-					{subscriptions && options && options.infosubscription && (
-						<SectionPrices
-							subscriptions={subscriptions}
-							infoSubscription={options.infosubscription}
-						/>
-					)}
+				<div className="py-0 md:py-20 pt-10 pb-10 bg-[#F6F3F2] relative w-full h-full">
+					
+				<Image
+						src="/assets-dev/wave-cream.svg"
+						fill
+						alt=""
+						className="h-40 w-full -top-40 absolute z-10  bg-no-repeat bg-cover "
+					/>
+
+				<Image
+						src="/assets-dev/fond-tarifs.png"
+						fill
+						alt=""
+						className="h-40 w-full bg-no-repeat bg-cover "
+					/>
+					
+					<Prices />
+					
 				</div>
+
+					
+
 			</Layout>
-		</>
 	)
 }
