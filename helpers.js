@@ -217,3 +217,19 @@ export const planning = [
 		],
 	},
 ]
+
+
+export  const subscriptions = [
+	{
+		id: 1,
+		title: "Carte de séance",
+		content: "Valade de 6 à 12 mois",
+		price: "à partir de 8€",
+	},
+	{
+		id: 2,
+		title: "Abonnement mensuel",
+		content: "Option et durée à définir avec un conseiller",
+		price: "à partir de 29,90€",
+	},
+]

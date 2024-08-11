@@ -5,6 +5,7 @@ import VideoPlayer from "@/components/VideoXL"
 import SwiperGallery from "@/components/SwiperGallery"
 import { SubscriptionCard } from "./SubscriptionCard"
 import ButtonDestroy from "@/components/ButtonDestroy"
+import { subscriptions } from "../../helpers"
 
 export default function ContentDynamic({
 	showVideo,
@@ -16,9 +17,11 @@ export default function ContentDynamic({
 	content,
 	collapse,
 	videoURL,
-	subscriptions,
 	dataInfoGeneral,
 }) {
+
+	
+
 	return (
 		<div className="container  grid grid-cols-4 gap-x-6">
 			<div className="lg:col-span-3 col-span-4">

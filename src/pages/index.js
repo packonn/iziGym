@@ -10,9 +10,10 @@ import "dayjs/locale/fr"
 import Head from "next/head"
 import Image from "next/image"
 import Prices from "@/components/Price"
+import { SubscriptionCard } from "@/components/SubscriptionCard"
+import { subscriptions } from "../../helpers"
 
 export const getServerSideProps = async () => {
-	let subscriptions = []
 	let options = null
 	let spaces = []
 	let actus = {}
@@ -47,14 +48,6 @@ export const getServerSideProps = async () => {
 							facebookurl
 							hoursreception
 							instagramurl
-							ordersubscription {
-								... on Subscription {
-									id
-									content
-									slug
-									title
-								}
-							}
 							urlDeReservatioDesCoursEnLigne
 							infosubscription
 							planning {
@@ -72,8 +65,7 @@ export const getServerSideProps = async () => {
 			`
 		)
 		options = await response.data.themeGeneralSettings.option
-		subscriptions = await response.data.themeGeneralSettings.option
-			.ordersubscription
+		
 	} catch (error) {
 		console.log(
 			"Error in fetching themeGeneralSettings:",
@@ -163,7 +155,6 @@ export const getServerSideProps = async () => {
 
 	return {
 		props: {
-			subscriptions: subscriptions,
 			options: options,
 			spaces: spaces,
 			actus: actus,
@@ -171,34 +162,36 @@ export const getServerSideProps = async () => {
 	}
 }
 
-export default function Home({ subscriptions, options, spaces, actus }) {
+export default function Home({options, spaces, actus }) {
 	const planning = options.planning
 	const urlDeReservatioDesCoursEnLigne = options.urlDeReservatioDesCoursEnLigne
 	return (
-			
-			<Layout
-				contactBannerColor="cream"
-				backgroundImageURL="/assets-dev/bg-home.jpeg"
-				title1="Club"
-				title2="IZI GYM"
-				title3="La forme sans la frime !"
-				hours
-			>
-				{spaces && spaces.length > 0 && (
-					<SectionServices spaces={spaces} />
-				)}
-				{actus && actus.length > 0 && (
-					<SectionActus bottomBanner actus={actus} />
-				)}
-				{options && <SectionWhy options={options} />}
-				<div className="relative w-full h-20 -mt-20 z-20">
-					<Image
-						src="/assets-dev/banner-top-footer.png"
-						fill
-						className="object-cover w-full h-20 "
-						alt="separation entre section planning et présentation de la salle de sport izigym à Aigrefeuille d'aunis 17290"
-					/>
-				</div>
+
+		<Layout
+			contactBannerColor="cream"
+			backgroundImageURL="/assets-dev/bg-home.jpeg"
+			title1="Club"
+			title2="IZI GYM"
+			title3="La forme sans la frime !"
+			hours
+		>
+			{spaces && spaces.length > 0 && (
+				<SectionServices spaces={spaces} />
+			)}
+			{actus && actus.length > 0 && (
+				<SectionActus bottomBanner actus={actus} />
+			)}
+			{options && <SectionWhy options={options} />}
+			<div className="relative w-full h-20 -mt-20 z-20">
+				<Image
+					src="/assets-dev/banner-top-footer.png"
+					fill
+					className="object-cover w-full h-20 "
+					alt="separation entre section planning et présentation de la salle de sport izigym à Aigrefeuille d'aunis 17290"
+				/>
+			</div>
+			<div className="relative">
+
 				{(planning) && (
 					<Planning
 						planning={planning}
@@ -207,29 +200,41 @@ export default function Home({ subscriptions, options, spaces, actus }) {
 						}
 					/>
 				)}
-
-				<div className="py-0 md:py-20 pt-10 pb-10 bg-[#F6F3F2] relative w-full h-full">
-					
 				<Image
-						src="/assets-dev/wave-cream.svg"
-						fill
-						alt=""
-						className="h-40 w-full -top-40 absolute z-10  bg-no-repeat bg-cover "
-					/>
+					src="/assets-dev/wave-cream.svg"
+					width={1920}
+					height={1080}
+					alt=""
+					className=" !w-full absolute bottom-0 z-10  bg-no-repeat bg-cover "
+				/>
+			</div>
+			<div className="py-0 md:py-20 pt-10 pb-10 bg-[#F6F3F2] relative w-full h-full">
+
+
 
 				<Image
-						src="/assets-dev/fond-tarifs.png"
-						fill
-						alt=""
-						className="h-40 w-full bg-no-repeat bg-cover "
-					/>
-					
-					<Prices />
-					
-				</div>
+					src="/assets-dev/fond-tarifs.png"
+					fill
+					alt=""
+					className="h-full w-full bg-no-repeat bg-cover "
+				/>
 
-					
+				{/* <Prices /> */}
 
-			</Layout>
+				<div className="container md:grid grid-cols-2 z-10">
+			{subscriptions.map((subscription) => {
+				
+				return (
+					<SubscriptionCard key={subscription.id} data={subscription}/>
+				)
+			})}
+
+			</div>
+
+			</div>
+
+
+
+		</Layout>
 	)
 }

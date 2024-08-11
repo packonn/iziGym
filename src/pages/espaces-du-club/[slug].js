@@ -43,13 +43,6 @@ export const getServerSideProps = async (context) => {
 				}
 			  }
 			  groupeChampsEspacesDuClub {
-				subscription {
-				  ... on Subscription {
-					id
-					title
-					content
-				  }
-				}
 				subtitle
 				videourl
 				collapse {
@@ -102,9 +95,6 @@ const SpaceDetails = ({ space, dataInfoGeneral, slug }) => {
 		>
 			<div className="py-20">
 				<ContentDynamic
-					subscriptions={
-						space.groupeChampsEspacesDuClub?.subscription
-					}
 					showVideo={showVideo}
 					title={space.title}
 					videoURL={space.groupeChampsEspacesDuClub?.videourl}
