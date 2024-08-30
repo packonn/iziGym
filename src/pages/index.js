@@ -1,15 +1,12 @@
 import Layout from "@/components/Layout";
 import Planning from "@/components/Planning";
 import SectionActus from "@/components/SectionActus";
-import SectionPrices from "@/components/SectionPrice";
 import SectionServices from "@/components/SectionServices";
 import SectionWhy from "@/components/SectionWhy";
 import { gql } from "@apollo/client";
 import apolloClient from "../../apollo-client";
 import "dayjs/locale/fr";
-import Head from "next/head";
 import Image from "next/image";
-import Prices from "@/components/Price";
 import { SubscriptionCard } from "@/components/SubscriptionCard";
 import { subscriptions } from "../../helpers";
 import { Title } from "@/components/Title";

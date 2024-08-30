@@ -1,55 +1,8 @@
 import Layout from "@/components/Layout";
-import SectionPrices from "@/components/SectionPrice";
-import { gql } from "@apollo/client";
-import apolloClient from "../../apollo-client";
+import { subscriptions } from "../../helpers";
+import { SubscriptionCard } from "@/components/SubscriptionCard";
 
-export const getServerSideProps = async (context) => {
-	let subscriptions = [];
-	let options = null;
-
-	try {
-		const response = await apolloClient.query({
-			query: gql`
-				{
-					themeGeneralSettings {
-						option {
-							ordersubscription {
-								... on Subscription {
-									id
-									content
-									slug
-									title
-								}
-							}
-							infosubscription
-						}
-					}
-					subscriptions {
-						nodes {
-							content
-							title
-						}
-					}
-				}
-			`,
-		});
-
-		subscriptions = await response.data.themeGeneralSettings.option
-			.ordersubscription;
-		options = await response.data.themeGeneralSettings.option;
-	} catch (error) {
-		console.log("error", error);
-	}
-
-	return {
-		props: {
-			subscriptions: subscriptions,
-			options: options,
-		},
-	};
-};
-
-export default function Abonnements({ subscriptions, options }) {
+export default function Abonnements() {
 	return (
 		<Layout
 			contactBannerColor="white"
@@ -58,11 +11,16 @@ export default function Abonnements({ subscriptions, options }) {
 			center
 			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
-			<SectionPrices
-				bgColor="white"
-				subscriptions={subscriptions}
-				infoSubscription={options?.infosubscription}
-			/>
+			<div className="container md:grid grid-cols-2 z-10 my-40 ">
+				{subscriptions.map((subscription) => {
+					return (
+						<SubscriptionCard
+							key={subscription.id}
+							subscription={subscription}
+						/>
+					);
+				})}
+			</div>
 		</Layout>
 	);
 }
