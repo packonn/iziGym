@@ -128,8 +128,7 @@ export const getServerSideProps = async () => {
 				}
 			}
 		`);
-
-		actus = await response.data.posts.nodes;
+		actus = await response?.data.posts.nodes;
 		if (Array.isArray(actus) && actus.length > 0) {
 			// filter actus to get only the ones that are not expired
 			actus = actus.filter((actu) => {
