@@ -1,23 +1,23 @@
-import Layout from "@/components/Layout"
-import Planning from "@/components/Planning"
-import SectionActus from "@/components/SectionActus"
-import SectionPrices from "@/components/SectionPrice"
-import SectionServices from "@/components/SectionServices"
-import SectionWhy from "@/components/SectionWhy"
-import { gql } from "@apollo/client"
-import apolloClient from "../../apollo-client"
-import "dayjs/locale/fr"
-import Head from "next/head"
-import Image from "next/image"
-import Prices from "@/components/Price"
-import { SubscriptionCard } from "@/components/SubscriptionCard"
-import { subscriptions } from "../../helpers"
-import { Title } from "@/components/Title"
+import Layout from "@/components/Layout";
+import Planning from "@/components/Planning";
+import SectionActus from "@/components/SectionActus";
+import SectionPrices from "@/components/SectionPrice";
+import SectionServices from "@/components/SectionServices";
+import SectionWhy from "@/components/SectionWhy";
+import { gql } from "@apollo/client";
+import apolloClient from "../../apollo-client";
+import "dayjs/locale/fr";
+import Head from "next/head";
+import Image from "next/image";
+import Prices from "@/components/Price";
+import { SubscriptionCard } from "@/components/SubscriptionCard";
+import { subscriptions } from "../../helpers";
+import { Title } from "@/components/Title";
 
 export const getServerSideProps = async () => {
-	let options = null
-	let spaces = []
-	let actus = {}
+	let options = null;
+	let spaces = [];
+	let actus = {};
 
 	const fetchWithRetry = async (query, retries = 3) => {
 		for (let i = 0; i < retries; i++) {
@@ -25,14 +25,14 @@ export const getServerSideProps = async () => {
 				const response = await apolloClient.query(
 					{ query },
 					{ fetchPolicy: "cache-first" }
-				)
-				return response
+				);
+				return response;
 			} catch (error) {
-				if (i === retries - 1) throw error
-				console.log(`Retrying... (${i + 1}/${retries})`)
+				if (i === retries - 1) throw error;
+				console.log(`Retrying... (${i + 1}/${retries})`);
 			}
 		}
-	}
+	};
 
 	try {
 		const response = await fetchWithRetry(
@@ -64,16 +64,15 @@ export const getServerSideProps = async () => {
 					}
 				}
 			`
-		)
-		options = await response.data.themeGeneralSettings.option
-		
+		);
+		options = await response.data.themeGeneralSettings.option;
 	} catch (error) {
 		console.log(
 			"Error in fetching themeGeneralSettings:",
 			error.message,
 			error.networkError,
 			error.graphQLErrors
-		)
+		);
 	}
 
 	try {
@@ -91,16 +90,16 @@ export const getServerSideProps = async () => {
 					}
 				}
 			}
-		`)
+		`);
 
-		spaces = await response.data.spaces.nodes
+		spaces = await response.data.spaces.nodes;
 	} catch (error) {
 		console.log(
 			"Error in fetching spaces:",
 			error.message,
 			error.networkError,
 			error.graphQLErrors
-		)
+		);
 	}
 	try {
 		const response = await fetchWithRetry(gql`
@@ -128,9 +127,9 @@ export const getServerSideProps = async () => {
 					}
 				}
 			}
-		`)
+		`);
 
-		actus = await response.data.posts.nodes
+		actus = await response.data.posts.nodes;
 		if (Array.isArray(actus) && actus.length > 0) {
 			// filter actus to get only the ones that are not expired
 			actus = actus.filter((actu) => {
@@ -139,11 +138,11 @@ export const getServerSideProps = async () => {
 						return (
 							new Date(actu.groupeChampsArticle.enddate) >
 							new Date()
-						)
+						);
 					}
 				}
-				return true
-			})
+				return true;
+			});
 		}
 	} catch (error) {
 		console.log(
@@ -151,7 +150,7 @@ export const getServerSideProps = async () => {
 			error.message,
 			error.networkError,
 			error.graphQLErrors
-		)
+		);
 	}
 
 	return {
@@ -160,14 +159,14 @@ export const getServerSideProps = async () => {
 			spaces: spaces,
 			actus: actus,
 		},
-	}
-}
+	};
+};
 
-export default function Home({options, spaces, actus }) {
-	const planning = options.planning
-	const urlDeReservatioDesCoursEnLigne = options.urlDeReservatioDesCoursEnLigne
+export default function Home({ options, spaces, actus }) {
+	const planning = options?.planning;
+	const urlDeReservatioDesCoursEnLigne =
+		options?.urlDeReservatioDesCoursEnLigne;
 	return (
-
 		<Layout
 			contactBannerColor="cream"
 			backgroundImageURL="/assets-dev/bg-home.jpeg"
@@ -176,9 +175,7 @@ export default function Home({options, spaces, actus }) {
 			title3="La forme sans la frime !"
 			hours
 		>
-			{spaces && spaces.length > 0 && (
-				<SectionServices spaces={spaces} />
-			)}
+			{spaces && spaces.length > 0 && <SectionServices spaces={spaces} />}
 			{actus && actus.length > 0 && (
 				<SectionActus bottomBanner actus={actus} />
 			)}
@@ -192,8 +189,7 @@ export default function Home({options, spaces, actus }) {
 				/>
 			</div>
 			<div className="relative">
-
-				{(planning) && (
+				{planning && (
 					<Planning
 						planning={planning}
 						urlDeReservatioDesCoursEnLigne={
@@ -210,14 +206,12 @@ export default function Home({options, spaces, actus }) {
 				/>
 			</div>
 			<div className="py-0 md:py-20 pt-10 pb-10 bg-[#F6F3F2] relative w-full h-full">
-
-
-			<Title
-						title={"Les tarifs"}
-						subtitle={"chez IZI GYM"}
-						color={"secondary"}
-						center={true}
-					/>
+				<Title
+					title={"Les tarifs"}
+					subtitle={"chez IZI GYM"}
+					color={"secondary"}
+					center={true}
+				/>
 				<Image
 					src="/assets-dev/fond-tarifs.png"
 					fill
@@ -228,19 +222,16 @@ export default function Home({options, spaces, actus }) {
 				{/* <Prices /> */}
 
 				<div className="container md:grid grid-cols-2 z-10">
-			{subscriptions.map((subscription) => {
-				
-				return (
-					<SubscriptionCard key={subscription.id} subscription={subscription}/>
-				)
-			})}
-
+					{subscriptions.map((subscription) => {
+						return (
+							<SubscriptionCard
+								key={subscription.id}
+								subscription={subscription}
+							/>
+						);
+					})}
+				</div>
 			</div>
-
-			</div>
-
-
-
 		</Layout>
-	)
+	);
 }

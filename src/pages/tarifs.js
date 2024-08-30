@@ -1,11 +1,11 @@
-import Layout from "@/components/Layout"
-import SectionPrices from "@/components/SectionPrice"
-import { gql } from "@apollo/client"
-import apolloClient from "../../apollo-client"
+import Layout from "@/components/Layout";
+import SectionPrices from "@/components/SectionPrice";
+import { gql } from "@apollo/client";
+import apolloClient from "../../apollo-client";
 
 export const getServerSideProps = async (context) => {
-	let subscriptions = []
-	let options = null
+	let subscriptions = [];
+	let options = null;
 
 	try {
 		const response = await apolloClient.query({
@@ -32,13 +32,13 @@ export const getServerSideProps = async (context) => {
 					}
 				}
 			`,
-		})
+		});
 
 		subscriptions = await response.data.themeGeneralSettings.option
-			.ordersubscription
-		options = await response.data.themeGeneralSettings.option
+			.ordersubscription;
+		options = await response.data.themeGeneralSettings.option;
 	} catch (error) {
-		console.log("error", error)
+		console.log("error", error);
 	}
 
 	return {
@@ -46,8 +46,8 @@ export const getServerSideProps = async (context) => {
 			subscriptions: subscriptions,
 			options: options,
 		},
-	}
-}
+	};
+};
 
 export default function Abonnements({ subscriptions, options }) {
 	return (
@@ -61,8 +61,8 @@ export default function Abonnements({ subscriptions, options }) {
 			<SectionPrices
 				bgColor="white"
 				subscriptions={subscriptions}
-				infoSubscription={options.infosubscription}
+				infoSubscription={options?.infosubscription}
 			/>
 		</Layout>
-	)
+	);
 }
