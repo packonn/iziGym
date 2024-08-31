@@ -68,13 +68,9 @@ export default function Home({ actus }) {
 			title3="La forme sans la frime !"
 			hours
 		>
-			 <SectionServices />
-
-			
-				<SectionActus bottomBanner actus={actus} />
-
-			 <SectionWhy />
-			
+			<SectionServices />
+			<SectionActus bottomBanner actus={actus} />
+			<SectionWhy />
 
 			<div className="relative">
 				<div className="relative w-full h-20 -mt-20 z-20">

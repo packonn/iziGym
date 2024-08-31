@@ -26,8 +26,10 @@ const Header = ({
 			</div>
 
 			<div
-				className={`min-h-[90vh] bg-secondary   w-full  relative  flex flex-col ${classCustom}`}
+				className={`min-h-[90vh] bg-secondary  w-full  relative  flex flex-col ${classCustom}`}
 			>
+				<Image src="/assets-dev/floating-right.png" alt="banner" placeholder="blur" blurDataURL="/assets-dev/floating-right.png" width={400} height={900} className=" absolute top-0  left-0 h-full w-fit object-contain md:flex hidden"></Image>
+				<Image src="/assets-dev/floating-left.png" alt="banner" placeholder="blur" blurDataURL="/assets-dev/floating-right.png" width={400} height={900} className=" absolute top-0  right-0 h-full w-fit object-contain md:flex hidden"></Image>
 				<Image
 					src={image}
 					fill
@@ -39,7 +41,6 @@ const Header = ({
 				<div className="gradient-black-top absolute top-0 left-0 w-full h-full"></div>
 				<Navbar />
 
-				<div className="bg-floatRight absolute top-0 left-0 h-full w-full bg-no-repeat"></div>
 				<div
 					className={`flex md:py-0 py-20 container flex-1 items-center md:flex-row flex-col h-full pb-[100px] z-10 ${
 						center
@@ -125,7 +126,6 @@ const Header = ({
 						</div>
 					)}
 				</div>
-				<div className="bg-floatLeft  absolute top-0 right-0 h-full w-full bg-right bg-no-repeat"></div>
 				<div className=" bg-bottomHeader h-40 w-full absolute bottom-[-1px] bg-repeat"></div>
 			</div>
 		</div>

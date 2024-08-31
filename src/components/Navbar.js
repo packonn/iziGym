@@ -107,12 +107,16 @@ export default function Navbar() {
 							<div className="flex items-center w-full  lg:justify-between ">
 								<div className="flex flex-shrink-0 items-center">
 									<Link href={homeURL}>
-										<img
+										<Image
+										width={300}
+										height={300}
 											className="block md:h-14 h-12 pb-1 bg-secondary w-auto lg:hidden"
 											src="/logo/logo.webp"
 											alt="IziGym Salle de sport 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
 										/>
-										<img
+										<Image
+										width={300}
+										height={300}
 											className="hidden md:h-14 h-10 pb-1 bg-secondary w-auto lg:block"
 											src="/logo/logo.webp"
 											alt="IziGym Salle de sport 17290 Aigrefeuille d'Aunis, proche de La Rochelle 17000"
