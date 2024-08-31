@@ -1,5 +1,4 @@
 export const SubscriptionCard = ({ subscription, customContainerClass, backgroundColor }) => {
-	console.log('backgroundColor', backgroundColor);
 	
 	return (
 		<div

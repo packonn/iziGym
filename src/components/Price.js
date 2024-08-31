@@ -5,7 +5,6 @@ import Image from "next/image";
 import ButtonDestroy from "./ButtonDestroy";
 
 export default function Prices({cream}) {
-	console.log('cream', cream);
 	
 	return (
 		<div className="py-0 md:py-20 pt-10 pb-10 relative w-full h-full">
