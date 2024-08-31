@@ -1,8 +1,6 @@
 import Layout from "@/components/Layout";
-import { subscriptions } from "../../helpers";
-import { SubscriptionCard } from "@/components/SubscriptionCard";
 import Prices from "@/components/Price";
-import Image from "next/image";
+
 
 export default function Abonnements() {
 	return (

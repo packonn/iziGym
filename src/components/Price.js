@@ -22,7 +22,7 @@ export default function Prices({cream}) {
 				/>
 				<div className="container md:grid grid-cols-2 z-10">
 					{subscriptions.map((subscription) => {
-						const backgroundColor = (cream && subscription.color == "bg-white") ? "bg-[#F5F3F2]" : subscription.color;
+						const backgroundColor = (cream && subscription.color == "bg-white") ? "bg-cream" : subscription.color;
 						return (
 							<SubscriptionCard
 								key={subscription.id}

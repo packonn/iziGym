@@ -28,6 +28,7 @@ module.exports = {
 				gray: "#B5B5B5",
 				gray2: "#1E1E1E",
 				black2: "#262626",
+				cream:"#F5F3F2"
 			},
 			container: {
 				center: true,
