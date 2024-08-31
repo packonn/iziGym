@@ -27,7 +27,6 @@ export default function Prices({cream}) {
 							<SubscriptionCard
 								key={subscription.id}
 								subscription={subscription}
-								customContainerClass="bg-white text-primary"
 								backgroundColor={backgroundColor}
 							/>
 						);
