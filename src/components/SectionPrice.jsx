@@ -1,3 +1,4 @@
+import { themeGeneralSettings } from "@/static-data"
 import ButtonDestroy from "./ButtonDestroy"
 import { SubscriptionCard } from "./SubscriptionCard"
 import { Title } from "./Title"
@@ -37,7 +38,7 @@ const SectionPrices = ({ subscriptions, infoSubscription, bgColor }) => {
 					<ButtonDestroy
 						primary
 						text="Je veux ma 1ère séance GRATUITE !"
-						href={"https://www.landing-page.izigym.fr/"}
+						href={themeGeneralSettings.landingPageUrl}
 					/>
 				</div>
 			</div>

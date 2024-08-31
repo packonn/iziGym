@@ -3,7 +3,7 @@ import SectionContact from "./SectionContact"
 import { navigationURLS } from "./Navbar"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { dataInfosGeneral } from "../data"
+import { themeGeneralSettings } from "../static-data"
 import ButtonDestroy from "./ButtonDestroy"
 
 export const infos = [
@@ -66,7 +66,8 @@ const Footer = ({ contactBannerColor }) => {
 										<ButtonDestroy
 											primary
 											text="Je veux ma 1ère séance GRATUITE !"
-											href={"https://www.landing-page.izigym.fr/"}
+											href={themeGeneralSettings.landingPageUrl}
+											target={"_blank"}
 										/>
 									</div>
 								</div>
@@ -81,7 +82,7 @@ const Footer = ({ contactBannerColor }) => {
 									<div
 										className="text-roboto  !text-16 text-white"
 										dangerouslySetInnerHTML={{
-											__html: dataInfosGeneral?.hoursreception,
+											__html: themeGeneralSettings?.hoursreception,
 										}}
 									/>
 								</>
@@ -92,7 +93,7 @@ const Footer = ({ contactBannerColor }) => {
 									<div
 										className="text-roboto  !text-16 text-white"
 										dangerouslySetInnerHTML={{
-											__html: dataInfosGeneral?.hoursacces,
+											__html: themeGeneralSettings?.hoursacces,
 										}}
 									/>
 								</>
@@ -106,7 +107,7 @@ const Footer = ({ contactBannerColor }) => {
 									<div
 										className="text-roboto  !text-16 text-white"
 										dangerouslySetInnerHTML={{
-											__html: dataInfosGeneral?.address,
+											__html: themeGeneralSettings?.address,
 										}}
 									/>
 								</div>
@@ -116,13 +117,13 @@ const Footer = ({ contactBannerColor }) => {
 								</p>
 								<a
 									href={
-										"'tel:" + dataInfosGeneral?.phone + "'"
+										`tel:${themeGeneralSettings?.phone}`
 									}
 								>
 									<div
 										className="text-roboto  !text-16 text-white"
 										dangerouslySetInnerHTML={{
-											__html: dataInfosGeneral?.phone,
+											__html: themeGeneralSettings?.phone,
 										}}
 									/>
 								</a>
@@ -132,7 +133,7 @@ const Footer = ({ contactBannerColor }) => {
 								</p>
 								<div className="flex items-center gap-x-6">
 									<Link
-										href={`${dataInfosGeneral?.facebookurl}`}
+										href={`${themeGeneralSettings?.facebookurl}`}
 										target={"_blank"}
 									>
 										<Image
@@ -145,7 +146,7 @@ const Footer = ({ contactBannerColor }) => {
 									</Link>
 									<Link
 										target={"_blank"}
-										href={`${dataInfosGeneral?.instagramurl}`}
+										href={`${themeGeneralSettings?.instagramurl}`}
 									>
 										<Image
 											src="/logo/instagram.svg"
@@ -158,10 +159,10 @@ const Footer = ({ contactBannerColor }) => {
 								</div>
 							</div>
 						</div>
-						{dataInfosGeneral?.addressurl && (
+						{themeGeneralSettings?.addressurl && (
 							<Link
 								target="_blank"
-								href={dataInfosGeneral?.addressurl}
+								href={themeGeneralSettings?.addressurl}
 								className="lg:col-span-1 col-span-5  relative w-full overflow-hidden  md:h-[300px] h-[200px] lg:border-l lg:pl-4 lg:border-t-0  border-t lg:mt-0  mt-5 border-gray "
 							>
 								<Image

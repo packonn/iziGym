@@ -1,7 +1,7 @@
-import { Disclosure, Menu, Transition } from "@headlessui/react"
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline"
+import { Disclosure,} from "@headlessui/react"
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
-import { dataInfosGeneral } from "../data"
+import { themeGeneralSettings } from "../static-data"
 import {
 	abonnementsURL,
 	actusURL,
@@ -12,7 +12,6 @@ import {
 	mentionslegalesURL,
 	cgvURL,
 } from "../../helpers"
-import { infos } from "./Footer"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import ButtonDestroy from "./ButtonDestroy"
@@ -147,7 +146,8 @@ export default function Navbar() {
 										<ButtonDestroy
 											primary
 											text="Je veux ma 1ère séance GRATUITE !"
-											href={"https://www.landing-page.izigym.fr/"}
+											href={themeGeneralSettings.landingPageUrl}
+											target={"_blank"}
 										/>
 									</div>
 								</div>
@@ -189,7 +189,7 @@ export default function Navbar() {
 										<div
 											className="text-roboto  !text-16 text-white"
 											dangerouslySetInnerHTML={{
-												__html: dataInfosGeneral?.hoursreception,
+												__html: themeGeneralSettings?.hoursreception,
 											}}
 										/>
 									</>
@@ -200,7 +200,7 @@ export default function Navbar() {
 										<div
 											className="text-roboto  !text-16 text-white"
 											dangerouslySetInnerHTML={{
-												__html: dataInfosGeneral?.hoursacces,
+												__html: themeGeneralSettings?.hoursacces,
 											}}
 										/>
 									</>
@@ -214,7 +214,7 @@ export default function Navbar() {
 										<div
 											className="text-roboto  !text-16 text-white"
 											dangerouslySetInnerHTML={{
-												__html: dataInfosGeneral?.address,
+												__html: themeGeneralSettings?.address,
 											}}
 										/>
 									</div>
@@ -225,14 +225,14 @@ export default function Navbar() {
 									<a
 										href={
 											"'tel:" +
-											dataInfosGeneral?.phone +
+											themeGeneralSettings?.phone +
 											"'"
 										}
 									>
 										<div
 											className="text-roboto  !text-16 text-white"
 											dangerouslySetInnerHTML={{
-												__html: dataInfosGeneral?.phone,
+												__html: themeGeneralSettings?.phone,
 											}}
 										/>
 									</a>
@@ -242,7 +242,7 @@ export default function Navbar() {
 									</p>
 									<div className="flex items-center gap-x-6">
 										<Link
-											href={`${dataInfosGeneral?.facebookurl}`}
+											href={`${themeGeneralSettings?.facebookurl}`}
 											target={"_blank"}
 										>
 											<Image
@@ -255,7 +255,7 @@ export default function Navbar() {
 										</Link>
 										<Link
 											target={"_blank"}
-											href={`${dataInfosGeneral?.instagramurl}`}
+											href={`${themeGeneralSettings?.instagramurl}`}
 										>
 											<Image
 												src="/logo/instagram.svg"

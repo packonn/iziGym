@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar"
 import Image from "next/image"
 import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
+import { themeGeneralSettings } from "@/static-data"
 
 const Header = ({
 	backgroundImageURL,
@@ -102,7 +103,8 @@ const Header = ({
 											text={
 												"Je veux profiter de l'offre !"
 											}
-											href={"https://www.landing-page.izigym.fr/"}
+											href={themeGeneralSettings.landingPageUrl}
+											target={"_blank"}
 										/>
 									</div>
 								</div>

@@ -5,7 +5,9 @@ import VideoPlayer from "@/components/VideoXL"
 import SwiperGallery from "@/components/SwiperGallery"
 import { SubscriptionCard } from "./SubscriptionCard"
 import ButtonDestroy from "@/components/ButtonDestroy"
-import { subscriptions } from "../../helpers"
+import { subscriptions } from "@/static-data"
+import { themeGeneralSettings } from "@/static-data"
+import Prices from "./Price"
 
 export default function ContentDynamic({
 	showVideo,
@@ -17,7 +19,6 @@ export default function ContentDynamic({
 	content,
 	collapse,
 	videoURL,
-	dataInfoGeneral,
 }) {
 
 	
@@ -78,13 +79,13 @@ export default function ContentDynamic({
 								secondary
 								icon="/logo/white-mail.svg"
 								text="S'inscire à la salle"
-								href={`mailto:${dataInfoGeneral?.email}`}
+								href={`mailto:${themeGeneralSettings?.email}`}
 							/>
 							<ButtonDestroy
 								white
 								icon="/logo/black-phone.svg"
-								text={dataInfoGeneral?.phone}
-								href={`tel:${dataInfoGeneral?.phone}`}
+								text={themeGeneralSettings?.phone}
+								href={`tel:${themeGeneralSettings?.phone}`}
 							/>
 						</div>
 					</div>
@@ -94,6 +95,7 @@ export default function ContentDynamic({
 								<SubscriptionCard
 								subscription={subscription}
 									key={index}
+									backgroundColor={subscription.color}
 									customContainerClass={
 										" !min-h-full odd:bg-[#ededed] even:bg-secondary even:text-white"
 									}

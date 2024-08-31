@@ -2,8 +2,9 @@ import Image from "next/image"
 import { Title } from "./Title"
 import { coursCollectifURL, servicesMusculationURL, spacesURL } from "../../helpers"
 import Link from "next/link"
+import { spaces } from "@/static-data"
 
-const SectionServices = ({spaces}) => {
+const SectionServices = () => {
 	
 	return (
 		<div className="relative min-h-[65vh] md:py-20 py-10 overflow-hidden">

@@ -3,14 +3,14 @@ import pin from "../../public/logo/pin.svg"
 import clock from "../../public/logo/clock.svg"
 import phone from "../../public/logo/phone.svg"
 import Link from "next/link"
-import { dataInfosGeneral } from "../data"
+import {  themeGeneralSettings } from "../static-data"
 
 const BandeauInfo = () => {
 	return (
 		<div className=" bg-secondary text-white text-xs relative  ">
 			<div className=" fixed  bottom-4  right-4  gap-2 flex flex-col">
 				<Link
-					href={"https://www.landing-page.izigym.fr/"}
+					href={themeGeneralSettings.landingPageUrl}
 					target="_blank"
 					className="ml-2 text-14 leading-[16px] bg-primary py-2 pb-4 px-4 rounded-xl flex items-center justify-center flex-col drop-shadow-xl"
 				>
@@ -39,7 +39,7 @@ const BandeauInfo = () => {
 				</Link>
 				<div className="flex items-center justify-between">
 					<a
-						href={`tel:${dataInfosGeneral?.phone}`}
+						href={`tel:${themeGeneralSettings?.phone}`}
 						className="ml-2 text-16 bg-white h-12 w-12 rounded-full flex items-center justify-center drop-shadow-xl"
 					>
 						<Image
@@ -50,7 +50,7 @@ const BandeauInfo = () => {
 						/>
 					</a>
 					<a
-						href={`mailto:${dataInfosGeneral?.email}`}
+						href={`mailto:${themeGeneralSettings?.email}`}
 						className="ml-2 text-16 bg-primary h-12 w-12 rounded-full flex items-center justify-center drop-shadow-xl"
 					>
 						<Image
@@ -63,7 +63,7 @@ const BandeauInfo = () => {
 				</div>
 			</div>
 			<div className="flex flex-wrap justify-center items-center md:gap-10 gap-x-4 py-2 container">
-				<div className="flex items-center justify-center ">
+				<a href={themeGeneralSettings?.addressurl} target="_blank" className="flex items-center justify-center ">
 					<Image
 						src={pin}
 						alt="Pin logo"
@@ -73,11 +73,11 @@ const BandeauInfo = () => {
 					/>
 					<div
 						dangerouslySetInnerHTML={{
-							__html: dataInfosGeneral?.address,
+							__html: themeGeneralSettings?.address,
 						}}
 						className="md:ml-2 text-16 text-center md:text-left"
 					></div>
-				</div>
+				</a>
 				<div className="flex items-center">
 					<Image
 						src={clock}
@@ -88,7 +88,7 @@ const BandeauInfo = () => {
 					<div
 						className="ml-2 text-16"
 						dangerouslySetInnerHTML={{
-							__html: dataInfosGeneral?.hoursacces,
+							__html: themeGeneralSettings?.hoursacces,
 						}}
 					></div>
 				</div>
@@ -102,10 +102,10 @@ const BandeauInfo = () => {
 						// placeholder="blur" // Optional blur-up while loading
 					/>
 					<a
-						href={`tel:${dataInfosGeneral?.phone}`}
+						href={`tel:${themeGeneralSettings?.phone}`}
 						className="ml-2 text-16"
 					>
-						{dataInfosGeneral?.phone}
+						{themeGeneralSettings?.phone}
 					</a>
 				</div>
 			</div>

@@ -1,7 +1,8 @@
 import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
+import { planning, themeGeneralSettings } from "@/static-data"
 
-const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
+const Planning = () => {
 	return (
 		<>
 			<div className="bg-black2 relative z-10 md:pb-20 pb-40">
@@ -32,7 +33,7 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 								secondary
 								icon="/logo/calendar.svg"
 								text="Réserver mon cours en ligne"
-								href={urlDeReservatioDesCoursEnLigne}
+								href={themeGeneralSettings.urlDeReservatioDesCoursEnLigne}
 								target="_blank"
 							/>
 						</div>
@@ -41,7 +42,8 @@ const Planning = ({ planning, urlDeReservatioDesCoursEnLigne }) => {
 								primary
 								icon="/logo/gift.svg"
 								text="Je veux ma 1ère séance GRATUITE !"
-								href={"https://www.landing-page.izigym.fr/"}
+								href={themeGeneralSettings.landingPageUrl}
+								target={"_blank"}
 							/>
 							<div className="-rotate-[5deg] z-40  absolute -right-10 -bottom-10 bg-white w-fit rounded px-2 py-1">
 								<div className="w-2 h-2 bg-primary rounded-full absolute top-[6px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>

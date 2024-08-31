@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
+import { themeGeneralSettings } from "@/static-data"
 
-const SectionWhy = ({ options }) => {
+const SectionWhy = () => {
 	const array = [
 		{
 			title: "Des coachs à fond",
@@ -96,14 +97,14 @@ const SectionWhy = ({ options }) => {
 						<ButtonDestroy
 							secondary
 							icon="/logo/white-mail.svg"
-							text={options?.email}
-							href={`mailto:${options?.email}`}
+							text={themeGeneralSettings.email}
+							href={`mailto:${themeGeneralSettings?.email}`}
 						/>
 						<ButtonDestroy
 							white
 							icon="/logo/black-phone.svg"
-							href={`tel:${options?.phone}`}
-							text={options?.phone}
+							href={`tel:${themeGeneralSettings?.phone}`}
+							text={themeGeneralSettings?.phone}
 						/>
 					</div>
 				</div>

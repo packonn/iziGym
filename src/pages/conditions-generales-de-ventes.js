@@ -1,39 +1,8 @@
 import Layout from "@/components/Layout"
-import SectionPrices from "@/components/SectionPrice"
-import { gql } from "@apollo/client"
-import apolloClient from "../../apollo-client"
+import { infos } from "@/static-data"
 
-export const getServerSideProps = async () => {
-	let subscriptions = []
-	let options = null
-	let mentionslegales = null
+export default function Abonnements() {
 
-	try {
-		const response = await apolloClient.query({
-			query: gql`
-				{
-					themeGeneralSettings {
-						option {
-							cgv
-						}
-					}
-				}
-			`,
-		})
-
-		mentionslegales = await response.data.themeGeneralSettings.option.cgv
-	} catch (error) {
-		console.log("error", error)
-	}
-
-	return {
-		props: {
-			mentionslegales: mentionslegales,
-		},
-	}
-}
-
-export default function Abonnements({ mentionslegales }) {
 	return (
 		<Layout
 			contactBannerColor="white"
@@ -44,7 +13,7 @@ export default function Abonnements({ mentionslegales }) {
 		>
 			<div
 				className="container customMentionLegaleHTML py-20"
-				dangerouslySetInnerHTML={{ __html: mentionslegales }}
+				dangerouslySetInnerHTML={{ __html: infos.cgv }}
 			></div>
 		</Layout>
 	)

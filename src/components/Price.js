@@ -1,26 +1,48 @@
-import { subscriptions } from "../../helpers"
+import { subscriptions, themeGeneralSettings } from "@/static-data";
+import { SubscriptionCard } from "./SubscriptionCard";
+import { Title } from "./Title";
+import Image from "next/image";
+import ButtonDestroy from "./ButtonDestroy";
 
-export default function Prices() {
+export default function Prices({cream}) {
+	console.log('cream', cream);
+	
 	return (
-		<div className="container md:grid grid-cols-2">
-			{subscriptions.map((item) => {
-				return (
-					<div
-						key={item.id}
-						className={`hover:scale-[1.02]  bg-white transition-all ease-in-out duration-500 even:bg-secondary even:text-white flex flex-col items-center justify-between lg:h-full  min-h-[400px] px-12 py-7 `}
-					>
-						<h3 className="text-[37px] font-anton uppercase text-center pb-5 ">
-							{item.title}
-						</h3>
-						<div className="customContentSubscription">
-							<p className="text-center">{item.content}</p>
-							<p className="font-anton text-[36px] text-primary text-center ">
-								{item.price}
-							</p>
-						</div>
-					</div>
-				)
-			})}
-		</div>
+		<div className="py-0 md:py-20 pt-10 pb-10 relative w-full h-full">
+				<Title
+					title={"Les tarifs"}
+					subtitle={"chez IZI GYM"}
+					color={"secondary"}
+					center={true}
+				/>
+				<Image
+					src="/assets-dev/fond-tarifs.png"
+					fill
+					alt=""
+					className="h-full w-full bg-no-repeat bg-cover "
+				/>
+				<div className="container md:grid grid-cols-2 z-10">
+					{subscriptions.map((subscription) => {
+						const backgroundColor = (cream && subscription.color == "bg-white") ? "bg-[#F5F3F2]" : subscription.color;
+						return (
+							<SubscriptionCard
+								key={subscription.id}
+								subscription={subscription}
+								customContainerClass="bg-white text-primary"
+								backgroundColor={backgroundColor}
+							/>
+						);
+					})}
+				</div>
+				<div className="w-fit mx-auto mt-10">
+
+				<ButtonDestroy
+											primary
+											text="Je veux ma 1ère séance GRATUITE !"
+											href={themeGeneralSettings.landingPageUrl}
+											target={"_blank"}
+											/>
+											</div>
+			</div>
 	)
 }

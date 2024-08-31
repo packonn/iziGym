@@ -1,5 +1,6 @@
 import ButtonDestroy from "@/components/ButtonDestroy"
 import { Title } from "@/components/Title"
+import { themeGeneralSettings } from "@/static-data"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -23,8 +24,9 @@ const SharePage = () => {
 					<div className="flex justify-center">
 						<Link
 							href={
-								"sms:?body=Hey ! Tu connais la salle de sport IZI GYM à Aigrefeuille ? J’ai une invitation gratuite pour une séance découverte, profites-en vite : https://www.landing-page.izigym.fr/"
+								`sms:?body=Hey ! Tu connais la salle de sport IZI GYM à Aigrefeuille ? J’ai une invitation gratuite pour une séance découverte, profites-en vite : ${themeGeneralSettings.landingPageUrl}`
 							}
+							target="_blank"
 							className={`bg-[url("/assets-dev/button-bg-orange.svg")] bg-no-repeat bg-cover relative z-20 flex items-center px-10 py-5 hover:opacity-80 `}
 						>
 							<Image

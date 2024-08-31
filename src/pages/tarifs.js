@@ -1,6 +1,8 @@
 import Layout from "@/components/Layout";
 import { subscriptions } from "../../helpers";
 import { SubscriptionCard } from "@/components/SubscriptionCard";
+import Prices from "@/components/Price";
+import Image from "next/image";
 
 export default function Abonnements() {
 	return (
@@ -11,16 +13,8 @@ export default function Abonnements() {
 			center
 			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
-			<div className="container md:grid grid-cols-2 z-10 my-40 ">
-				{subscriptions.map((subscription) => {
-					return (
-						<SubscriptionCard
-							key={subscription.id}
-							subscription={subscription}
-						/>
-					);
-				})}
-			</div>
+			
+			<Prices cream/>
 		</Layout>
 	);
 }

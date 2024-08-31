@@ -3,7 +3,11 @@ import { Title } from "./Title"
 import { ActusCarousel } from "./ActusCarousel"
 import ButtonDestroy from "./ButtonDestroy"
 
-const SectionActus = ({ bottomBanner, actus }) => {
+
+
+const SectionActus = ({actus, bottomBanner}) => {
+	if(!actus || actus?.length === 0) return null
+
 	return (
 		<div className="bg-actusBG min-h-[70vh] bg-center bg-contain pb-20 relative ">
 			<div className="relative w-full h-20 bottom-1">

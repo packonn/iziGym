@@ -6,6 +6,7 @@ import { Navigation, Pagination } from "swiper"
 import ActusItem from "./ActusItem"
 
 export const ActusCarousel = ({ actus }) => {
+	
 	const prevRef = useRef(null)
 	const nextRef = useRef(null)
 	return (
@@ -31,14 +32,15 @@ export const ActusCarousel = ({ actus }) => {
 				}}
 				// centeredSlides={true}
 			>
-				{actus &&
+				{actus && 
 					actus.map((item, i) => {
+						const expired = item.groupeChampsArticle?.enddate ? new Date(item.groupeChampsArticle.enddate) < new Date() : false
 						return (
 							<SwiperSlide
 								key={i}
-								className="bg-secondary   !h-[420px] relative z-50 flex  justify-center items-center "
+								className="bg-secondary !h-[420px] relative z-50 flex justify-center items-center "
 							>
-								<ActusItem item={item} />
+								<ActusItem item={item}expired={expired} />
 							</SwiperSlide>
 						)
 					})}
