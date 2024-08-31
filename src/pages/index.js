@@ -50,6 +50,7 @@ export const getServerSideProps = async () => {
 	return {
 		props: {
 			actus: actus,
+			options: {discount: "10% de rabais sur les programmes de l'Izi Gym"}
 		},
 	}
 
@@ -58,7 +59,7 @@ export const getServerSideProps = async () => {
 
 
 
-export default function Home({ actus }) {
+export default function Home({ actus , options}) {
 	return (
 		<Layout
 			contactBannerColor="cream"
@@ -67,6 +68,7 @@ export default function Home({ actus }) {
 			title2="IZI GYM"
 			title3="La forme sans la frime !"
 			hours
+			options={options}
 		>
 			<SectionServices />
 			<SectionActus bottomBanner actus={actus} />

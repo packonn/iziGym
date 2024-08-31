@@ -62,7 +62,7 @@ const BandeauInfo = () => {
 					</a>
 				</div>
 			</div>
-			<div className="flex flex-wrap justify-center items-center md:gap-10 gap-x-4 py-2 container">
+			<div className="flex flex-wrap justify-center items-center lg:gap-10 gap-x-4 py-2 container">
 				<a href={themeGeneralSettings?.addressurl} target="_blank" className="flex items-center justify-center ">
 					<Image
 						src={pin}

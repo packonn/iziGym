@@ -4,12 +4,31 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent"
 import Script from "next/script"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { mentionslegalesURL } from "../../helpers"
-import { useRouter } from "next/router"
 
 export default function Layout(props) {
-	const router = useRouter()
+const [options, setOptions] = useState(null)
+
+const loadData = async () => {
+	const response = await fetch("/api/options-page", {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json"
+		}
+	})
+
+	const result = await response.json()
+	setOptions(result.data)
+
+}
+
+useEffect(()=> {
+	loadData()
+}, [])	
+
+
+	
 	const children = props.children
 	const [cookieIsAccepted, setCookieIsAccepted] = useState(false)
 
@@ -70,7 +89,7 @@ export default function Layout(props) {
 					title3={props.title3}
 					center={props.center}
 					hours={props.hours}
-					options={props.options}
+					options={options}
 				/>
 			</header>
 

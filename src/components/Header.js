@@ -14,15 +14,18 @@ const Header = ({
 	center,
 	classCustom,
 	hours,
+	options,
 }) => {
 	const image = backgroundImageURL
 		? backgroundImageURL
 		: "/assets-dev/placeholder.png"
+
+		
 	return (
 		<div>
 			<div className="z-40 relative">
 				<BandeauInfo />
-				<BandeauPromo />
+				<BandeauPromo options={options} />
 			</div>
 
 			<div
