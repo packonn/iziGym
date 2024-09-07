@@ -1,6 +1,8 @@
 import { Title } from "./Title"
 import ButtonDestroy from "./ButtonDestroy"
 import { planning, themeGeneralSettings } from "@/static-data"
+import Image from "next/image"
+import Link from "next/link"
 
 const Planning = () => {
 	return (
@@ -16,10 +18,6 @@ const Planning = () => {
 					/>
 					<div className="flex md:flex-row flex-col justify-center gap-4 items-center mt-20 ">
 						<div className="w-fit relative">
-							{/* <div className="text-black rotate-[5deg] ml-auto z-40  relative bg-white w-fit rounded px-2 py-1">
-								Réservé aux abonnés
-							</div> */}
-
 							<div className="rotate-[5deg] z-40  absolute right-0 -top-8 bg-white w-fit rounded px-2 py-1">
 								<div className="w-2 h-2 bg-black rounded-full absolute bottom-[1px] border-black border right-[1px] transform "></div>
 								<span className="text-black text-center flex justify-center text-sm pt-1">
@@ -51,7 +49,10 @@ const Planning = () => {
 							</div>
 						</div>
 					</div>
-					<div className="grid grid-cols-3 gap-10 mt-24 ">
+					<Link href={"https://cms.izigym.fr/wp-content/uploads/2024/09/planning.png"} target="_blank">
+						<Image src="https://cms.izigym.fr/wp-content/uploads/2024/09/planning.png" alt="planning horaires cours collectif izi Gym" width={2000} height={1415} className="h-auto w-full mt-20 object-contain" />
+					</Link>
+					{/* <div className="grid grid-cols-3 gap-10 mt-24 ">
 						{planning &&
 							planning.map((item, index) => {
 								// verification si il y a des cours le matin
@@ -191,7 +192,7 @@ const Planning = () => {
 									</div>
 								)
 							})}
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</>
