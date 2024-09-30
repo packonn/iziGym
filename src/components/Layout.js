@@ -9,9 +9,8 @@ import { mentionslegalesURL } from "../../helpers"
 
 export default function Layout(props) {
 	const [options, setOptions] = useState(null)
-	const [cookieIsAccepted, setCookieIsAccepted] = useState(false)
+	const [cookieIsAccepted, setCookieIsAccepted] = useState(getCookieConsentValue())
 
-	// Utiliser useEffect pour charger les données
 	useEffect(() => {
 		const loadData = async () => {
 			try {
@@ -20,20 +19,27 @@ export default function Layout(props) {
 					headers: {
 						"Content-Type": "application/json",
 					},
-				})
-				const result = await response.json()
-				setOptions(result.data)
+				});
+	
+				if (!response.ok) {
+					throw new Error(`Erreur de chargement des options: ${response.status} - ${response.statusText}`);
+				}
+	
+				const result = await response.json();
+				setOptions(result.data);
 			} catch (error) {
-				console.log("error", error)
+				console.error("Erreur lors de la récupération des options :", error);
 			}
-		}
-		loadData()
-	}, []) // [] signifie que cet effet ne s'exécutera qu'une seule fois après le premier rendu
+		};
+	
+		loadData();
+	}, []); // [] signifie que cet effet ne s'exécutera qu'une seule fois après le premier rendu
+	
 
 	const children = props.children
 
 	return (
-		<>
+		<React.Fragment>
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -145,6 +151,6 @@ export default function Layout(props) {
 			</main>
 
 			<Footer contactBannerColor={props.contactBannerColor} />
-		</>
+		</React.Fragment>
 	)
 }
