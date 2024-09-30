@@ -16,7 +16,7 @@ async function optionsPageRoute(req, res) {
 			`,
 		})
 
-		const data = await response?.data.themeGeneralSettings.option;
+		const data = await response?.data?.themeGeneralSettings?.option;
 	
 		res.status(200).json({ error: false, data: data }) //, pageInfo: data.products.pageInfo, found: data.products.found });
 

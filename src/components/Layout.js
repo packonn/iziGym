@@ -8,29 +8,29 @@ import { useState, useEffect } from "react"
 import { mentionslegalesURL } from "../../helpers"
 
 export default function Layout(props) {
-const [options, setOptions] = useState(null)
-
-const loadData = async () => {
-	const response = await fetch("/api/options-page", {
-		method: "GET",
-		headers: {
-			"Content-Type": "application/json"
-		}
-	})
-
-	const result = await response.json()
-	setOptions(result.data)
-
-}
-
-useEffect(()=> {
-	loadData()
-}, [])	
-
-
-	
-	const children = props.children
+	const [options, setOptions] = useState(null)
 	const [cookieIsAccepted, setCookieIsAccepted] = useState(false)
+
+	// Utiliser useEffect pour charger les données
+	useEffect(() => {
+		const loadData = async () => {
+			try {
+				const response = await fetch("/api/options-page", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+					},
+				})
+				const result = await response.json()
+				setOptions(result.data)
+			} catch (error) {
+				console.log("error", error)
+			}
+		}
+		loadData()
+	}, []) // [] signifie que cet effet ne s'exécutera qu'une seule fois après le premier rendu
+
+	const children = props.children
 
 	return (
 		<>
@@ -69,14 +69,11 @@ useEffect(()=> {
 							strategy="afterInteractive"
 						>
 							{`
-							
 							  window.dataLayer = window.dataLayer || [];
 							  function gtag(){dataLayer.push(arguments);}
 							  gtag('js', new Date());
-							
 							  gtag('config', 'G-1HLKVW9ME2');
-							
-				`}
+							`}
 						</Script>
 					</>
 				)}
@@ -106,7 +103,6 @@ useEffect(()=> {
 						}}
 						onAccept={(acceptedByScrolling) => {
 							if (acceptedByScrolling) {
-								// triggered if user scrolls past threshold
 								setCookieIsAccepted(true)
 							} else {
 								setCookieIsAccepted(true)
