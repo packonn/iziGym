@@ -5,6 +5,7 @@ const nextConfig = {
 		SITE_URL: process.env.SITE_URL,
 	},
 	images: {
+		unoptimized: true,
 		domains: [
 			"www.izigym.fr",
 			"izigym.cloud4206.heitzsystem.com",
@@ -38,6 +39,6 @@ const nextConfig = {
 			permanent: true,
 		},
 	],
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
