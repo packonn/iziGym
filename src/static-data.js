@@ -8,7 +8,7 @@ export const themeGeneralSettings = {
 	facebookurl:
 		"https://www.facebook.com/people/IZI-GYM/100033020574671/?locale=fr_FR&paipv=0&eav=Afa5jjKaVHY9OggV1qoWX6Ehzc5DaEmnNBMnaGiBGvTz3uF5-6hYBUM8kXtVuKGjJnA&_rdr",
 	hoursreception:
-		"<p>Lundi-Mardi-Jeudi : 9h00-13h30 / 16h00-21h00<br />\nMercredi : 16h00 &#8211; 21h00<br />\nVendredi : 9h00-13h30 / 16h00-20h00<br />\nSamedi : 9h30-13h00</p>\n",
+		"<p>Lundi - Mardi - Mercredi - Jeudi : 9h45 - 13h / 17h - 21h<br />\nVendredi : 9h45-13h <br />\n",
 	instagramurl: "https://www.instagram.com/izi_gym/",
 	urlDeReservatioDesCoursEnLigne: "https://app.heitzfit.com/#/",
 	addressurl:

@@ -92,7 +92,7 @@ const Header = ({
 							)}
 
 							{hours && (
-								<div className="flex flex-col gap-2 -rotate-6 bg-white p-10 py-5 rounded-2xl ml-10 mt-10">
+								<div className="flex flex-col w-full gap-2 -rotate-6 bg-white md:p-10 p-5 py-5 rounded-2xl md:ml-10 mt-10">
 									<Title
 										title={"1ère séance"}
 										subtitle={"GRATUITE!"}
