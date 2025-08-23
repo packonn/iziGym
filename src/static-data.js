@@ -8,7 +8,7 @@ export const themeGeneralSettings = {
 	facebookurl:
 		"https://www.facebook.com/people/IZI-GYM/100033020574671/?locale=fr_FR&paipv=0&eav=Afa5jjKaVHY9OggV1qoWX6Ehzc5DaEmnNBMnaGiBGvTz3uF5-6hYBUM8kXtVuKGjJnA&_rdr",
 	hoursreception:
-		"<p>Lundi - Mardi - Mercredi - Jeudi : 9h45 - 13h / 17h - 21h<br />\nVendredi : 9h45-13h <br />\n",
+		"<p>Lundi - Mardi - Mercredi -<br/> Jeudi - Vendredi <br/> 9h - 13h / 16h - 21h<br /></p>\n",
 	instagramurl: "https://www.instagram.com/izi_gym/",
 	urlDeReservatioDesCoursEnLigne: "https://app.heitzfit.com/#/",
 	addressurl:
@@ -341,7 +341,7 @@ export const themeGeneralSettings = {
           {
             id: 1,
             title: "Carte de séance",
-            content: "Valade de 6 à 12 mois",
+            content: "La séance",
             price: "à partir de 8€",
             color: "bg-white",
           },

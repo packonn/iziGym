@@ -17,7 +17,7 @@ export const infos = [
 	},
 	{
 		title: "Horaires d'accueil",
-		texte: "<p>Lundi - Mardi - Mercredi - Jeudi : 9h45 - 13h / 17h - 21h</p><p>Vendredi : 9h45-13h </p>",
+		texte: "<p>Lundi - Mardi - Mercredi - <br/>Jeudi - Vendredi <br/> 9h - 13h / 16h - 21h</p>",
 	},
 	{
 		title: "Horaires d'accès",
