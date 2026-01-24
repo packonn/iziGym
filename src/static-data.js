@@ -13,7 +13,7 @@ export const themeGeneralSettings = {
 	urlDeReservatioDesCoursEnLigne: "https://app.heitzfit.com/#/",
 	addressurl:
 		"https://www.google.fr/maps/place/IZI+GYM/@46.1001272,-0.9507331,17z/data=!3m1!4b1!4m6!3m5!1s0x480149d09d09528b:0x6dea21e0797028ab!8m2!3d46.1001272!4d-0.9481582!16s%2Fg%2F11bzv2_9k_?entry=ttu",
-  landingPageUrl:"https://boost.fitnessboost.fr/module_reservation?club=1722324434428x801981807394816000/"
+  landingPageUrl:"https://boost.fitnessboost.fr/module_reservation?club=1722324434428x801981807394816000"
 
 	}
 
