@@ -49,8 +49,8 @@ const Planning = () => {
 							</div>
 						</div>
 					</div>
-					<Link href={"https://cms.izigym.fr/wp-content/uploads/2026/06/RenderedImage.jpeg"} target="_blank">
-						<Image src="https://cms.izigym.fr/wp-content/uploads/2026/06/RenderedImage.jpeg" alt="planning horaires cours collectif izi Gym" width={2000} height={1415} className="h-auto w-full mt-20 object-contain" />
+					<Link href={"https://cms.izigym.fr/wp-content/uploads/2026/06/planning-ete-2026.jpeg"} target="_blank">
+						<Image src="https://cms.izigym.fr/wp-content/uploads/2026/06/planning-ete-2026.jpeg" alt="planning horaires cours collectif izi Gym" width={2000} height={1415} className="h-auto w-full mt-20 object-contain" />
 					</Link>
 					{/* <div className="grid grid-cols-3 gap-10 mt-24 ">
 						{planning &&
