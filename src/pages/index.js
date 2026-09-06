@@ -83,7 +83,7 @@ export default function Home({ actus , options}) {
 						alt="separation entre section planning et présentation de la salle de sport izigym à Aigrefeuille d'aunis 17290"
 					/>
 				</div>
-				<Planning />
+				<Planning showTitle={true} theme="black" showPadding />
 				<Image
 					src="/assets-dev/wave-cream.svg"
 					width={1920}

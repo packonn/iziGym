@@ -24,6 +24,7 @@ const currentSpace = space[slug]
 
 	return (
 		<Layout
+		
 			contactBannerColor="white"
 			center
 			backgroundImageURL={
@@ -34,6 +35,9 @@ const currentSpace = space[slug]
 			title1={currentSpace.title}
 			classCustom=" min-h-[300px] md:min-h-[400px]"
 		>
+			{slug === "cours-collectifs" && (
+				<Planning theme="white" showTitle={false} />
+		)}
 			<div className="py-20">
 				<ContentDynamic
 					showVideo={showVideo}
@@ -47,11 +51,7 @@ const currentSpace = space[slug]
 					breakPointsSwiper={breakPointsSwiper}
 				/>
 
-				{slug === "cours-collectifs" && (
-					<div className="mt-10">
-						<Planning />
-					</div>
-				)}
+				
 
 				
 			</div>

@@ -4,21 +4,27 @@ import { planning, themeGeneralSettings } from "@/static-data"
 import Image from "next/image"
 import Link from "next/link"
 
-const Planning = () => {
+const Planning = (props) => {
+	let showTitle = props.showTitle ? true : false 
+	let bgColor = props.theme == "black" ? "bg-black2" : "white" 
+	let padding = props.showPadding ? "md:py-20 py-10 md:pb-32" : ""
+
 	return (
 		<>
-			<div className="bg-black2 relative z-10 md:pb-20 pb-40">
-				<div className="container md:py-20 py-10 md:pb-32">
+			<div className={" relative z-10 md:pb-20 pb-40 " + " " + bgColor}>
+				<div className={"container " + padding }>
+					{showTitle && 
+					<div className="">
 					<Title
 						title="Planning"
 						subtitle="Cours collectifs"
 						color={"white"}
 						center
 						textColor1={"primary"}
-					/>
+					/></div>}
 					<div className="flex md:flex-row flex-col justify-center gap-4 items-center mt-20 ">
 						<div className="w-fit relative">
-							<div className="rotate-[5deg] z-40  absolute right-0 -top-8 bg-white w-fit rounded px-2 py-1">
+							<div className="rotate-[5deg] z-40  absolute right-0 -top-8 bg-white shadow-xl drop-shadow-lg w-fit rounded px-2 py-1">
 								<div className="w-2 h-2 bg-black rounded-full absolute bottom-[1px] border-black border right-[1px] transform "></div>
 								<span className="text-black text-center flex justify-center text-sm pt-1">
 									Réservé aux abonnés
@@ -40,7 +46,7 @@ const Planning = () => {
 								href={themeGeneralSettings.landingPageUrl}
 								target={"_blank"}
 							/>
-							<div className="-rotate-[5deg] z-40  absolute -right-10 -bottom-10 bg-white w-fit rounded px-2 py-1">
+							<div className="-rotate-[5deg] z-40  absolute -right-10 -bottom-10 bg-white shadow-xl drop-shadow-lg w-fit rounded px-2 py-1">
 								<div className="w-2 h-2 bg-primary rounded-full absolute top-[6px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
 								<span className="text-black text-center flex justify-center text-sm pt-1">
 									Offre réservée <br />
@@ -49,8 +55,8 @@ const Planning = () => {
 							</div>
 						</div>
 					</div>
-					<Link href={"https://cms.izigym.fr/wp-content/uploads/2026/06/planning-ete-2026.jpeg"} target="_blank">
-						<Image src="https://cms.izigym.fr/wp-content/uploads/2026/06/planning-ete-2026.jpeg" alt="planning horaires cours collectif izi Gym" width={2000} height={1415} className="h-auto w-full mt-20 object-contain" />
+					<Link href={"https://cms.izigym.fr/wp-content/uploads/2026/09/planning.png"} target="_blank">
+						<Image src="https://cms.izigym.fr/wp-content/uploads/2026/09/planning.png" alt="planning horaires cours collectif izi Gym" width={2000} height={1415} className="h-auto w-full mt-20 object-contain" />
 					</Link>
 					{/* <div className="grid grid-cols-3 gap-10 mt-24 ">
 						{planning &&
