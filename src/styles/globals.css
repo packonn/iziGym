@@ -195,3 +195,12 @@ h2 span strong {
 html {
 	scroll-behavior: smooth;
 }
+
+/* Garde-fou : aucun contenu ne doit élargir la page sur mobile.
+   Un débordement horizontal fait dézoomer le viewport sur Chrome mobile
+   et décale/masque le header. */
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+}

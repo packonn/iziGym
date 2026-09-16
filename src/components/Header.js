@@ -51,15 +51,15 @@ const Header = ({
 							: " justify-center xl:justify-start"
 					} `}
 				>
-					<div className=" relative z-20 flex flex-col md:items-start items-center  w-full lg:left-0 left-0 ">
+					<div className=" relative z-20 flex flex-col md:items-start items-center  w-full min-w-0 max-w-full lg:left-0 left-0 ">
 						<div
-							className={` flex flex-col justify-center items-center ${
+							className={` flex flex-col justify-center items-center min-w-0 max-w-full ${
 								center ? "" : "md:w-1/2"
 							} w-full `}
 						>
 							{title1 && (
 								<h2
-									className={`text-white break-keep !font-great lg:leading-[100px] leading-[70px] lg:text-[130px] text-[70px]  ${
+									className={`text-white break-words hyphens-auto max-w-full !font-great lg:leading-[100px] leading-[70px] lg:text-[130px] text-[70px]  ${
 										center
 											? "text-center"
 											: "text-left -rotate-6"
@@ -70,7 +70,7 @@ const Header = ({
 							)}
 							{title2 && (
 								<h1
-									className={` text-primary font-great lg:leading-[100px] md:leading-[70px] lg:text-[130px]  md:text-[60px]  text-[50px] leading-[50px]  whitespace-nowrap ${
+									className={` text-primary font-great break-words hyphens-auto max-w-full lg:leading-[100px] md:leading-[70px] lg:text-[130px]  md:text-[60px]  text-[40px] leading-[44px] ${
 										center
 											? "text-center"
 											: "text-left -rotate-6"
