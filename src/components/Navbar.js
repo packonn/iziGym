@@ -275,7 +275,8 @@ export default function Navbar() {
 											text={
 												"Je veux profiter de l'offre !"
 											}
-											href={"#contact"}
+											target="_blank"
+											href={`${themeGeneralSettings.landingPageUrl}`}
 										/>
 									</div>
 								</div>
